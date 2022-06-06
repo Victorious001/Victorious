@@ -1,0 +1,21 @@
+2022/06/06-12:51:59.532 1027 Reusing MANIFEST /home/victorious/.config/google-chrome/Profile 3/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/06/06-12:51:59.532 1027 Recovering log #19
+2022/06/06-12:51:59.636 1027 Reusing old log /home/victorious/.config/google-chrome/Profile 3/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000019.log 
+2022/06/06-13:01:13.428 141a Level-0 table #24: started
+2022/06/06-13:01:13.455 141a Level-0 table #24: 1199196 bytes OK
+2022/06/06-13:01:13.460 141a Delete type=0 #19
+2022/06/06-13:02:52.605 156b Compacting 1@1 + 1@2 files
+2022/06/06-13:02:52.617 156b Generated table #25@1: 346 keys, 35218 bytes
+2022/06/06-13:02:52.617 156b Compacted 1@1 + 1@2 files => 35218 bytes
+2022/06/06-13:02:52.620 156b compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/06/06-13:02:52.620 156b Delete type=2 #21
+2022/06/06-13:02:52.620 156b Delete type=2 #24
+2022/06/06-15:24:27.493 41ad Level-0 table #27: started
+2022/06/06-15:24:27.518 41ad Level-0 table #27: 1141180 bytes OK
+2022/06/06-15:24:27.522 41ad Delete type=0 #23
+2022/06/06-15:26:44.901 4159 Compacting 1@1 + 1@2 files
+2022/06/06-15:26:44.914 4159 Generated table #28@1: 681 keys, 44284 bytes
+2022/06/06-15:26:44.914 4159 Compacted 1@1 + 1@2 files => 44284 bytes
+2022/06/06-15:26:44.919 4159 compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/06/06-15:26:44.919 4159 Delete type=2 #27
+2022/06/06-15:26:44.919 4159 Delete type=2 #25

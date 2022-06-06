@@ -1,0 +1,60 @@
+[2022-06-05 12:14:35.271] [renderer1] [error] RequestService#request (browser) - error https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery {"name":"Offline"}
+[2022-06-05 12:14:35.280] [renderer1] [error] Offline: Offline
+    at R (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:83:27352)
+    at I.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:619:22000)
+    at J.queryRawGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:26385)
+    at async J.queryGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:23676)
+    at async ae (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22645)
+    at async J.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22886)
+    at async Rs.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3162:12775)
+    at async ee.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:16421)
+    at async ee.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:7605)
+    at async vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:5820
+[2022-06-05 12:14:35.320] [renderer1] [error] RequestService#request (browser) - error https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery {"name":"Offline"}
+[2022-06-05 12:14:35.321] [renderer1] [error] Offline: Offline
+    at R (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:83:27352)
+    at I.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:619:22000)
+    at J.queryRawGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:26385)
+    at async J.queryGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:23676)
+    at async J.getExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:20406)
+    at async Rs.getExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3162:13394)
+    at async Ce.getInstallableRecommendations (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:19125)
+    at async Ce.getAllRecommendationsModel (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:22544)
+    at async Ce.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:7605)
+    at async vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:5820
+[2022-06-05 12:14:46.959] [renderer1] [error] RequestService#request (browser) - error https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery {"name":"Offline"}
+[2022-06-05 12:14:46.960] [renderer1] [error] Offline: Offline
+    at R (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:83:27352)
+    at I.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:619:22000)
+    at J.queryRawGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:26385)
+    at async J.queryGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:23676)
+    at async ae (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22645)
+    at async J.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22886)
+    at async Rs.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3162:12775)
+    at async $t.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:16421)
+    at async $t.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:7605)
+    at async vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:5820
+[2022-06-05 12:14:50.677] [renderer1] [error] RequestService#request (browser) - error https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery {"name":"Offline"}
+[2022-06-05 12:14:50.709] [renderer1] [error] Offline: Offline
+    at R (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:83:27352)
+    at I.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:619:22000)
+    at J.queryRawGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:26385)
+    at async J.queryGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:23676)
+    at async ae (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22645)
+    at async J.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22886)
+    at async Rs.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3162:12775)
+    at async $t.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:16421)
+    at async $t.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:7605)
+    at async vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:5820
+[2022-06-05 12:14:52.381] [renderer1] [error] RequestService#request (browser) - error https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery {"name":"Offline"}
+[2022-06-05 12:14:52.383] [renderer1] [error] Offline: Offline
+    at R (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:83:27352)
+    at I.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:619:22000)
+    at J.queryRawGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:26385)
+    at async J.queryGalleryExtensions (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:23676)
+    at async ae (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22645)
+    at async J.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:624:22886)
+    at async Rs.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3162:12775)
+    at async $t.queryGallery (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:16421)
+    at async $t.query (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:7605)
+    at async vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:3158:5820

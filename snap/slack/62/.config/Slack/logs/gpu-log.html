@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<!-- saved from url=(0013)chrome://gpu/ -->
+<html dir="ltr" lang="en"><!--
+Copyright (c) 2012 The Chromium Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+--><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="viewport" content="width=device-width">
+<style>
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: white;
+  cursor: default;
+  font-family: sans-serif;
+  padding: 0;
+}
+
+#debug-div {
+  border: 1px solid red;
+  display: -webkit-box;
+  left: 50%;
+  position: fixed;
+  top: 0;
+}
+
+</style>
+<style>/* Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+#info-view {
+  -webkit-box-flex: 1;
+  overflow: auto;
+  padding: 10px;
+}
+
+#info-view * {
+  -webkit-user-select: text;
+}
+
+#info-view[selected] {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+#info-view h3,
+#info-view ul {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#info-view > div {
+  margin-bottom: 1em;
+}
+
+#info-view .row-title {
+  font-weight: bold;
+}
+
+#info-view table {
+  border-collapse: collapse;
+  cursor: auto;
+  table-layout: fixed;
+  width: 100%;
+}
+
+#info-view table,
+#info-view th,
+#info-view td {
+  border: 1px solid #777;
+  padding-end: 4px;
+  padding-start: 4px;
+  text-align: top;
+}
+
+#info-view td {
+  overflow-x: auto;
+}
+
+#info-view .feature-green {
+  color: rgb(0, 128, 0);
+}
+
+#info-view .feature-yellow {
+  color: rgb(128, 128, 0);
+}
+
+#info-view .feature-red {
+  color: rgb(255, 0, 0);
+}
+
+#info-view .feature-gray {
+  color: rgb(128, 128, 128);
+}
+
+#info-view .bg-yellow {
+  background-color: yellow;
+}
+
+#vulkan-info-value {
+  white-space: pre;
+}
+
+#copy-to-clipboard {
+  user-select: none;
+}
+</style>
+<link rel="stylesheet" href="chrome://resources/css/widgets.css">
+<script type="module" src="chrome://gpu/gpu_internals.js"></script>
+</head>
+<body>
+  <div id="debug-div">
+  </div>
+  <!--
+Copyright (c) 2012 The Chromium Authors. All rights reserved.
+Use of this source code is governed by a BSD-style license that can be
+found in the LICENSE file.
+-->
+<div id="info-view">
+  <div>
+    <input type="button" id="copy-to-clipboard" value="Copy Report to Clipboard">
+  </div>
+  <div>
+    <h3>Graphics Feature Status</h3>
+    <ul class="feature-status-list"><li><span>Canvas: </span><span class="feature-green">Hardware accelerated</span></li><li><span>Canvas out-of-process rasterization: </span><span class="feature-red">Disabled</span></li><li><span>Direct Rendering Display Compositor: </span><span class="feature-yellow">Disabled</span></li><li><span>Compositing: </span><span class="feature-green">Hardware accelerated</span></li><li><span>Multiple Raster Threads: </span><span class="feature-green">Enabled</span></li><li><span>OpenGL: </span><span class="feature-green">Enabled</span></li><li><span>Rasterization: </span><span class="feature-green">Hardware accelerated</span></li><li><span>Raw Draw: </span><span class="feature-yellow">Disabled</span></li><li><span>Skia Renderer: </span><span class="feature-green">Enabled</span></li><li><span>Video Decode: </span><span class="feature-yellow">Software only. Hardware acceleration disabled</span></li><li><span>Video Encode: </span><span class="feature-yellow">Software only. Hardware acceleration disabled</span></li><li><span>Vulkan: </span><span class="feature-red">Disabled</span></li><li><span>WebGL: </span><span class="feature-green">Hardware accelerated</span></li><li><span>WebGL2: </span><span class="feature-green">Hardware accelerated</span></li></ul>
+  </div>
+
+  <div class="workarounds-div">
+    <h3>Driver Bug Workarounds</h3>
+    <ul class="workarounds-list"><li>clear_uniforms_before_first_program_use</li><li>count_all_in_varyings_packing</li><li>enable_webgl_timer_query_extensions</li><li>exit_on_context_lost</li><li>disabled_extension_GL_KHR_blend_equation_advanced</li><li>disabled_extension_GL_KHR_blend_equation_advanced_coherent</li></ul>
+  </div>
+
+  <div class="problems-div">
+    <h3>Problems Detected</h3>
+    <ul class="problems-list"><li><a>Accelerated video encode has been disabled, either via blocklist, about:flags or the command line.</a><br><i><span>Disabled Features: </span><span class="feature-red">video_encode</span></i></li><li><a>Accelerated video decode has been disabled, either via blocklist, about:flags or the command line.</a><br><i><span>Disabled Features: </span><span class="feature-red">video_decode</span></i></li><li><a>Clear uniforms before first program use on all platforms</a><span>: </span><a href="http://crbug.com/124764">124764</a><span>, </span><a href="http://crbug.com/349137">349137</a><br><i><span>Applied Workarounds: </span><span class="feature-yellow">clear_uniforms_before_first_program_use</span></i></li><li><a>Mesa drivers in Linux handle varyings without static use incorrectly</a><span>: </span><a href="http://crbug.com/333885">333885</a><br><i><span>Applied Workarounds: </span><span class="feature-yellow">count_all_in_varyings_packing</span></i></li><li><a>Disable KHR_blend_equation_advanced until cc shaders are updated</a><span>: </span><a href="http://crbug.com/661715">661715</a><br><i><span>Applied Workarounds: </span><span class="feature-yellow">disable(GL_KHR_blend_equation_advanced)</span><span>, </span><span class="feature-yellow">disable(GL_KHR_blend_equation_advanced_coherent)</span></i></li><li><a>Expose WebGL's disjoint_timer_query extensions on platforms with site isolation</a><span>: </span><a href="http://crbug.com/808744">808744</a><span>, </span><a href="http://crbug.com/870491">870491</a><br><i><span>Applied Workarounds: </span><span class="feature-yellow">enable_webgl_timer_query_extensions</span></i></li><li><a>Some drivers can't recover after OUT_OF_MEM and context lost</a><span>: </span><a href="http://crbug.com/893177">893177</a><br><i><span>Applied Workarounds: </span><span class="feature-yellow">exit_on_context_lost</span></i></li></ul>
+  </div>
+
+  <div class="angle-features-div">
+    <h3>ANGLE Features</h3>
+    <ul class="angle-features-list"><li><b>allow_compressed_formats</b><span> </span><span>(Frontend workarounds)</span><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: true</span><br><i><span>Allow compressed formats</span></i></li><li><b>disable_anisotropic_filtering</b><span> </span><span>(Frontend workarounds)</span><span>: </span><span class="feature-red">Disabled</span><br><i><span>Disable support for anisotropic filtering</span></i></li><li><b>disable_program_binary</b><span> </span><span>(Frontend features)</span><span> </span><a href="http://anglebug.com/5007">anglebug:5007</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsPowerVrRogue(functions)</span><br><i><span>Disable support for GL_OES_get_program_binary</span></i></li><li><b>disable_program_caching_for_transform_feedback</b><span> </span><span>(Frontend workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() &amp;&amp; isQualcomm</span><br><i><span>On some GPUs, program binaries don't contain transform feedback varyings</span></i></li><li><b>enableCompressingPipelineCacheInThreadPool</b><span> </span><span>(Frontend workarounds)</span><span> </span><a href="http://anglebug.com/4722">anglebug:4722</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: false</span><br><i><span>Enable compressing pipeline cache in thread pool.</span></i></li><li><b>enableProgramBinaryForCapture</b><span> </span><span>(Frontend features)</span><span> </span><a href="http://anglebug.com/5658">anglebug:5658</a><span>: </span><span class="feature-red">Disabled</span><br><i><span>Even if FrameCapture is enabled, enable GL_OES_get_program_binary</span></i></li><li><b>enable_capture_limits</b><span> </span><span>(Frontend features)</span><span> </span><a href="http://anglebug.com/5750">anglebug:5750</a><span>: </span><span class="feature-red">Disabled</span><br><i><span>Set the context limits like frame capturing was enabled</span></i></li><li><b>forceInitShaderVariables</b><span> </span><span>(Frontend features)</span><span>: </span><span class="feature-red">Disabled</span><br><i><span>Force-enable shader variable initialization</span></i></li><li><b>forceRobustResourceInit</b><span> </span><span>(Frontend features)</span><span> </span><a href="http://anglebug.com/6041">anglebug:6041</a><span>: </span><span class="feature-red">Disabled</span><br><i><span>Force-enable robust resource init</span></i></li><li><b>lose_context_on_out_of_memory</b><span> </span><span>(Frontend workarounds)</span><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: true</span><br><i><span>Some users rely on a lost context notification if a GL_OUT_OF_MEMORY error occurs</span></i></li><li><b>scalarize_vec_and_mat_constructor_args</b><span> </span><span>(Frontend workarounds)</span><span> </span><a href="http://crbug.com/1165751">1165751</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: false</span><br><i><span>Always rewrite vec/mat constructors to be consistent</span></i></li><li><b>add_and_true_to_loop_condition</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel</span><br><i><span>Calculation of loop conditions in for and while loop has bug</span></i></li><li><b>adjust_src_dst_region_for_blitframebuffer</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/830046">830046</a><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: IsLinux() || (IsAndroid() &amp;&amp; isNvidia) || (IsWindows() &amp;&amp; isNvidia) || (IsApple() &amp;&amp; functions-&gt;standard == STANDARD_GL_ES)</span><br><i><span>Many platforms have issues with blitFramebuffer when the parameters are large.</span></i></li><li><b>allow_clear_for_robust_resource_init</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/883276">883276</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Using glClear for robust resource initialization is buggy on some drivers and leads to texture corruption. Default to data uploads except on MacOS where it is very slow.</span></i></li><li><b>allow_etc_formats</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: isIntel &amp;&amp; !IsSandyBridge(device) &amp;&amp; !IsIvyBridge(device) &amp;&amp; !IsHaswell(device)</span><br><i><span>Enable ETC2/EAC on desktop OpenGL</span></i></li><li><b>always_call_use_program_after_link</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/110263">110263</a><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: true</span><br><i><span>Always call useProgram after a successful link to avoid a driver bug</span></i></li><li><b>avoid_1_bit_alpha_texture_formats</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; isAMD</span><br><i><span>Issue with 1-bit alpha framebuffer formats</span></i></li><li><b>bind_transform_feedback_buffer_before_bind_buffer_range</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://anglebug.com/5140">anglebug:5140</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Bind transform feedback buffers to the generic binding point before calling glBindBufferBase or glBindBufferRange.</span></i></li><li><b>chunked_texture_upload</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1181068">1181068</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Upload texture data in &lt;120kb chunks to work around Mac driver hangs and crashes.</span></i></li><li><b>clamp_array_access</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/2978">anglebug:2978</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() || isAMD || !functions-&gt;hasExtension("GL_KHR_robust_buffer_access_behavior")</span><br><i><span>Clamp uniform array access to avoid reading invalid memory.</span></i></li><li><b>clamp_frag_depth</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>gl_FragDepth is not clamped correctly when rendering to a floating point depth buffer</span></i></li><li><b>clamp_msc_rate</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/1042393">1042393</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsLinux() &amp;&amp; IsWayland()</span><br><i><span>Some drivers return bogus values for GetMscRate, so we clamp it to 30Hz</span></i></li><li><b>clamp_point_size</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() || isNvidia</span><br><i><span>The point size range reported from the API is inconsistent with the actual behavior</span></i></li><li><b>clear_to_zero_or_one_broken</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/710443">710443</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel &amp;&amp; GetMacOSVersion() &lt; OSVersion(10, 12, 6)</span><br><i><span>Clears when the clear color is all zeros or ones do not work.</span></i></li><li><b>clip_src_region_for_blitframebuffer</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/830046">830046</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() || (IsLinux() &amp;&amp; isAMD)</span><br><i><span>Issues with blitFramebuffer when the parameters don't match the framebuffer size.</span></i></li><li><b>decode_encode_srgb_for_generatemipmap</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/4646">anglebug:4646</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Decode and encode before generateMipmap for srgb format textures.</span></i></li><li><b>disable_blend_func_extended</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/1085">anglebug:1085</a><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: isAMD || isIntel</span><br><i><span>ARB_blend_func_extended does not pass the tests</span></i></li><li><b>disable_draw_buffers_indexed</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsWindows() &amp;&amp; isAMD</span><br><i><span>Disable OES_draw_buffers_indexed extension.</span></i></li><li><b>disable_gpu_switching_support</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/1091824">1091824</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isDualGPUMacWithNVIDIA</span><br><i><span>Disable GPU switching support (use only the low-power GPU) on older MacBook Pros.</span></i></li><li><b>disable_mutlisampled_render_to_texture</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/2894">anglebug:2894</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isAdreno4xxOnAndroidLessThan51 || isAdreno4xxOnAndroid70 || isAdreno5xxOnAndroidLessThan70 || isAdreno5xxOnAndroid71 || isLinuxVivante</span><br><i><span>Many drivers have bugs when using GL_EXT_multisampled_render_to_texture</span></i></li><li><b>disable_native_parallel_compile</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1094869">1094869</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isTSANBuild &amp;&amp; IsLinux() &amp;&amp; isNvidia</span><br><i><span>Do not use native KHR_parallel_shader_compile even when available.</span></i></li><li><b>disable_semaphore_fd</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/1046462">1046462</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsLinux() &amp;&amp; isAMD &amp;&amp; isMesa &amp;&amp; mesaVersion &lt; (std::array&lt;int, 3&gt;{19, 3, 5})</span><br><i><span>Disable GL_EXT_semaphore_fd extension</span></i></li><li><b>disable_sync_control_support</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/1137851">1137851</a><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: IsLinux() &amp;&amp; isIntel &amp;&amp; isMesa &amp;&amp; mesaVersion[0] == 20</span><br><i><span>Speculative fix for issues on Linux/Wayland where exposing GLX_OML_sync_control renders Chrome unusable</span></i></li><li><b>disable_timestamp_queries</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/811661">811661</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: (IsLinux() &amp;&amp; isVMWare) || (IsAndroid() &amp;&amp; isNvidia) || (IsAndroid() &amp;&amp; GetAndroidSdkLevel() &lt; 27 &amp;&amp; IsAdreno5xxOrOlder(functions)) || (IsAndroid() &amp;&amp; IsMaliT8xxOrOlder(functions)) || (IsAndroid() &amp;&amp; IsMaliG31OrOlder(functions))</span><br><i><span>Disable GL_EXT_disjoint_timer_query extension</span></i></li><li><b>disable_worker_contexts</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/849576">849576</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: (IsWindows() &amp;&amp; (isIntel || isAMD)) || (IsLinux() &amp;&amp; isNvidia) || IsIOS() || IsAndroid() || IsAndroidEmulator(functions)</span><br><i><span>Some tests have been seen to fail using worker contexts</span></i></li><li><b>do_while_glsl_causes_gpu_hang</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/644669">644669</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; GetMacOSVersion() &lt; OSVersion(10, 11, 0)</span><br><i><span>Some GLSL constructs involving do-while loops cause GPU hangs</span></i></li><li><b>does_srgb_clears_on_linear_framebuffer_attachments</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: isIntel || isAMD</span><br><i><span>Issue clearing framebuffers with linear attachments when GL_FRAMEBUFFER_SRGB is enabled</span></i></li><li><b>dont_initialize_uninitialized_locals</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/2046">anglebug:2046</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() &amp;&amp; isQualcomm</span><br><i><span>Initializing uninitialized locals caused odd behavior in a few WebGL 2 tests</span></i></li><li><b>dont_relink_programs_in_parallel</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/3045">anglebug:3045</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() || (IsWindows() &amp;&amp; isIntel)</span><br><i><span>Relinking a program in parallel is buggy</span></i></li><li><b>dont_use_loops_to_initialize_variables</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/809422">809422</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: (IsAndroid() &amp;&amp; isQualcomm) || (isIntel &amp;&amp; IsApple())</span><br><i><span>For loops used to initialize variables hit native GLSL compiler bugs</span></i></li><li><b>emulate_abs_int_function</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/642227">642227</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel</span><br><i><span>abs(i) where i is an integer returns unexpected result</span></i></li><li><b>emulate_atan_2_float</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/672380">672380</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>atan(y, x) may return a wrong answer</span></i></li><li><b>emulate_copyteximage2d_from_renderbuffers</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://anglebug.com/4674">anglebug:4674</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; functions-&gt;standard == STANDARD_GL_ES &amp;&amp; !(isAMD &amp;&amp; IsWindows())</span><br><i><span>CopyTexImage2D spuriously returns errors on iOS when copying from renderbuffers.</span></i></li><li><b>emulate_immutable_compressed_texture_3d</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/1060012">1060012</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isQualcomm</span><br><i><span>Use non-immutable texture allocation to work around a driver bug.</span></i></li><li><b>emulate_isnan_float</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/650547">650547</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isIntel &amp;&amp; IsApple() &amp;&amp; IsSkylake(device) &amp;&amp; GetMacOSVersion() &lt; OSVersion(10, 13, 2)</span><br><i><span>Using isnan() on highp float will get wrong answer</span></i></li><li><b>emulate_max_vertex_attrib_stride</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/1936">anglebug:1936</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsLinux() &amp;&amp; functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; isAMD</span><br><i><span>Some drivers return 0 when MAX_VERTEX_ATTRIB_STRIED queried</span></i></li><li><b>emulate_pack_skip_rows_and_pack_skip_pixels</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://anglebug.com/4849">anglebug:4849</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; (isAMD || isIntel || isNvidia)</span><br><i><span>GL_PACK_SKIP_ROWS and GL_PACK_SKIP_PIXELS are ignored in Apple's OpenGL driver.</span></i></li><li><b>emulate_primitive_restart_fixed_index</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/3997">anglebug:3997</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; functions-&gt;isAtLeastGL(gl::Version(3, 1)) &amp;&amp; !functions-&gt;isAtLeastGL(gl::Version(4, 3))</span><br><i><span>When GL_PRIMITIVE_RESTART_FIXED_INDEX is not available, emulate it with GL_PRIMITIVE_RESTART and glPrimitiveRestartIndex.</span></i></li><li><b>finish_does_not_cause_queries_to_be_available</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; isNvidia</span><br><i><span>glFinish doesn't cause all queries to report available result</span></i></li><li><b>flush_before_delete_texture_if_copied_to</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/4267">anglebug:4267</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel</span><br><i><span>Some drivers track CopyTex{Sub}Image texture dependencies incorrectly. Flush before glDeleteTextures in this case</span></i></li><li><b>flush_on_framebuffer_change</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1181068">1181068</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; Has9thGenIntelGPU(systemInfo)</span><br><i><span>Switching framebuffers without a flush can lead to crashes on Intel 9th Generation GPU Macs.</span></i></li><li><b>init_fragment_output_variables</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1171371">1171371</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAdreno42xOr3xx(functions)</span><br><i><span>No init gl_FragColor causes context lost</span></i></li><li><b>initialize_current_vertex_attributes</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>During initialization, assign the current vertex attributes to the spec-mandated defaults</span></i></li><li><b>keep_buffer_shadow_copy</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: !CanMapBufferForRead(functions)</span><br><i><span>Maintain a shadow copy of buffer data when the GL API does not permit reading data back.</span></i></li><li><b>max_3d_array_texture_size_1024</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/927470">927470</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: limitMaxTextureSize</span><br><i><span>Limit max 3d texture size and max array texture layers to 1024 to avoid system hang</span></i></li><li><b>max_msaa_sample_count_4</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/797243">797243</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() || (IsApple() &amp;&amp; (isIntel || isAMD || isNvidia))</span><br><i><span>Various rendering bugs have been observed when using higher MSAA counts</span></i></li><li><b>max_texture_size_limit_4096</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/927470">927470</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() || limitMaxTextureSize</span><br><i><span>Limit max texture size to 4096 to avoid frequent out-of-memory errors</span></i></li><li><b>pack_last_row_separately_for_padding_inclusion</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/1512">anglebug:1512</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() || isNvidia</span><br><i><span>When uploading textures from an pack buffer, some drivers count an extra row padding</span></i></li><li><b>pack_overlapping_rows_separately_pack_buffer</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>In the case of packing to a pixel pack buffer, pack overlapping rows row by row</span></i></li><li><b>pre_add_texel_fetch_offsets</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/642605">642605</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel</span><br><i><span>Intel Mac drivers mistakenly consider the parameter position of nagative vaule as invalid even if the sum of position and offset is in range, so we need to add workarounds by rewriting texelFetchOffset(sampler, position, lod, offset) into texelFetch(sampler, position + offset, lod).</span></i></li><li><b>promote_packed_formats_to_8_bit_per_channel</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/5469">anglebug:5469</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; hasAMD</span><br><i><span>Packed color formats are buggy on Macs with AMD GPUs</span></i></li><li><b>query_counter_bits_generates_errors</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/3027">anglebug:3027</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsNexus5X(vendor, device)</span><br><i><span>Drivers generate errors when querying the number of bits in timer queries</span></i></li><li><b>read_pixels_using_implementation_color_read_format</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/4214">anglebug:4214</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: !isIntel &amp;&amp; functions-&gt;standard == STANDARD_GL_ES &amp;&amp; functions-&gt;isAtLeastGLES(gl::Version(3, 1)) &amp;&amp; functions-&gt;hasGLESExtension("GL_EXT_texture_norm16")</span><br><i><span>Quite some OpenGL ES drivers don't implement readPixels for RGBA/UNSIGNED_SHORT from EXT_texture_norm16 correctly</span></i></li><li><b>reapply_ubo_bindings_after_using_binary_program</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/1637">anglebug:1637</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isAMD || IsAndroid()</span><br><i><span>Some drivers forget about UBO bindings when using program binaries</span></i></li><li><b>regenerate_struct_names</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/403957">403957</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>All Mac drivers do not handle struct scopes correctly. This workaround overwrites a structname with a unique prefix.</span></i></li><li><b>remove_dynamic_indexing_of_swizzled_vector</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/709351">709351</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() || IsAndroid() || IsWindows()</span><br><i><span>Dynamic indexing of swizzled l-values doesn't work correctly on various platforms.</span></i></li><li><b>remove_invarient_and_centroid_for_essl3</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: functions-&gt;isAtMostGL(gl::Version(4, 1)) || (functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; isAMD)</span><br><i><span>Fix spec difference between GLSL 4.1 or lower and ESSL3</span></i></li><li><b>reset_teximage2d_base_level</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="https://crbug.com/705865">705865</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel &amp;&amp; GetMacOSVersion() &gt;= OSVersion(10, 12, 4)</span><br><i><span>Reset texture base level before calling glTexImage2D to work around pixel comparison failure.</span></i></li><li><b>rewrite_float_unary_minus_operator</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/308366">308366</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isIntel &amp;&amp; GetMacOSVersion() &lt; OSVersion(10, 12, 0)</span><br><i><span>Using '-&lt;float&gt;' will get wrong answer</span></i></li><li><b>rewrite_repeated_assign_to_swizzled</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>Repeated assignment to swizzled values inside a GLSL user-defined function have incorrect results</span></i></li><li><b>rewrite_row_major_matrices</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/2273">anglebug:2273</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: false</span><br><i><span>Rewrite row major matrices in shaders as column major as a driver bug workaround</span></i></li><li><b>rgb_dxt1_textures_sample_zero_alpha</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/3729">anglebug:3729</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Sampling BLACK texels from RGB DXT1 textures returns transparent black on Mac.</span></i></li><li><b>rgba4_is_not_supported_for_color_rendering</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-green">Enabled</span><span class="feature-gray">: functions-&gt;standard == STANDARD_GL_DESKTOP &amp;&amp; isIntel</span><br><i><span>GL_RGBA4 is not color renderable</span></i></li><li><b>sanitize_amdgpu_renderer_string</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1181193">1181193</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsLinux() &amp;&amp; hasAMD</span><br><i><span>Strip precise kernel and DRM version information from amdgpu renderer strings.</span></i></li><li><b>set_primitive_restart_fixed_index_for_draw_arrays</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/3997">anglebug:3997</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: features-&gt;emulatePrimitiveRestartFixedIndex.enabled &amp;&amp; IsApple() &amp;&amp; isIntel</span><br><i><span>Some drivers discard vertex data in DrawArrays calls when the fixed primitive restart index is within the number of primitives being drawn.</span></i></li><li><b>set_zero_level_before_generating_mipmap</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>glGenerateMipmap fails if the zero texture level is not set on some Mac drivers.</span></i></li><li><b>shift_instanced_array_data_with_offset</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1144207">1144207</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; IsIntel(vendor) &amp;&amp; !IsHaswell(device)</span><br><i><span>glDrawArraysInstanced is buggy on certain new Mac Intel GPUs</span></i></li><li><b>sync_vertex_arrays_to_default</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/5577">anglebug:5577</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: !nativegl::SupportsVertexArrayObjects(functions)</span><br><i><span>Only use the default VAO because of missing support or driver bugs</span></i></li><li><b>unbind_fbo_before_switching_context</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/1181193">1181193</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsPowerVR(vendor)</span><br><i><span>Imagination GL drivers are buggy with context switching.</span></i></li><li><b>unfold_short_circuits</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/482">anglebug:482</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple()</span><br><i><span>Mac incorrectly executes both sides of &amp;&amp; and || expressions when they should short-circuit.</span></i></li><li><b>unpack_last_row_separately_for_padding_inclusion</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://anglebug.com/1512">anglebug:1512</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() || isNvidia</span><br><i><span>When uploading textures from an unpack buffer, some drivers count an extra row padding</span></i></li><li><b>unpack_overlapping_rows_separately_unpack_buffer</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: isNvidia</span><br><i><span>In the case of unpacking from a pixel unpack buffer, unpack overlapping rows row by row</span></i></li><li><b>unsized_srgb_read_pixels_doesnt_transform</b><span> </span><span>(OpenGL workarounds)</span><span> </span><a href="http://crbug.com/565179">565179</a><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsAndroid() &amp;&amp; isQualcomm</span><br><i><span>Drivers returning raw sRGB values instead of linearized values when calling glReadPixels on unsized sRGB texture formats</span></i></li><li><b>use_unused_blocks_with_standard_or_shared_layout</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: (IsApple() &amp;&amp; functions-&gt;standard == STANDARD_GL_DESKTOP) || (IsLinux() &amp;&amp; isAMD)</span><br><i><span>Unused std140 or shared uniform blocks will be treated as inactive</span></i></li><li><b>vertex_id_does_not_include_base_vertex</b><span> </span><span>(OpenGL workarounds)</span><span>: </span><span class="feature-red">Disabled</span><span class="feature-gray">: IsApple() &amp;&amp; isAMD</span><br><i><span>gl_VertexID in GLSL vertex shader doesn't include base vertex value</span></i></li></ul>
+  </div>
+
+  <div class="dawn-info-div">
+    <h3>DAWN Info</h3>
+    <ul class="dawn-info-list"><br><b>&lt;CPU&gt;  Vulkan backend - SwiftShader Device (Subzero)</b><br><span class="feature-green">[Default Toggle Names]</span><li><b>lazy_clear_resource_on_first_use:  </b><a href="https://crbug.com/dawn/145">https://crbug.com/dawn/145</a><i>:  Clears resource to zero on first usage. This initializes the resource so that no dirty bits from recycled memory is present in the new resource.</i></li><li><b>use_temporary_buffer_in_texture_to_texture_copy:  </b><a href="https://crbug.com/dawn/42">https://crbug.com/dawn/42</a><i>:  Split texture-to-texture copy into two copies: copy from source texture into a temporary buffer, and copy from the temporary buffer into the destination texture when copying between compressed textures that don't have block-aligned sizes. This workaround is enabled by default on all Vulkan drivers to solve an issue in the Vulkan SPEC about the texture-to-texture copies with compressed formats. See #1005 (https://github.com/KhronosGroup/Vulkan-Docs/issues/1005) for more details.</i></li><li><b>vulkan_use_d32s8:  </b><a href="https://crbug.com/dawn/286">https://crbug.com/dawn/286</a><i>:  Vulkan mandates support of either D32_FLOAT_S8 or D24_UNORM_S8. When available the backend will use D32S8 (toggle to on) but setting the toggle to off will make it use the D24S8 format when possible.</i></li><li><b>disallow_unsafe_apis:  </b><a href="http://crbug.com/1138528">http://crbug.com/1138528</a><i>:  Produces validation errors on API entry points or parameter combinations that aren't considered secure yet.</i></li><span class="feature-green">[WebGPU Forced Toggles - enabled]</span><li><b>disallow_spirv:  </b><a href="https://crbug.com/1214923">https://crbug.com/1214923</a><i>:  Disallow usage of SPIR-V completely so that only WGSL is used for shader modules.This is useful to prevent a Chromium renderer process from successfully sendingSPIR-V code to be compiled in the GPU process.</i></li><span class="feature-green">[Supported Features]</span><li>texture-compression-bc</li><li>texture-compression-etc2</li><li>texture-compression-astc</li><li>timestamp-query</li><li>depth-clamping</li><li>depth32float-stencil8</li><li>dawn-internal-usages</li><li>dawn-native</li></ul>
+  </div>
+
+  <div>
+    <h3>Version Information</h3>
+    <div id="client-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Data exported</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">2022-05-30T16:24:58.959Z</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="1">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Chrome version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Chrome/100.0.4896.127</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="2">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Operating system</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Linux 5.13.0-44-generic</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="3">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Software rendering list URL</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">https://chromium.googlesource.com/chromium/src/+/02e770179ce3271f44daab3b9a053cd5cc5f0fe6/gpu/config/software_rendering_list.json</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="4">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Driver bug list URL</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">https://chromium.googlesource.com/chromium/src/+/02e770179ce3271f44daab3b9a053cd5cc5f0fe6/gpu/config/gpu_driver_bug_list.json</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="5">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">ANGLE commit id</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">cc8b741c6ba4</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="6">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">2D graphics backend</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Skia/100 b524f580859d367e51591d8b5c16485d022844cb</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="*7">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Command Line</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">/snap/slack/62/usr/lib/slack/slack --no-sandbox --executed-from=/home/victorious --pid=23442 --enable-crashpad --allow-file-access-from-files --ignore-connections-limit=slack.com,slack-msgs.com,slackb.com --disable-pinch --autoplay-policy=no-user-gesture-required --force-color-profile=srgb --enable-logging --log-file=/home/victorious/snap/slack/62/.config/Slack/logs/electron_debug.log --disable-features=,WebRtcHideLocalIpsWithMdns,HardwareMediaKeyHandling,RequestInitiatorSiteLockEnfocement,WinRetrieveSuggestionsOnlyOnDemand,CalculateNativeWinOcclusion,IntensiveWakeUpThrottling,AllowAggressiveThrottlingWithWebSocket,LogJsConsoleMessages --secure-schemes=app,slack-webapp-dev --bypasscsp-schemes=slack-webapp-dev --cors-schemes=slack-webapp-dev --fetch-schemes=slack-webapp-dev --service-worker-schemes=slack-webapp-dev --standard-schemes=app,slack-webapp-dev --streaming-schemes</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Driver Information</h3>
+    <div id="basic-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Initialization time</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">89</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="1">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">In-process GPU</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">false</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="2">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Passthrough Command Decoder</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">true</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="3">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Sandboxed</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">false</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="4">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GPU0</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">VENDOR= 0x0000 [Google Inc. (Intel Open Source Technology Center)], DEVICE=0x0000 [ANGLE (Intel Open Source Technology Center, Mesa DRI Intel(R) HD Graphics 5500 (BDW GT2), OpenGL 4.6 (Core Profile) Mesa 20.0.8)] *ACTIVE*</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="5">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Optimus</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">false</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="6">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">AMD switchable</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">false</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="7">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Driver vendor</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Mesa</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="8">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Driver version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">20.0.8</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="9">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GPU CUDA compute capability major version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">0</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="10">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Pixel shader version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">1.00</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="11">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Vertex shader version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">1.00</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="12">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Max. MSAA samples</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">8</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="13">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Machine model name</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null"></span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="14">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Machine model version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null"></span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="15">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GL_VENDOR</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Google Inc. (Intel Open Source Technology Center)</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="16">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GL_RENDERER</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">ANGLE (Intel Open Source Technology Center, Mesa DRI Intel(R) HD Graphics 5500 (BDW GT2), OpenGL 4.6 (Core Profile) Mesa 20.0.8)</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="17">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GL_VERSION</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">OpenGL ES 2.0.0 (ANGLE 2.1.17981 git hash: cc8b741c6ba4)</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="18">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GL_EXTENSIONS</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">GL_ANGLE_base_vertex_base_instance GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_client_arrays GL_ANGLE_compressed_texture_etc GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multi_draw GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_external_update GL_ANGLE_texture_rectangle GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARB_sync GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_color_buffer_float_rgb GL_CHROMIUM_color_buffer_float_rgba GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_CHROMIUM_sync_query GL_EXT_blend_minmax GL_EXT_color_buffer_half_float GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_multi_draw_indirect GL_EXT_multisample_compatibility GL_EXT_occlusion_query_boolean GL_EXT_read_format_bgra GL_EXT_robustness GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_shader_texture_lod GL_EXT_shadow_samplers GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_sRGB_decode GL_EXT_texture_storage GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_MESA_framebuffer_flip_y GL_NV_depth_buffer_float2 GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_read_depth GL_NV_read_stencil GL_OES_compressed_EAC_R11_signed_texture GL_OES_compressed_EAC_R11_unsigned_texture GL_OES_compressed_EAC_RG11_signed_texture GL_OES_compressed_EAC_RG11_unsigned_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_ETC2_RGB8_texture GL_OES_compressed_ETC2_RGBA8_texture GL_OES_compressed_ETC2_punchthroughA_RGBA8_texture GL_OES_compressed_ETC2_punchthroughA_sRGB8_alpha_texture GL_OES_compressed_ETC2_sRGB8_alpha8_texture GL_OES_compressed_ETC2_sRGB8_texture GL_OES_depth24 GL_OES_depth32 GL_OES_depth_texture GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_3D GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_vertex_array_object GL_WEBGL_video_texture </span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="19">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Disabled Extensions</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="20">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Disabled WebGL Extensions</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null"></span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="21">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Window system binding vendor</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Google Inc. (Intel Open Source Technology Center)</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="22">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Window system binding version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">1.5 (ANGLE 2.1.17981 git hash: cc8b741c6ba4)</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="23">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Window system binding extensions</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">EGL_EXT_create_context_robustness EGL_KHR_create_context EGL_KHR_get_all_proc_addresses EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_create_context_backwards_compatible EGL_KHR_create_context_no_error EGL_NOK_texture_from_pixmap EGL_KHR_reusable_sync EGL_KHR_mutable_render_buffer </span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="24">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">XDG_CURRENT_DESKTOP</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Unity</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="25">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">XDG_SESSION_TYPE</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">x11</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="26">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GDMSESSION</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">ubuntu</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="27">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Ozone platform</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">x11</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="28">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Direct rendering version</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">unknown</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="29">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Reset notification strategy</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">0x8252</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="30">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">GPU process crash count</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">0</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="*31">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">gfx::BufferFormats supported for allocation and texturing</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">R_8: not supported,  R_16: not supported,  RG_88: not supported,  RG_1616: not supported,  BGR_565: not supported,  RGBA_4444: not supported,  RGBX_8888: not supported,  RGBA_8888: not supported,  BGRX_8888: not supported,  BGRA_1010102: not supported,  RGBA_1010102: not supported,  BGRA_8888: not supported,  RGBA_F16: not supported,  YVU_420: not supported,  YUV_420_BIPLANAR: not supported,  P010: not supported</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Compositor Information</h3>
+    <div id="compositor-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Tile Update Mode</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">One-copy</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="*1">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Partial Raster</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Enabled</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>GpuMemoryBuffers Status</h3>
+    <div id="gpu-memory-buffer-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">R_8</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="1">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">R_16</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="2">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RG_88</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="3">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RG_1616</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="4">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">BGR_565</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="5">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RGBA_4444</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="6">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RGBX_8888</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="7">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RGBA_8888</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="8">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">BGRX_8888</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="9">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">BGRA_1010102</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="10">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RGBA_1010102</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="11">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">BGRA_8888</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="12">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">RGBA_F16</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="13">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">YVU_420</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="14">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">YUV_420_BIPLANAR</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="*15">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">P010</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Software only</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Display(s) Information</h3>
+    <div id="display-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Info </span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">Display[1881264395124802] bounds=[0,0 1366x768], workarea=[72,27 1294x741], scale=1, rotation=0, panel_rotation=0 internal.</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="1">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Color space (all)</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">{primaries:BT709, transfer:SRGB, matrix:RGB, range:FULL}</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="2">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Buffer format (all)</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">RGBA_8888</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="3">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">SDR white level in nits</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">100</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="4">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">HDR relative maximum luminance</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">1</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="5">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Bits per color component</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">8</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="6">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Bits per pixel</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">24</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr><tr jsselect="value" jstcache="5" jsinstance="*7">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Refresh Rate in Hz</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null">59</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Video Acceleration Information</h3>
+    <div id="video-acceleration-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="*0">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">Encoding</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9" id="null"></span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7" style="display: none;">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Vulkan Information</h3>
+    <div id="vulkan-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="*0" style="display: none;">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">title</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9">value</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div>
+    <h3>Device Performance Information</h3>
+    <div id="device-perf-info"><div jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5" jsinstance="*0" style="display: none;">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">title</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9">value</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div></div>
+  </div>
+
+  <div class="diagnostics" hidden="">
+    <h3>Diagnostics</h3>
+    <div class="diagnostics-loading">... loading ...</div>
+    <div id="diagnostics-table">None</div>
+  </div>
+
+  <div class="basic-info-for-hardware-gpu-div" hidden="">
+    <h3>Driver Information for Hardware GPU</h3>
+    <div id="basic-info-for-hardware-gpu"></div>
+  </div>
+
+  <div class="feature-status-for-hardware-gpu-div" hidden="">
+    <h3>Graphics Feature Status for Hardware GPU</h3>
+    <ul class="feature-status-for-hardware-gpu-list">
+    </ul>
+  </div>
+
+  <div class="workarounds-for-hardware-gpu-div" hidden="">
+    <h3>Driver Bug Workarounds for Hardware GPU</h3>
+    <ul class="workarounds-for-hardware-gpu-list">
+    </ul>
+  </div>
+
+  <div class="problems-for-hardware-gpu-div" hidden="">
+    <h3>Problems Detected for Hardware GPU</h3>
+    <ul class="problems-for-hardware-gpu-list">
+    </ul>
+  </div>
+
+  <div id="log-messages" jsdisplay="values.length" jstcache="1" style="">
+    <h3 jstcache="0">Log Messages</h3>
+    <ul jstcache="0">
+      <li jsselect="values" jstcache="2" jsinstance="*0">
+        <span jscontent="header" jstcache="3">[23933:0530/192443.639765:ERROR:sandbox_linux.cc(377)] </span>: <span jscontent="message" jstcache="4">InitializeSandbox() called with multiple threads in process gpu-process.
+</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- templates -->
+  <div style="display:none">
+    <div id="info-view-table-template" jstcache="0">
+      <table id="info-view-table" jstcache="0">
+        <colgroup jstcache="0">
+          <col style="width: 25%" jstcache="0">
+          <col style="width: 75%" jstcache="0">
+        </colgroup>
+        <tbody jstcache="0"><tr jsselect="value" jstcache="5">
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span class="row-title" jscontent="description" jstcache="8">title</span>
+          </td>
+          <td jsdisplay="!(value instanceof Array)" jstcache="6">
+            <span jscontent="value" jsvalues=".id:id" jstcache="9">value</span>
+          </td>
+          <td jsdisplay="value instanceof Array" colspan="2" jstcache="7">
+            <span jscontent="description" class="row-title" jstcache="8"></span>
+            <div transclude="info-view-table-template" jstcache="10"></div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+  <script src="chrome://resources/js/jstemplate_compiled.js"></script>
+
+
+</body></html>

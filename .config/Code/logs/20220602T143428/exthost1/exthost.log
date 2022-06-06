@@ -1,0 +1,21 @@
+[2022-06-02 14:34:32.036] [exthost] [info] Extension host with pid 46555 started
+[2022-06-02 14:34:32.036] [exthost] [info] Skipping acquiring lock for /home/victorious/.config/Code/User/workspaceStorage/605f338e1c7a7ec1f228d719e1ca2fb4.
+[2022-06-02 14:34:32.250] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+[2022-06-02 14:34:32.347] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-06-02 14:34:32.362] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+[2022-06-02 14:34:32.370] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-06-02 14:34:32.381] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+[2022-06-02 14:34:32.510] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-06-02 14:34:32.607] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+[2022-06-02 14:34:32.703] [exthost] [info] Eager extensions activated
+[2022-06-02 14:34:32.719] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-06-02 14:34:32.747] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-06-02 14:35:15.253] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+[2022-06-02 14:35:36.076] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+[2022-06-02 14:35:36.136] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+[2022-06-02 14:35:37.015] [exthost] [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+[2022-06-02 14:35:37.306] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+[2022-06-02 14:35:37.317] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+[2022-06-02 14:35:38.294] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2022-06-02 19:25:31.066] [exthost] [info] Extension host terminating: renderer closed the socket
+[2022-06-02 19:25:31.104] [exthost] [info] Extension host with pid 46555 exiting with code 0

@@ -1,0 +1,349 @@
+#!/bin/bash
+# Script by Colin GILLE / Congelli501
+# Addition of lzop compression by Wolfgang Hartmann
+
+VERSION='4.0.4'
+POLAPP_FILE_VERSION='4.0.0'
+
+BACK_PWD=$(pwd)
+
+# Config POL
+if [ "$PLAYONLINUX" = "" ]; then
+	echo "Warning: PLAYONLINUX not set !" >&2
+	
+	if [ "$scriptPathDir" = "" ]; then
+		scriptPathDir=$(dirname $(readlink -f $0)) # readlink -f $0 ne marche pas en cas de "source"
+	fi
+
+	if ! which playonlinux > /dev/null ; then
+		echo "Error: playOnLinux not found !" >&2
+		exit 1	
+	fi
+	
+	PLAYONLINUX=$(dirname $(cat $(which playonlinux) | grep 'playonlinux' | cut -f1 -d' '))
+	if [ -d "$PLAYONLINUX" ]; then
+		cd "$PLAYONLINUX"
+		export PLAYONLINUX=`pwd`
+	else
+		echo "Error: playOnLinux not found !" >&2
+		exit 1
+	fi
+else
+	scriptPathDir="$REPERTOIRE/plugins/PlayOnLinux Vault/scripts"
+fi
+source "$PLAYONLINUX/lib/sources"
+
+# Config
+source "$scriptPathDir/source"
+source "$scriptPathDir/c501tar"
+source "$scriptPathDir/gettext"
+
+# Script
+# Init
+PLUGIN_NAME="PlayOnLinux Vault"
+
+POL_SetupWindow_Init "$scriptPathDir/../data/logo_60.png" "$scriptPathDir/../data/left.png"
+
+# Check
+checkProg "dd"
+checkProg "tee"
+checkProg "dirname"
+checkProg "basename"
+checkProg "bzip2"
+checkProg "bunzip2"
+
+hasLzop=0
+if which "lzop" > /dev/null; then
+	hasLzop=1
+fi
+
+# Info
+INFO=""
+INFO="$INFO"$(eval_gettext "PlayOnLinux Vault is a free software created by Colin GILLE.")"\n"
+INFO="$INFO"$(eval_gettext "PlayOnLinux Vault was released under the GPL license. It enables you to save and to restore your PlayOnLinux's applications.")"\n"
+INFO="$INFO""\n"
+INFO="$INFO"$(eval_gettext "Website: http://www.congelli.eu/")"\n"
+INFO="$INFO"$(eval_gettext "License: GPL")"\n"
+INFO="$INFO"$(eval_gettext "Version: ")"$VERSION\n"
+INFO="$INFO"$(eval_gettext "Author: Colin GILLE / Congelli501")"\n"
+INFO="$INFO""\n"
+INFO="$INFO"$(eval_gettext "Press Next to continue.")"\n"
+
+POL_SetupWindow_free_presentation "$PLUGIN_NAME" "$INFO"
+
+# Fichier donné ?
+APP_NAME=''
+APP_ANSWER=''
+
+cd "$BACK_PWD"
+if [ -f "$1" ]; then
+	if [ "${1:0:1}" = '/' ]; then # Chemin absolu
+		BACKUP_FILENAME="$1"
+	else # Chemin relatif
+		BACKUP_FILENAME="$BACK_PWD/$1"
+	fi
+	
+	APP_ANSWER=0
+	FILE_SELECTED=1
+elif [ "$#" -eq 2 ] && [ "$1" = '--app' ]; then # Save a given app
+	APP_NAME="$2"
+	APP_ANSWER=1
+else
+	FILE_SELECTED=0
+	# Installation / Restauration ?
+	POL_SetupWindow_menu_num "$(eval_gettext "What do you want to do ?")" "$PLUGIN_NAME" "$(eval_gettext "Restore an applications...")|$(eval_gettext "Save an applications...")" '|'
+fi
+
+if [ "$APP_ANSWER" -eq 0 ]; then # Restore
+	# Fichier
+	if [ "$FILE_SELECTED" -eq 0 ]; then
+		cd "$HOME"
+		POL_SetupWindow_browse  "$(eval_gettext "Please choose the application you want to restore...")" "$PLUGIN_NAME"
+		BACKUP_FILENAME="$APP_ANSWER"
+	fi
+	
+	# Scan
+	POL_SetupWindow_wait_next_signal "$(eval_gettext "Please wait...")" "$PLUGIN_NAME"
+	
+		# Verif
+	fileList=$(c501tarListFiles "$BACKUP_FILENAME")
+	if [ "$?" -ne 0 ]; then
+		polFatalError "$(eval_gettext "Error: this file is not a valid polApp !")"
+	fi
+	
+	fileToTest=('config' 'version' 'prefix.tar.bz2')
+	for file in ${fileToTest[*]}; do
+		if [ -z $(echo "$fileList" | grep "$file") ]; then
+			polFatalError "Error: this file is not a valid polApp (file $file not found) !"
+		fi
+	done
+	
+	version=$(c501tarGetFile "$BACKUP_FILENAME" 'version')
+	if [ "$version" != "$POLAPP_FILE_VERSION" ]; then
+		polFatalError "$(eval_gettext "Error: bad file version !")"
+	fi
+	
+		# Config
+	configContent=$(c501tarGetFile "$BACKUP_FILENAME" 'config')
+	
+	APP_NAME=$(echo "$configContent" | getConfigValue 'name')
+	APP_COMMENT=$(echo "$configContent" | getConfigValue 'comment')
+	APP_PREFIX_SIZE_HUMAN=$(echo "$configContent" | getConfigValue 'prefixSize')
+	PREFIX_COMPRESSION_METHOD=$(echo "$configContent" | getConfigValue 'prefixCompressionMethod')
+	
+		# Prog
+	if [ "$PREFIX_COMPRESSION_METHOD" = 'bz2' ]; then
+		PREFIX_DECOMPRESSION_PROG='bunzip2'
+	elif [ "$PREFIX_COMPRESSION_METHOD" == 'none' ]; then
+		PREFIX_DECOMPRESSION_PROG='cat'
+	elif [ "$PREFIX_COMPRESSION_METHOD" == 'lzop' ]; then
+		if [ "$hasLzop" -eq 1 ]; then
+			PREFIX_DECOMPRESSION_PROG='lzop -d -c'
+		else
+			polFatalError "Error: Lzop is not installed on your system !"
+		fi
+	else
+		polFatalError "Error: Unknown compression method $PREFIX_COMPRESSION_METHOD !"
+	fi
+	
+		# Autre
+	APP_LUNCH_SCRIPT_NB=$(echo "$fileList" | grep 'shortcuts/' | wc -l)
+	
+		# Info
+	INFO=""
+	INFO="$INFO"$(eval_gettext "Application:")" $APP_NAME\n"
+	INFO="$INFO"$(eval_gettext "Shortcut number:")" $APP_LUNCH_SCRIPT_NB\n"
+	INFO="$INFO"$(eval_gettext "Compression method:")" $PREFIX_COMPRESSION_METHOD\n"
+	INFO="$INFO"$(eval_gettext "Size:")" $APP_PREFIX_SIZE_HUMAN\n"
+	INFO="$INFO""\n"
+	INFO="$INFO"$(eval_gettext "Press Next to continue.")
+	
+	# Affichage
+	POL_SetupWindow_detect_exit
+	POL_SetupWindow_message "$INFO" "$PLUGIN_NAME"
+	
+	# Restauration...
+	POL_SetupWindow_pulsebar "$(eval_gettext "Restoring your application...")" "$PLUGIN_NAME"
+	
+	# Prefix
+	PREFIX_ARCH_NAME='prefix.tar.bz2'
+	WINEPREFIX_DIR="$REPERTOIRE/wineprefix"
+	mkdir -p "$WINEPREFIX_DIR"
+	cd "$WINEPREFIX_DIR"
+	
+	prefixArchSize=$(c501tarGetFileSize "$BACKUP_FILENAME" "$PREFIX_ARCH_NAME")
+	
+	timeSave
+	while read progressInfo; do
+		progress=$(echo "$progressInfo" | cut -f1 -d'|')
+		POL_SetupWindow_pulse "$progress"
+		timeLeft=$(transformTime $(echo "$progressInfo" | cut -f2 -d'|'))
+		POL_SetupWindow_set_text "$(eval echo "$(eval_gettext '$progress% - Remaining: $timeLeft')")"
+	done < <( (c501tarGetFile "$BACKUP_FILENAME" "$PREFIX_ARCH_NAME" | "$scriptPathDir/pipe_progress" "$prefixArchSize" | $PREFIX_DECOMPRESSION_PROG | tar -x ) 2>&1 )
+	
+	# Icones + shortcut
+	POL_SetupWindow_pulsebar "$(eval_gettext "Restoring your application...")" "$PLUGIN_NAME"
+	
+	ICON_32_DIR="$REPERTOIRE/icones/32"
+	ICON_FULL_SIZE_DIR="$REPERTOIRE/icones/full_size"
+	INSTALLED_DIR="$REPERTOIRE/shortcuts"
+		
+	while read pathInTar; do
+		name=$(basename "$pathInTar")
+		
+		# Icon (en premier pour ne pas perturber PlayOnLinux)
+			# 32*32
+		if [ -n "$(echo "$fileList" | grep "icons_32x32/$name")" ]; then
+			c501tarGetFile "$BACKUP_FILENAME" "icons_32x32/$name" > "$ICON_32_DIR/$name"
+		else
+			cp "$scriptPathDir/../data/logo_32.png" "$ICON_32_DIR/$name"
+		fi
+		
+			# full size
+		if [ -n "$(echo "$fileList" | grep "icons_full_size/$name")" ]; then
+			c501tarGetFile "$BACKUP_FILENAME" "icons_full_size/$name" > "$ICON_FULL_SIZE_DIR/$name"
+		else
+			cp "$scriptPathDir/../data/logo_48.png" "$ICON_FULL_SIZE_DIR/$name"
+		fi		
+		
+		# Shortcut
+		c501tarGetFile "$BACKUP_FILENAME" "$pathInTar" | removePolHomeVar > "$INSTALLED_DIR/$name"
+		chmod +x "$INSTALLED_DIR/$name"
+		
+		wineVersion=$(cat "$INSTALLED_DIR/$name" | scanLunchScript 'wineVersion')
+		if [ "$wineVersion" != 'System' ]; then
+			POL_SetupWindow_detect_exit
+			POL_SetupWindow_install_wine "$wineVersion"
+			POL_SetupWindow_pulsebar "$(eval_gettext "Restoring your application...")" "$PLUGIN_NAME"
+		fi
+	done < <( echo "$fileList" | grep 'shortcuts/' )
+	
+	POL_SetupWindow_detect_exit
+	
+	# Time
+	totalTime=$(transformTime "$(getTimeSpan)")
+	
+	# Shortcuts
+	while read pathInTar; do
+		name=$(basename "$pathInTar")
+		POL_Shortcut_MakeDesktopShortcut "$name"
+	done < <( echo "$fileList" | grep 'shortcuts/' )
+elif [ "$APP_ANSWER" -eq 1 ]; then # Save
+	# App
+	if [ "$APP_NAME" = '' ]; then
+		POL_SetupWindow_games "$(eval_gettext "Please choose the application you want to save...")" "$PLUGIN_NAME"
+		APP_NAME="$APP_ANSWER"
+	fi
+	
+	POL_SetupWindow_wait_next_signal "$(eval_gettext "Please wait...")" "$PLUGIN_NAME"
+	
+	APP_PREFIX=$(cat "$REPERTOIRE/shortcuts/$APP_NAME" | scanLunchScript "prefix")
+	APP_PREFIX_NAME=$(cat "$REPERTOIRE/shortcuts/$APP_NAME" | scanLunchScript "prefixName")
+	APP_LUNCH_SCRIPT_LIST=$(getWineprefixApps "$APP_PREFIX")
+	APP_LUNCH_SCRIPT_NB=$(echo "$APP_LUNCH_SCRIPT_LIST" | wc -l)
+
+	APP_PREFIX_SIZE_HUMAN=$(du -sh "$APP_PREFIX" | cut -d$'\t' -f1)
+	APP_PREFIX_SIZE_BYTES=$(du -sb "$APP_PREFIX" | cut -d$'\t' -f1)
+	
+	POL_SetupWindow_detect_exit
+	
+	INFO=""
+	INFO="$INFO"$(eval_gettext "Selected Application:")" $APP_NAME\n"
+	INFO="$INFO"$(eval_gettext "Shortcut number:")" $APP_LUNCH_SCRIPT_NB\n"
+	INFO="$INFO"$(eval_gettext "Wine prefix:")" $APP_PREFIX_NAME\n"
+	INFO="$INFO"$(eval_gettext "Size:")" $APP_PREFIX_SIZE_HUMAN\n"
+	INFO="$INFO""\n"
+	INFO="$INFO"$(eval_gettext "Press Next to continue.")
+	
+	POL_SetupWindow_message "$INFO" "$PLUGIN_NAME"
+	
+	# Methode de compression
+	POL_SetupWindow_menu_num "$(eval_gettext "Please select the compression method...")" "$TITLE" "$(eval_gettext "bz2 compression (good compression but slow)")~$(eval_gettext "lzop compression (medium compression but fast)")~$(eval_gettext "None (no compression but very fast)")" "~"
+	
+	if [ "$APP_ANSWER" -eq 0 ]; then
+		PREFIX_COMPRESSION_METHOD='bz2'
+		PREFIX_DECOMPRESSION_PROG='bzip2'
+ 	elif [ "$APP_ANSWER" -eq 1 ]; then
+		PREFIX_COMPRESSION_METHOD='lzop'
+		PREFIX_DECOMPRESSION_PROG='lzop'
+	elif [ "$APP_ANSWER" -eq 2 ]; then
+		PREFIX_COMPRESSION_METHOD='none'
+		PREFIX_DECOMPRESSION_PROG='cat'
+	else
+		polFatalError "Error: Unknown compression method $PREFIX_COMPRESSION_METHOD !"
+	fi
+	
+	if [ "$PREFIX_DECOMPRESSION_PROG" = 'lzop' ] && [ "$hasLzop" -eq 0 ]; then
+		polFatalError "Error: Lzop is not installed on your system !"
+	fi
+	
+	# Nom du fichier
+	BACKUP_FILENAME="$HOME/$APP_PREFIX_NAME.polApp"
+	if which zenity > /dev/null; then
+		BACKUP_FILENAME=$(zenity --file-selection --filename="$BACKUP_FILENAME" --save --confirm-overwrite --title="$PLUGIN_NAME" --window-icon="$scriptPathDir/../data/logo_22.png")
+	else
+		echo "Warning: zenity not found !" >&2
+	fi
+	POL_SetupWindow_textbox ".polApp filename" "$PLUGIN_NAME" "$BACKUP_FILENAME"
+	BACKUP_FILENAME="$APP_ANSWER"
+	
+	# Création du fichier
+	timeSave
+	POL_SetupWindow_wait_next_signal "$(eval_gettext "Please wait...")" "$PLUGIN_NAME"
+		
+	if ! c501tarCreate "$BACKUP_FILENAME"; then
+		polFatalError "`eval_gettext "Error: can't create backup file !"`"
+	fi
+	echo "$POLAPP_FILE_VERSION" | c501tarAddFile "$BACKUP_FILENAME" "version"
+	
+	configContent=""
+	configContent="$configContent""name=$APP_NAME\n"
+	configContent="$configContent""comment=$APP_NAME\n"
+	configContent="$configContent""prefixSize=$APP_PREFIX_SIZE_HUMAN\n"
+	configContent="$configContent""prefixCompressionMethod=$PREFIX_COMPRESSION_METHOD"
+	echo -e "$configContent" | c501tarAddFile "$BACKUP_FILENAME" "config"
+	
+	# Sauvegarde des shortcut & icons.
+	ICON_32_DIR="$REPERTOIRE/icones/32"
+	ICON_FULL_SIZE_DIR="$REPERTOIRE/icones/full_size"
+	
+	while read path; do
+		name=$(basename "$path")
+		
+		# Shortcut
+		cat "$path" | addPolHomeVar | c501tarAddFile "$BACKUP_FILENAME" "shortcuts/$name"
+		
+		# Icon
+			# 32
+		if [ -f "$ICON_32_DIR/$name" ]; then
+			c501tarAddFile "$BACKUP_FILENAME" "icons_32x32/$name" < "$ICON_32_DIR/$name"
+		fi
+			
+			# full size
+		if [ -f "$ICON_FULL_SIZE_DIR/$name" ]; then
+			c501tarAddFile "$BACKUP_FILENAME" "icons_full_size/$name" < "$ICON_FULL_SIZE_DIR/$name"
+		fi		
+	done < <( echo "$APP_LUNCH_SCRIPT_LIST" )
+	
+	POL_SetupWindow_detect_exit
+	
+	# Sauvegarde du prefix
+	POL_SetupWindow_pulsebar "$(eval_gettext "Saving your application...")" "$PLUGIN_NAME"
+	
+	cd $(dirname "$APP_PREFIX")
+	while read progressInfo; do
+		progress=$(echo "$progressInfo" | cut -f1 -d'|')
+		POL_SetupWindow_pulse "$progress"
+		timeLeft=$(transformTime $(echo "$progressInfo" | cut -f2 -d'|'))
+		POL_SetupWindow_set_text "$(eval echo "$(eval_gettext '$progress% - Remaining: $timeLeft')")"
+	done < <( (tar -c --to-stdout "$APP_PREFIX_NAME" | "$scriptPathDir/pipe_progress" "$APP_PREFIX_SIZE_BYTES" | $PREFIX_DECOMPRESSION_PROG | c501tarAddFile "$BACKUP_FILENAME" "prefix.tar.bz2" ) 2>&1 )
+	
+	# End
+	totalTime=$(transformTime "$(getTimeSpan)")
+fi
+
+msg1=$(eval_gettext 'Everything is ok !')
+msg2=$(eval_gettext 'Time needed: $totalTime')
+#POL_SetupWindow_message_image "$msg1\n$msg2" "$PLUGIN_NAME" "$scriptPathDir/../data/logo_end.png"
+POL_SetupWindow_message "$msg1\n$msg2" "$PLUGIN_NAME"
+POL_SetupWindow_Close

@@ -1,0 +1,12 @@
+2022/06/06-10:36:35.599 13d0 Reusing MANIFEST /home/victorious/.config/google-chrome/Profile 3/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/06/06-10:36:35.599 13d0 Recovering log #7
+2022/06/06-10:36:35.658 13d0 Reusing old log /home/victorious/.config/google-chrome/Profile 3/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000007.log 
+2022/06/06-10:37:27.180 14eb Level-0 table #13: started
+2022/06/06-10:37:27.336 14eb Level-0 table #13: 1993609 bytes OK
+2022/06/06-10:37:27.348 14eb Delete type=0 #7
+2022/06/06-10:37:53.035 14eb Compacting 1@1 + 1@2 files
+2022/06/06-10:37:53.052 14eb Generated table #14@1: 70 keys, 44006 bytes
+2022/06/06-10:37:53.052 14eb Compacted 1@1 + 1@2 files => 44006 bytes
+2022/06/06-10:37:53.078 14eb compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/06/06-10:37:53.078 14eb Delete type=2 #13
+2022/06/06-10:37:53.078 14eb Delete type=2 #10

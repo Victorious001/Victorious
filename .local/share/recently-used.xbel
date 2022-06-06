@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/victorious/Downloads/Full%20Scholarship%20Award%20Response%20Prep_Core%20-REMOTE.pdf" added="2022-06-06T07:38:47Z" modified="2022-06-06T07:38:47Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2022-06-06T07:38:47Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/victorious/Downloads/git-cheat-sheet-education.pdf" added="2022-06-06T07:38:59Z" modified="2022-06-06T07:38:59Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2022-06-06T07:38:59Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/victorious/Documents/Arrow%20functions%20discussions" added="2022-06-06T10:23:21Z" modified="2022-06-06T10:23:21Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 6.4" exec="&apos;soffice %u&apos;" modified="2022-06-06T10:23:21Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/victorious/Documents/Arrow%20functions%20discussions.docx" added="2022-06-06T10:23:31Z" modified="2022-06-06T10:24:22Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 6.4" exec="&apos;soffice %u&apos;" modified="2022-06-06T10:23:31Z" count="2"/>
+          <bookmark:application name="google-chrome-stable" exec="&apos;google-chrome-stable %u&apos;" modified="2022-06-06T10:24:22Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/victorious/Downloads/Arrow%20functions%20discussions.edited.docx" added="2022-06-06T10:25:22Z" modified="2022-06-06T10:25:56Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+        <bookmark:applications>
+          <bookmark:application name="LibreOffice 6.4" exec="&apos;soffice %u&apos;" modified="2022-06-06T10:25:56Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/victorious/Downloads/index.js" added="2022-06-06T12:14:39Z" modified="2022-06-06T13:52:22Z" visited="1969-12-31T23:59:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/javascript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2022-06-06T13:52:22Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

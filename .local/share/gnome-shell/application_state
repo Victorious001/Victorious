@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="libreoffice-writer.desktop" score="154" last-seen="1654511215"/>
+    <application id="google-chrome.desktop" score="20477" last-seen="1654524034"/>
+    <application id="gnome-control-center.desktop" score="1414" last-seen="1654505445"/>
+    <application id="org.gnome.Shell.PortalHelper.desktop" score="446" last-seen="1654157617"/>
+    <application id="apport-gtk.desktop" score="2" last-seen="1653935415"/>
+    <application id="libreoffice-startcenter.desktop" score="1" last-seen="1653928454"/>
+    <application id="org.gnome.Nautilus.desktop" score="21" last-seen="1654517028"/>
+    <application id="update-manager.desktop" score="6" last-seen="1653924904"/>
+    <application id="snap-store_ubuntu-software.desktop" score="60" last-seen="1653927994"/>
+    <application id="libreoffice-impress.desktop" score="1" last-seen="1653928451"/>
+    <application id="code_code.desktop" score="105" last-seen="1654523846"/>
+    <application id="firefox.desktop" score="2400" last-seen="1654111986"/>
+    <application id="org.gnome.Terminal.desktop" score="2596" last-seen="1654523963"/>
+    <application id="org.gnome.Calendar.desktop" score="1" last-seen="1653976712"/>
+    <application id="slack_slack.desktop" score="67" last-seen="1654509112"/>
+    <application id="thunderbird.desktop" score="14" last-seen="1654523273"/>
+    <application id="yelp.desktop" score="1" last-seen="1654506212"/>
+    <application id="org.gnome.gedit.desktop" score="39" last-seen="1654524054"/>
+  </context>
+</application-state>

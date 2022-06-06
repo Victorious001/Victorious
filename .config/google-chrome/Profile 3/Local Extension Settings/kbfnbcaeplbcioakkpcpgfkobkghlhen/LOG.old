@@ -1,0 +1,6 @@
+2022/06/06-12:51:58.094 1034 Log #3: dropping 98 bytes; Corruption: missing start of fragmented record(2)
+2022/06/06-12:51:58.106 1034 Log #3: 1988 ops saved to Table #4 OK
+2022/06/06-12:51:58.106 1034 Archiving /home/victorious/.config/google-chrome/Profile 3/Local Extension Settings/kbfnbcaeplbcioakkpcpgfkobkghlhen/000003.log: OK
+2022/06/06-12:51:58.108 1034 Table #4: 1988 entries OK
+2022/06/06-12:51:58.108 1034 Archiving /home/victorious/.config/google-chrome/Profile 3/Local Extension Settings/kbfnbcaeplbcioakkpcpgfkobkghlhen/MANIFEST-000001: OK
+2022/06/06-12:51:58.110 1034 **** Repaired leveldb /home/victorious/.config/google-chrome/Profile 3/Local Extension Settings/kbfnbcaeplbcioakkpcpgfkobkghlhen; recovered 1 files; 226316 bytes. Some data may have been lost. ****

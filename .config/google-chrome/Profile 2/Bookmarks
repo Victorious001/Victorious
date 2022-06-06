@@ -1,0 +1,68 @@
+{
+   "checksum": "9ff6c5bf53dd35f7f4d3b3ee80094deb",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13298400324932027",
+            "guid": "0fe84e51-23ed-496a-9024-fdea7ac0fb43",
+            "id": "5",
+            "name": "Gmail",
+            "type": "url",
+            "url": "https://accounts.google.com/b/0/AddMailService"
+         }, {
+            "date_added": "13298400324933232",
+            "guid": "64e2b643-d438-4de7-bb25-342c4579d493",
+            "id": "6",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://youtube.com/"
+         }, {
+            "date_added": "13298400324933960",
+            "guid": "a9a7317a-8864-498d-b24c-8317c5c0a6f4",
+            "id": "7",
+            "name": "Maps",
+            "type": "url",
+            "url": "https://maps.google.com/"
+         }, {
+            "date_added": "13298400326853336",
+            "guid": "1a5ff832-059e-447c-9bf6-840a709f2945",
+            "id": "8",
+            "name": "News",
+            "type": "url",
+            "url": "https://news.google.com/"
+         }, {
+            "date_added": "13298400327272615",
+            "guid": "8c2bf4ad-d19a-48d1-a8a8-19e6b826c696",
+            "id": "9",
+            "name": "Translate",
+            "type": "url",
+            "url": "https://translate.google.com/"
+         } ],
+         "date_added": "13298400319916436",
+         "date_modified": "13298400327272615",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13298400319916439",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13298400319916441",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

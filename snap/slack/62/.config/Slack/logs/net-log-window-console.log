@@ -1,0 +1,130 @@
+[05/30/22, 19:24:44:599] info: 
+╔════════════════════════════════════════════════════════════════╗
+║      Slack 4.26.1, linux (Store) 5.13.0-44-generic on x64      ║
+╚════════════════════════════════════════════════════════════════╝ 
+[05/30/22, 19:24:44:600] info: Configured logger via 
+{
+  "enableConsoleTransport": true,
+  "identifierOverride": "net-log-window-console",
+  "shouldUseNewBackend": false,
+  "loggerInstanceCount": 3
+}
+[05/30/22, 19:24:44:601] info: Predefined values for process 
+{
+  "NODE_ENV": "production",
+  "platform": "linux",
+  "type": "browser",
+  "timeZone": "Africa/Nairobi",
+  "PACKAGE_MANIFEST.productName": "Slack",
+  "PACKAGE_MANIFEST.version": "4.26.1",
+  "PACKAGE_MANIFEST.commit": "76f5abf",
+  "PACKAGE_MANIFEST.branch": "HEAD"
+}
+[05/30/22, 19:24:44:602] info: Starting Sentry (Renderer) 
+[05/30/22, 19:24:44:602] info: getSentryDSN: Setting sentry URL to slack.com 
+[05/30/22, 19:24:44:602] info: Store: UPDATE_SETTINGS {
+  "startNetLogAtLaunch": false
+} 
+[05/30/22, 19:24:44:603] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 2,
+  "state": "unloaded"
+} 
+[05/30/22, 19:24:44:603] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 2,
+  "state": "loaded"
+} 
+[05/30/22, 19:24:44:604] info: Store: RECORD_PERFORMANCE_TIMING {
+  "phase": 2,
+  "interval": 460
+} 
+[05/30/22, 19:24:44:609] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 2,
+  "type": "net-log-window",
+  "history": "[REDACTED]"
+} 
+[05/30/22, 19:24:54:176] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "empty-page"
+} 
+[05/30/22, 19:24:54:177] info: Store: TRACK_PAGE_ERROR {
+  "errorCode": -105,
+  "errorDescription": "ERR_NAME_NOT_RESOLVED",
+  "validatedUrl": "https://app.slack.com/ssb/first?redir=%2Fssb%2Fclient",
+  "isMainFrame": true,
+  "timestamp": "2022-05-30T16:24:54.164Z",
+  "sourceWebContentsId": 1
+} 
+[05/30/22, 19:24:54:233] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "loaded"
+} 
+[05/30/22, 19:24:54:234] info: Store: MAIN_WINDOW_SHOWN  
+[05/30/22, 19:24:54:234] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 225,
+      "y": 27,
+      "width": 988,
+      "height": 704
+    }
+  }
+} 
+[05/30/22, 19:24:54:238] info: Store: CLEAR_NOTIFICATIONS  
+[05/30/22, 19:24:54:299] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "type": "app",
+  "history": "[REDACTED]"
+} 
+[05/30/22, 19:24:55:153] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "history": "[REDACTED]"
+} 
+[05/30/22, 19:24:55:317] info: Store: UPDATE_SETTINGS {
+  "mainWindowSettings": {
+    "fullScreen": false,
+    "maximized": false,
+    "bounds": {
+      "x": 225,
+      "y": 64,
+      "width": 988,
+      "height": 704
+    }
+  }
+} 
+[05/30/22, 19:24:58:550] info: Store: QUIT_APP  
+[05/30/22, 19:24:58:578] info: Store: DOWNLOADS_CLEANED_UP  
+[05/30/22, 19:24:58:579] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 1,
+  "state": "page-closed"
+} 
+[05/30/22, 19:24:58:610] info: Store: REMOVE_WEB_CONTENTS {
+  "id": 1
+} 
+[05/30/22, 19:24:58:610] info: Store: REMOVE_WINDOW 1 
+[05/30/22, 19:24:58:673] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 3,
+  "state": "unloaded"
+} 
+[05/30/22, 19:24:58:792] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 3,
+  "state": "loaded"
+} 
+[05/30/22, 19:24:58:793] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 3,
+  "type": "chrome",
+  "history": "[REDACTED]"
+} 
+[05/30/22, 19:24:58:990] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 3,
+  "state": "page-closed"
+} 
+[05/30/22, 19:24:59:006] info: Store: REMOVE_WEB_CONTENTS {
+  "id": 3
+} 
+[05/30/22, 19:24:59:150] info: Store: SET_NET_LOG_STATUS false 
+[05/30/22, 19:24:59:153] info: Store: UPSERT_WEB_CONTENTS {
+  "id": 2,
+  "state": "page-closed"
+} 

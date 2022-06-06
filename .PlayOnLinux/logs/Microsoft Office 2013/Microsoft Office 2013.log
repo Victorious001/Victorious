@@ -1,0 +1,149 @@
+PlayOnLinux debugging tool (v4.3.4)
+-----------------------------------------------
+Debugging: Microsoft Office 2013
+
+Warning: This is a PlayOnLinux script logfile. It does not contain everything that happened in your program\'s virtual drive (wineprefix)
+Please do not use this logfile on winehq forum, this logfile is not interesting for wine debugging.
+
+Date: 06/06/22 12:47:31
+
+> uname -a
+  Linux victorious-HP-EliteBook-Revolve-810-G3 5.13.0-44-generic #49~20.04.1-Ubuntu SMP Wed May 18 18:44:28 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+> lsb_release -a
+  
+> wine --version (Be careful; this version might not be the version used
+in the script. Read the content of this file for more information)
+  wine-5.0 (Ubuntu 5.0-3ubuntu1)
+> glxinfo \| grep rendering
+  direct rendering: Yes
+> glxinfo \| grep renderer
+      GLX_MESA_query_renderer, GLX_MESA_swap_control, GLX_NV_float_buffer, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_query_renderer, GLX_MESA_swap_control, 
+Extended renderer info (GLX_MESA_query_renderer):
+OpenGL renderer string: Mesa Intel(R) HD Graphics 5500 (BDW GT2)
+> OpenGL libs
+  check_dd_x86 missing, test skipped
+  check_dd_amd64 missing, test skipped
+> export
+  declare -x AMD64_COMPATIBLE="True"
+declare -x APPLICATION_TITLE="PlayOnLinux"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+declare -x DEBIAN_PACKAGE="TRUE"
+declare -x DESKTOP="/home/victorious/Desktop"
+declare -x DESKTOP_SESSION="ubuntu"
+declare -x DISPLAY=":0"
+declare -x DONT_MONITOR="1"
+declare -x DYLDPATH_ORIGIN=""
+declare -x DYLD_LIBRARY_PATH=""
+declare -x GDMSESSION="ubuntu"
+declare -x GECKO_SITE="http://wine.playonlinux.com/gecko"
+declare -x GEM_HOME="/usr/share/rvm/gems/ruby-2.7.4"
+declare -x GEM_PATH="/usr/share/rvm/gems/ruby-2.7.4:/usr/share/rvm/gems/ruby-2.7.4@global"
+declare -x GIO_LAUNCHED_DESKTOP_FILE="/usr/share/applications/PlayOnLinux.desktop"
+declare -x GIO_LAUNCHED_DESKTOP_FILE_PID="25181"
+declare -x GJS_DEBUG_OUTPUT="stderr"
+declare -x GJS_DEBUG_TOPICS="JS ERROR;JS LOG"
+declare -x GNOME_DESKTOP_SESSION_ID="this-is-deprecated"
+declare -x GNOME_SHELL_SESSION_MODE="ubuntu"
+declare -x GNUPGHOME="/home/victorious/.PlayOnLinux//gpg"
+declare -x GPG_AGENT_INFO="/run/user/1000/gnupg/S.gpg-agent:0:1"
+declare -x GTK_MODULES="gail:atk-bridge"
+declare -x G_FILENAME_ENCODING="UTF-8"
+declare -x HOME="/home/victorious"
+declare -x IGNORE_ICON_DIR="false"
+declare -x IM_CONFIG_PHASE="1"
+declare -x INVOCATION_ID="b8769019cd8c43a99b3321baafc4c424"
+declare -x IRBRC="/usr/share/rvm/rubies/ruby-2.7.4/.irbrc"
+declare -x JOURNAL_STREAM="8:45335"
+declare -x LANG="en_US.UTF-8"
+declare -x LC_ADDRESS="om_KE.UTF-8"
+declare -x LC_IDENTIFICATION="om_KE.UTF-8"
+declare -x LC_MEASUREMENT="om_KE.UTF-8"
+declare -x LC_MONETARY="om_KE.UTF-8"
+declare -x LC_NAME="om_KE.UTF-8"
+declare -x LC_NUMERIC="om_KE.UTF-8"
+declare -x LC_PAPER="om_KE.UTF-8"
+declare -x LC_TELEPHONE="om_KE.UTF-8"
+declare -x LC_TIME="om_KE.UTF-8"
+declare -x LD_32_PATH_ORIGIN=""
+declare -x LD_LIBRARY_PATH=""
+declare -x LD_PATH_ORIGIN=""
+declare -x LOGNAME="victorious"
+declare -x MACHTYPE="x86_64-pc-linux-gnu"
+declare -x MANAGERPID="1391"
+declare -x MD5_COMMAND="md5sum"
+declare -x MONO_SITE="http://wine.playonlinux.com/mono"
+declare -x MY_RUBY_HOME="/usr/share/rvm/rubies/ruby-2.7.4"
+declare -x OLDPWD="/home/victorious/.PlayOnLinux/configurations/setups/Microsoft Office 2013"
+declare -x OS_NAME="linux"
+declare -x OpenGL32="1"
+declare -x OpenGL64="1"
+declare -x PATH="/usr/share/rvm/gems/ruby-2.7.4/bin:/usr/share/rvm/gems/ruby-2.7.4@global/bin:/usr/share/rvm/rubies/ruby-2.7.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/share/rvm/bin:/usr/lib/wine"
+declare -x PATH_ORIGIN="/usr/share/rvm/gems/ruby-2.7.4/bin:/usr/share/rvm/gems/ruby-2.7.4@global/bin:/usr/share/rvm/rubies/ruby-2.7.4/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/share/rvm/bin:/usr/lib/wine"
+declare -x PLAYONLINUX="/usr/share/playonlinux"
+declare -x POL_ARCH="x86"
+declare -x POL_COOKIE="VmjFhDEu6FK1ellrsXam"
+declare -x POL_CURL="curl"
+declare -x POL_DNS="playonlinux.com"
+declare -x POL_HOST="127.0.0.1"
+declare -x POL_ID="25428062"
+declare -x POL_LANG="en"
+declare -x POL_OS="Linux"
+declare -x POL_PORT="30000"
+declare -x POL_PYTHON="python2.7"
+declare -x POL_SetupWindow_ID="38122"
+declare -x POL_TERM="x-terminal-emulator"
+declare -x POL_UPTODATE="TRUE"
+declare -x POL_USER_ARCH="x86"
+declare -x POL_USER_ROOT="/home/victorious/.PlayOnLinux/"
+declare -x POL_WGET="env LD_LIBRARY_PATH=\"\" wget --prefer-family=IPv4 -q"
+declare -x PWD="/usr/share/playonlinux/python"
+declare -x QT_ACCESSIBILITY="1"
+declare -x QT_IM_MODULE="ibus"
+declare -x REPERTOIRE="/home/victorious/.PlayOnLinux/"
+declare -x RUBY_VERSION="ruby-2.7.4"
+declare -x SCRIPTID="Microsoft Office 2013"
+declare -x SED="sed"
+declare -x SESSION_MANAGER="local/victorious-HP-EliteBook-Revolve-810-G3:@/tmp/.ICE-unix/1670,unix/victorious-HP-EliteBook-Revolve-810-G3:/tmp/.ICE-unix/1670"
+declare -x SETUPWINDOW_INIT="true"
+declare -x SHELL="/bin/bash"
+declare -x SHLVL="3"
+declare -x SITE="http://repository.playonlinux.com"
+declare -x SSH_AGENT_PID="1632"
+declare -x SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
+declare -x TEXTDOMAIN="pol"
+declare -x TITLE="Microsoft Office 2013"
+declare -x TITRE="PlayOnLinux"
+declare -x UBUNTU_MENUPROXY="0"
+declare -x USER="victorious"
+declare -x USERNAME="victorious"
+declare -x VERSION="4.3.4"
+declare -x WGETRC="/home/victorious/.PlayOnLinux//configurations/wgetrc"
+declare -x WINDOWPATH="2"
+declare -x WINEDLLOVERRIDES="winemenubuilder.exe=d"
+declare -x WINEPREFIX="/home/victorious/.PlayOnLinux//wineprefix/default"
+declare -x WINE_SITE="https://phoenicis.playonlinux.com/index.php/wine?os=linux"
+declare -x WorkingDirectory="/home/victorious"
+declare -x XAUTHORITY="/run/user/1000/gdm/Xauthority"
+declare -x XDG_CONFIG_DIRS="/etc/xdg/xdg-ubuntu:/etc/xdg"
+declare -x XDG_CURRENT_DESKTOP="ubuntu:GNOME"
+declare -x XDG_DATA_DIRS="/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop"
+declare -x XDG_MENU_PREFIX="gnome-"
+declare -x XDG_RUNTIME_DIR="/run/user/1000"
+declare -x XDG_SESSION_CLASS="user"
+declare -x XDG_SESSION_DESKTOP="ubuntu"
+declare -x XDG_SESSION_TYPE="x11"
+declare -x XMODIFIERS="@im=ibus"
+declare -x rvm_bin_path="/usr/share/rvm/bin"
+declare -x rvm_path="/usr/share/rvm"
+declare -x rvm_prefix="/usr/share"
+declare -x rvm_version="1.29.12 (manual)"
+
+
+06/06/22 12:47:32 - [POL_System_SetArch] Message: POL_ARCH set to x86
+06/06/22 12:47:35 - [POL_SetupWindow_icon_menu] Message: icon_menu answer: Use a setup file in my computer
+06/06/22 12:47:35 - [POL_SetupWindow_InstallMethod] Message: Install method: LOCAL
+06/06/22 12:49:09 - [POL_SetupWindow_browse] Message: browser answer: 
+06/06/22 12:49:09 - [POL_Wine_SelectPrefix] Message: Selecting prefix: Office2013
+06/06/22 12:49:09 - [POL_Wine_PrefixCreate] Message: Setting POL_WINEVERSION to 4.0.4
+06/06/22 12:49:09 - [POL_Wine_PrefixCreate] Message: Creating prefix (4.0.4)...

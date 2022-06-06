@@ -1,0 +1,63 @@
+2022/06/06-10:32:41.628 108a Reusing MANIFEST /home/victorious/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/MANIFEST-000001
+2022/06/06-10:32:41.629 108a Recovering log #269
+2022/06/06-10:32:41.631 108a Reusing old log /home/victorious/.config/google-chrome/Default/Local Extension Settings/gighmmpiobklfepjocnamgkkbiglidom/000269.log 
+2022/06/06-10:33:51.486 1061 Level-0 table #273: started
+2022/06/06-10:33:51.627 1061 Level-0 table #273: 8104737 bytes OK
+2022/06/06-10:33:51.632 1061 Delete type=0 #269
+2022/06/06-10:33:51.635 1061 Compacting 4@0 + 2@1 files
+2022/06/06-10:33:51.839 1061 Generated table #274@0: 1 keys, 8104534 bytes
+2022/06/06-10:33:51.844 1061 Generated table #275@0: 5 keys, 374 bytes
+2022/06/06-10:33:51.844 1061 Compacted 4@0 + 2@1 files => 8104908 bytes
+2022/06/06-10:33:51.847 1061 compacted to: files[ 0 2 1 0 0 0 0 ]
+2022/06/06-10:33:51.847 1061 Delete type=2 #273
+2022/06/06-10:33:51.847 1061 Delete type=2 #270
+2022/06/06-10:33:51.847 1061 Delete type=2 #263
+2022/06/06-10:33:51.847 1061 Delete type=2 #264
+2022/06/06-10:33:51.847 1061 Delete type=2 #268
+2022/06/06-10:33:51.847 1061 Delete type=2 #266
+2022/06/06-10:34:39.660 108c Level-0 table #277: started
+2022/06/06-10:34:39.791 108c Level-0 table #277: 8104534 bytes OK
+2022/06/06-10:34:39.794 108c Delete type=0 #272
+2022/06/06-10:34:42.347 1063 Level-0 table #279: started
+2022/06/06-10:34:42.485 1063 Level-0 table #279: 8104704 bytes OK
+2022/06/06-10:34:42.488 1063 Delete type=0 #276
+2022/06/06-10:36:06.103 1061 Level-0 table #281: started
+2022/06/06-10:36:06.221 1061 Level-0 table #281: 8104509 bytes OK
+2022/06/06-10:36:06.225 1061 Delete type=0 #278
+2022/06/06-11:33:51.924 34ab Level-0 table #283: started
+2022/06/06-11:33:52.082 34ab Level-0 table #283: 8104509 bytes OK
+2022/06/06-11:33:52.086 34ab Delete type=0 #280
+2022/06/06-11:33:52.089 34ab Compacting 4@0 + 2@1 files
+2022/06/06-11:33:52.379 34ab Generated table #284@0: 1 keys, 8104509 bytes
+2022/06/06-11:33:52.385 34ab Generated table #285@0: 5 keys, 374 bytes
+2022/06/06-11:33:52.385 34ab Compacted 4@0 + 2@1 files => 8104883 bytes
+2022/06/06-11:33:52.387 34ab compacted to: files[ 0 2 1 0 0 0 0 ]
+2022/06/06-11:33:52.387 34ab Delete type=2 #274
+2022/06/06-11:33:52.387 34ab Delete type=2 #283
+2022/06/06-11:33:52.387 34ab Delete type=2 #277
+2022/06/06-11:33:52.387 34ab Delete type=2 #279
+2022/06/06-11:33:52.387 34ab Delete type=2 #281
+2022/06/06-11:33:52.387 34ab Delete type=2 #275
+2022/06/06-11:34:02.343 3489 Level-0 table #287: started
+2022/06/06-11:34:02.481 3489 Level-0 table #287: 8104509 bytes OK
+2022/06/06-11:34:02.486 3489 Delete type=0 #282
+2022/06/06-11:34:05.472 34ab Level-0 table #289: started
+2022/06/06-11:34:05.626 34ab Level-0 table #289: 8104951 bytes OK
+2022/06/06-11:34:05.630 34ab Delete type=0 #286
+2022/06/06-11:42:31.369 337f Level-0 table #291: started
+2022/06/06-11:42:31.511 337f Level-0 table #291: 8104755 bytes OK
+2022/06/06-11:42:31.515 337f Delete type=0 #288
+2022/06/06-12:33:51.978 736f Level-0 table #293: started
+2022/06/06-12:33:52.122 736f Level-0 table #293: 8104759 bytes OK
+2022/06/06-12:33:52.125 736f Delete type=0 #290
+2022/06/06-12:33:52.128 736f Compacting 4@0 + 2@1 files
+2022/06/06-12:33:52.469 736f Generated table #294@0: 1 keys, 8104759 bytes
+2022/06/06-12:33:52.475 736f Generated table #295@0: 5 keys, 374 bytes
+2022/06/06-12:33:52.475 736f Compacted 4@0 + 2@1 files => 8105133 bytes
+2022/06/06-12:33:52.477 736f compacted to: files[ 0 2 1 0 0 0 0 ]
+2022/06/06-12:33:52.477 736f Delete type=2 #291
+2022/06/06-12:33:52.477 736f Delete type=2 #289
+2022/06/06-12:33:52.477 736f Delete type=2 #287
+2022/06/06-12:33:52.477 736f Delete type=2 #284
+2022/06/06-12:33:52.477 736f Delete type=2 #293
+2022/06/06-12:33:52.477 736f Delete type=2 #285

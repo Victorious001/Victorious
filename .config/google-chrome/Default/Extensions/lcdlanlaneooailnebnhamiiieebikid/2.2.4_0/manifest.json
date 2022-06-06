@@ -1,0 +1,41 @@
+{
+   "background": {
+      "scripts": [ "jquery.js", "core/webext/utils/EventEmitter.js", "core/webext/core/base.js", "core/webext/core/chrome.storage.js", "core/webext/core/chrome.runtime.js", "core/webext/core/chrome.notifications.js", "core/webext/core/chrome.browserAction.js", "core/webext/core/chrome.contextMenus.js", "core/webext/core/chrome.tabs.js", "core/background.js", "termlib_parser.js", "config.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "16": "data/icons/disabled/16.png",
+         "18": "data/icons/disabled/18.png",
+         "19": "data/icons/disabled/19.png",
+         "32": "data/icons/disabled/32.png",
+         "36": "data/icons/disabled/36.png",
+         "38": "data/icons/disabled/38.png",
+         "48": "data/icons/disabled/48.png",
+         "64": "data/icons/disabled/64.png"
+      },
+      "default_popup": "popup.html"
+   },
+   "default_locale": "en_US",
+   "description": "__MSG_appDesc__",
+   "homepage_url": "http://www.puupnewsapp.com/internet-download-manager-for-chrome/",
+   "icons": {
+      "128": "data/icons/128.png",
+      "16": "data/icons/16.png",
+      "19": "data/icons/19.png",
+      "32": "data/icons/32.png",
+      "38": "data/icons/38.png",
+      "48": "data/icons/48.png",
+      "64": "data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1I08RJT4/UGjbY5ksMksB8v10EF7QL3kcPKZTHDYkoPySYs5w4Vya4xWXQkFisOhY4NdwElRBEoNAw15oIRjuj2GLyevEfGQu2Ew4gUQQCbYgkW4eJxju9tkv/ag94ci7vQrd1xuDKKlGycRS+rgQhbEqheep9BgBFSnhV1VcpFJwndPSghPtx9O2aWyvlS4VrvLtq1d23fZrmWwwVKDqrcAagfBBWzCtz90llha86oPhM7uGRm2NEG/lBlzg1ZDeCKuY34HDfbQOCwvklyP0+kHsV6XVgpjc4v9fCZ3WzqMgvhQCjKutLJp+rN1Zd32Ch5om7LQaDWbVh/szz9/2wIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_appName__",
+   "offline_enabled": true,
+   "options_ui": {
+      "chrome_style": true,
+      "page": "data/options/index.html"
+   },
+   "permissions": [ "tabs", "storage", "notifications", "alarms", "idle", "cookies", "webNavigation", "webRequest", "webRequestBlocking", "nativeMessaging", "contextMenus", "downloads", "*://*/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.2.4"
+}

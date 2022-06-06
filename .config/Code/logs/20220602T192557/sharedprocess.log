@@ -1,0 +1,37 @@
+[2022-06-02 19:26:01.599] [sharedprocess] [info] Starting worker process with pid 137754 (type: fileWatcher, window: 1).
+[2022-06-03 07:00:32.605] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-03 07:05:33.599] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-03 07:10:34.630] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-03 07:15:35.600] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-04 06:44:18.385] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:03:49.217] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:09:01.782] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:14:26.356] [sharedprocess] [warning] No ptyHost heartbeat after 6 seconds
+[2022-06-05 12:14:34.730] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:14:35.315] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/workspaceRecommendations.json.gz {"name":"Offline"}
+[2022-06-05 12:14:35.316] [sharedprocess] [error] Offline: Offline
+    at T (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:21:26722)
+    at T.request (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:29:137846)
+    at o.fetchWorkspacesTips (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:32:1745)
+    at o.getAllWorkspacesTips (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:32:700)
+    at g.call (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:26:34097)
+    at s.onPromise (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:20:4867)
+    at s.onRawMessage (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:20:4262)
+    at vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:20:3554
+    at m.invoke (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:16:145)
+    at S.deliver (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:16:2265)
+    at fire (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:16:1843)
+    at MessagePort.j (vscode-file://vscode-app/snap/code/97/usr/share/code/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js:14:53148)
+[2022-06-05 12:22:33.995] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:27:34.032] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 12:32:34.045] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:14:28.150] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:19:28.162] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:24:28.206] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:29:28.219] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:34:28.233] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:39:28.245] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:44:28.257] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-05 21:49:28.272] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}
+[2022-06-06 05:43:56.237] [sharedprocess] [warning] No ptyHost heartbeat after 6 seconds
+[2022-06-06 05:46:24.593] [sharedprocess] [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {"name":"Offline"}

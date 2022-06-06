@@ -1,0 +1,28 @@
+{
+   "author": "__MSG_provider__",
+   "background": {
+      "scripts": [ "scripts/distribution.js", "scripts/worker.js", "scripts/onInstalled.js" ]
+   },
+   "browser_action": {
+      "default_icon": "images/netflex.png"
+   },
+   "content_scripts": [ {
+      "js": [ "libs/dompurify/purify.min.js", "libs/jquery/jquery.min.js", "libs/fontawesome/fontawesome.js", "scripts/distribution.js", "scripts/global.js", "scripts/functions.js", "scripts/objects.js", "scripts/vars.js", "scripts/options.js", "scripts/status.js", "scripts/assistant.js", "scripts/rating.js", "libs/fireworks/fireworks.js", "scripts/versions.js", "scripts/init.js", "netflix.min.js" ],
+      "matches": [ "*://www.netflix.com/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "icons": {
+      "128": "images/netflex.png",
+      "16": "images/netflex_16.png",
+      "48": "images/netflex_48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmUtH9cD95KAKe4qH8cLt1So79b60HDsqwbpZrjNf1s3F3v37z/ixBcTX2VfIQv+Y3GvuYTavv+5s7LR68kDUrmLtgC2/5YtGL339aVnAt6VS702UDkz/WjLGsK9Bro+UHLQsy5abvQOIMuZeXguxlluQGdhRU0SS5twh3pnZvNSZmMbxEZecQspSOAuOTy77ZM2VVKzhxBCne8tnwCvqKec1pgcu6XwJWh7JXsOPaI1ppFfC3jxqiMIcLPLLJtzDsdUiHLokYTHee0xk2hBKu1f3WYImR4ivtsEkKhYHsEfY6SOh+AbGBpXwgw9eMKx7o7NO9MMNtMm/hX6IP7MFdwIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_name__",
+   "permissions": [ "*://*.netflix.com/*", "*://*.wikidata.org/*", "*://*.omdbapi.com/*", "storage" ],
+   "short_name": "__MSG_short_name__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "8.2.0",
+   "web_accessible_resources": [ "_locales/en/messages.json", "images/netflex.png", "images/netflex_test.png", "images/netflex_dev.png", "images/netflex_sup.png", "CHANGELOG", "styles/netflex-ui.css", "styles/netflex-features.css", "scripts/interface.js", "libs/dompurify/purify.min.js.map" ]
+}

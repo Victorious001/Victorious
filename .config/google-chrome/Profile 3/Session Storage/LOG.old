@@ -1,0 +1,18 @@
+2022/06/06-10:32:45.946 5 Reusing MANIFEST /home/victorious/.config/google-chrome/Profile 3/Session Storage/MANIFEST-000001
+2022/06/06-10:32:45.962 5 Recovering log #15
+2022/06/06-10:32:45.969 5 Reusing old log /home/victorious/.config/google-chrome/Profile 3/Session Storage/000015.log 
+2022/06/06-10:49:58.457 5 Level-0 table #19: started
+2022/06/06-10:49:58.471 5 Level-0 table #19: 19139 bytes OK
+2022/06/06-10:49:58.478 5 Delete type=0 #15
+2022/06/06-10:49:58.479 5 Compacting 4@0 + 1@1 files
+2022/06/06-10:49:58.484 5 Generated table #20@0: 722 keys, 26308 bytes
+2022/06/06-10:49:58.484 5 Compacted 4@0 + 1@1 files => 26308 bytes
+2022/06/06-10:49:58.487 5 compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/06/06-10:49:58.488 5 Delete type=2 #16
+2022/06/06-10:49:58.488 5 Delete type=2 #8
+2022/06/06-10:49:58.488 5 Delete type=2 #11
+2022/06/06-10:49:58.488 5 Delete type=2 #14
+2022/06/06-10:49:58.488 5 Delete type=2 #19
+2022/06/06-12:11:27.773 25 Level-0 table #22: started
+2022/06/06-12:11:27.792 25 Level-0 table #22: 20398 bytes OK
+2022/06/06-12:11:27.797 25 Delete type=0 #18

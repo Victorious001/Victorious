@@ -1,0 +1,100 @@
+{
+   "checksum": "4cbee13de6357848b02c936c9c4e2731",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13238171723858905",
+            "guid": "007dfc5c-8320-46a1-a758-7eb9fb865bcb",
+            "id": "10",
+            "meta_info": {
+               "last_visited_desktop": "13238512903763029"
+            },
+            "name": "QA World",
+            "type": "url",
+            "url": "https://app.qa-world.com/"
+         }, {
+            "date_added": "13238278105990453",
+            "guid": "fc4dc4f3-4de5-4769-801f-e929e60781bc",
+            "id": "11",
+            "name": "New Tab",
+            "type": "url",
+            "url": "chrome://newtab/"
+         }, {
+            "date_added": "13298399733719179",
+            "guid": "115f33e5-1c4c-46b4-9a45-046cb9a132c9",
+            "id": "12",
+            "name": "Gmail",
+            "type": "url",
+            "url": "https://accounts.google.com/b/0/AddMailService"
+         }, {
+            "date_added": "13298399733720236",
+            "guid": "ff20797f-e9fa-4494-809d-6a7d02f03415",
+            "id": "13",
+            "name": "YouTube",
+            "type": "url",
+            "url": "https://youtube.com/"
+         }, {
+            "date_added": "13298399733721535",
+            "guid": "56c6ba43-0251-489e-85f2-0015f52e1853",
+            "id": "14",
+            "name": "Maps",
+            "type": "url",
+            "url": "https://maps.google.com/"
+         }, {
+            "date_added": "13268734411924812",
+            "guid": "49f731ec-6f10-456d-84ee-1391c20c8edc",
+            "id": "15",
+            "name": "Get Into PC - Download Free Your Desired App",
+            "type": "url",
+            "url": "https://getintopc.com/"
+         }, {
+            "date_added": "13280830465595559",
+            "guid": "25f03527-0f18-4284-b020-86605ab407ae",
+            "id": "16",
+            "name": "casual-loop logic in relation to corporate objectives - Google Search",
+            "type": "url",
+            "url": "https://www.google.com/search?q=casual-loop+logic+in+relation+to+corporate+objectives&oq=casual-loop+logic+in+relation+to+corporate+objectives&aqs=chrome..69i57j0i10i512j0i10i22i30j0i390.1155j0j7&sourceid=chrome&ie=UTF-8"
+         }, {
+            "date_added": "13298399738589997",
+            "guid": "45e87452-732e-4c30-b200-c20e56cba639",
+            "id": "8",
+            "name": "Translate",
+            "type": "url",
+            "url": "https://translate.google.com/"
+         }, {
+            "date_added": "13298399740333150",
+            "guid": "40bf070a-f972-46c4-a6bd-1ca5f449a924",
+            "id": "9",
+            "name": "News",
+            "type": "url",
+            "url": "https://news.google.com/"
+         } ],
+         "date_added": "13298399721971601",
+         "date_modified": "13298399740333150",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13298399721971605",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13298399721971607",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CscBCqYBCIiBAhKfARKMAQgCEk4KBgoCYm0QARAzGhIJgKB2rzzgBQAhgKB2rzzgBQAiFAlIlwa/POAFABADGdkKHOr/rfWvMhgKFggCEe3MEL884AUAGAAhAAAAAAAAAAASOAoGCgJiZBAAEDMaEgmAoHavPOAFACGAoHavPOAFADIYChYIAhHtzBC/POAFABgAIQAAAAAAAAAAIABI8N7HrZEwcPDex62RMBIAIAEqGCtvVzBoc01LdDZOV2lmK2FVdHdQQ1E9PRLsAQgJEucBChxnaXZjTnBoazVhOWZua3dHeE1MQUg5SEQvMWM9EmZaOkFEcXRBWncvNFJRbkQwVG9HRG5XY044YVFGV25LVGNId1l2Y2pMM2hCdWM0bWo2NHdmOXZEcWd3WlhqOVlqeSszQU4rbG9ySllRK2VIa29EUldPcUVTK1hSNEVrVmlEMW9RPT0YACABKAEw6/zq+MuH+AI4sOHHrZEwQLDhx62RMEocVzNtTFdFblk4cVMrK0dkdW5wYjQ3YmdwOEpvPVofIh3/MTBDeEhNVnNYclBBRzUyY1BxbU5QNFlicWFzPWXPzq1qEuwBCAgS5wEKHHlvVGthd0VJNjUrajFHZWlQYk9wd1BjZmZCTT0SZlo6QURxdEFady80UlFuRDBUb0dEbldjTjhhUUZXbjNCNTFoLzUwWjFZWDc5dXEzb05HUWVqUklncU5wcFl3N2hZZnp5U2ZqV2MxZUkzYUlVUTRrTUkyQlIwWUJnRmJXWC9sYlE9PRgAIAEoATDr/Or4y4f4Ajiw4cetkTBAsOHHrZEwShxueFlIRmpxd3RHN2FPZVAwYjlsZk84Y1Y1M0U9Wh8iHf5BeFU4QWQybjJ3Zng4dldwTmVaT3FNOVpOcVU9ZVwq+SoSwwEIAhK+AQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRJmWjpBRHF0QVp3bDZ4enVSQUEvUG1wTERYZkR0blJ1YWFURzFsbHFtQ1lzMXNMUEV4eG1WLzdCZU5TV202eXJyMGphMVpOd2NpUi81UjFZeXQ4dWxQb3gxNWRjM2dYaEhremxEUT09GAAgACgAMMeumvjLh/gCOABAAEocb1BWa2h3QlJiVjY1S0NXUjIrSU9OSFdvT3U4PVoAZQAAAAASrQIIDxKoAgocU2VESVBPdUdnbGRZa0VlaGtieUUzbE95QWdzPRKmAVo6QURxdEFad0JJSTNCbGVrNEJ2RDJTMVZHM01pakdNdGUxdXhPclNRbmFqTmxNOGlldjdscTJzdW9IVXpwV0M1dkhjNWpjdGlPallVeHQ4QW5CU2xPQzlhWUk4NlEvQ1dQV3FxZEUzcDUyUXJOaVFvL1NhZGdJaitGb0xXWUdRU2RWZ1krSEo4QVNxbDdtVWh3SWNNdVQ4YmxtaWRhZ0dNVzNBPT0YACACKAIw6/zq+MuH+AI4lrn066IvQPbhx62RMEocaUJDbm9jYnkrbzJZQTRlTStjNVk1NDNvTWVvPVofIh36Tkh6UmpLamFsd0grc1YwbFEzZFo3NnAwUlFFPWW+7zd0Eq0CCAsSqAIKHGRqZkthN3ExOWRaY1Q3MWpUN01sMStPOXozaz0SpgFaOkFEcXRBWndCSUkzQmxlazRCdkQyUzFWRzNNaWo5eEZzWTNxQWJ3M3JGR3AvSDJYTUpQcDljTEdyRHptaU9UTnlpaFk2QjQ1YUVCUzFJZDVNQVZYZHdlcEVxK1o2TXlkSGdKZUdBcGIxckZlUVh4NEpnWllCeUcwbUtrMFppbzRlNkErcVRHUmpWRXNSNkFSQm85K212ejEyak5UODVsNXE3dz09GAAgACgAMIaEpL/EwfQCOIeHm7GxLkCHh5uxsS5KHFpaTXVhVXNVWm9NcmRTSEtWOE5mYUQ0bkxHQT1aHyIdp0ZIR3FjTk9SOUM0WlRJaFgxUWVlUWxWZDA2OD1lAAAAABKsAggKEqcCChxVcDFvbVl6Ri8zS2NlWXE5K2hVdktiRkR6ZTg9EqYBWjpBRHF0QVp3QklJM0JsZWs0QnZEMlMxVkczTWlqOXhGc1kzcUFidzNyRkdwL0gyWE1KTHM4ZkpmbmV1YitGd1QzVDJ0NWhpTE5KN0VucjQrTHZUTUNsZVJoSTgvc0NZdjVyOGJrM2VnS2ZkbmRIeDJwYlZkUHdFZXhoMkdJTTB3SG5iWXNScUhQQ2tDWm9UZ1FrUStiajJYSzhuaDlSWWx5K2c9PRgAIAIoAjDr/Or4y4f4AjjrgL7+sC5A8+HHrZEwShwrWmh0N3psTGQyUkNzQnhiVlRUUjJPTHRaR1k9Wh4iHE5sckJXTG43bjF0TEVJU0IwSUdWS2VkRmVQUT1lKLTEbxKtAggOEqgCChxSMzZYWFUzbXdFVXBlWFY0TGlQU1A5MGl4dzA9EqYBWjpBRHF0QVp3QklJM0JsZWs0QnZEMlMxVkczTWlqbitZVUozSDI1NmdKNXBVeGdmbGNINmhxTlR6bmM4a3piTUVQd05Zem5YK3htU0JxQ0RycXlOalZmK1J2Y1RsTGw4NE5lMGhEbGhDdE4yTDE1UitCUUxHNCs3OXhoVWFYbUpYZFRDdkprSlBVWkNSekVCWnlldUZCZUdUT1ZOQURiY1NBZkE9PRgAIAIoAjDr/Or4y4f4AjiLouPcuS5A9eHHrZEwShxiTTZqUENrRzJId3lQS3JVM2JNZEFsL2E4Yzg9Wh8iHfRNckRnTFlUeTQyK3M3RFBkbWdDWW9ZaXppL009ZT1shRESrQIIDBKoAgocMUVjQ1VjdXVZRkl6ZXlkUVR3MXNZbUIraDBJPRKmAVo6QURxdEFad0JJSTNCbGVrNEJ2RDJTMVZHM01pam4rWVVKM0gyNTZnSjVwVXhnZmxjSHpyVHkzQlNaYWhYcldVSnFYRmt1VEZoWEpxRHlVbnVPRjdnTEl5WWo2cWFYc0NtM2NZYS9kN1JtTndmR2ZKcml3dnBNczFSYzdsNmR3Nis0cGIrRUhNYW5JN0tvYXorNTJmOUU5SGM1UVVVTmZEanFBPT0YACACKAIw6/zq+MuH+AI4iqLj3LkuQPThx62RMEocL2RsZXExWERrbmdMdmRwbHFpU2RydWI3VzdVPVofIh3TcTUwY3FjdUUwT0VDajk5M0RDSnI2anE1emxRPWWLoIzREq0CCA0SqAIKHGhCSHVhR3NZbk1QWDE0cTAycUQ3eWYvV20wOD0SpgFaOkFEcXRBWndCSUkzQmxlazRCdkQyUzFWRzNNaWpuK1lVSjNIMjU2Z0o1cFV4Z2ZsY0g1NXZZQmovUFZ4c0g2SFhNTndrTGk4TVUwWEpEYVY3S2RFRFZuR3NiVmN3SVVLRkpiR281b0p6NllSUkFwS1J5M2hCZURodkwxcXB3QStDSkJtc3MxTEsrTEROaEw2cFIvVUFScWtrUHF0TlRXdzZNZz09GAAgAigCMOv86vjLh/gCOIqi49y5LkD04cetkTBKHDVONmt6TllnSFhNeXFKOFkvNWFWZEhJMzJUVT1aHyId6WFWQ2xYOHdaUkdjMUw3clhOSEpiUHdOU0JuWT1lOPk5MxKrAQgBEqYBChx5eEovNmZ2a2VjcjdrcDVFUXpCNHRXTHBkYkU9Ek5aOkFEcXRBWno2aE5vazZ1Ym9WMlVJWjhES3hISC9kNldjR2xaMFN3eUp4aTFBU1JKcE1LK0N3akdseGg0TUNPdWlmQWExOGVwSTlCMTMYACAAKAAwx66a+MuH+AI4AEAAShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9WgBlAAAAABLsAQgQEucBChxZaEY4WFd5ZHFGbzNVdWdJUFdpL0NsTE5rRnM9EmZaOkFEcXRBWncvNFJRbkQwVG9HRG5XY044YVFGV25qVlBtRWFDMm1DV1BPMjBiemIxRzhHeVR4a0FwSFN1eXdzVWN1dFJuWCticjV6bmJVL2lVcG5pWm8vaENXVkZpUHE1L25BPT0YACACKAIw6/zq+MuH+AI4vvzg888vQPbhx62RMEocVDRROEMySXEwcG55NEVobzR2dXNHS0IvdnNZPVofIh39WmZTWkZITTVwMWdEcDFPS1E3TXJteVlPbk9nPWUQMP/kEsMBCAMSvgEKHG5qZ0R1ODhlQ3J2WHA4NnBEN2ZIR2NxRnA4OD0SZlo6QURxdEFad05jS3ljaFUvNTN3b0JWSFIyTFg4bkhaTFg3TUdoNWFReXVuZEEwZ1VuTHo3VGhVQTlqTXBQSFJSSUE4bnIrYlNVZXpERldVR1VzbG1NSHRHQ3ExMmc3SFI0b0E9PRgAIAAoADDHrpr4y4f4AjgAQABKHHl6TkIwMWNuNTRBN2NSVTB1VCsvUGdtVHRVbz1aAGUAAAAAMAE4AA==",
+   "version": 1
+}

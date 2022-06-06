@@ -1,0 +1,7 @@
+2022/06/02-14:59:49.018 f40d Reusing MANIFEST /home/victorious/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/06/02-14:59:49.019 f40d Recovering log #3
+2022/06/02-14:59:49.053 f40d Reusing old log /home/victorious/.config/google-chrome/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2022/06/02-15:00:44.662 f914 Level-0 table #5: started
+2022/06/02-15:00:44.681 f914 Level-0 table #5: 801821 bytes OK
+2022/06/02-15:00:44.686 f914 Delete type=0 #3
+2022/06/02-15:00:44.687 f914 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: polVault\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-25 23:38+0100\n"
+"PO-Revision-Date: 2013-04-25 23:38+0100\n"
+"Last-Translator: Colin GILLE / congelli501 <colingille@hotmail.com>\n"
+"Language-Team: Congelli501 <colingille@hotmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: ../../../scripts\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: menu:62
+#, sh-format
+msgid "PlayOnLinux Vault is a free software created by Colin GILLE."
+msgstr "PlayOnLinux Vault est un programme libre créé par Colin GILLE."
+
+#: menu:63
+#, sh-format
+msgid "PlayOnLinux Vault was released under the GPL license. It enables you to save and to restore your PlayOnLinux's applications."
+msgstr "PlayOnLinux Vault est distribué sous licence GPL. Il vous permet de sauvegarder et de restaurer des applications PlayOnLinux."
+
+#: menu:65
+#, sh-format
+msgid "Website: http://www.congelli.eu/"
+msgstr "Site web : http://www.congelli.eu/"
+
+#: menu:66
+#, sh-format
+msgid "License: GPL"
+msgstr "Licence : GPL"
+
+#: menu:67
+#, sh-format
+msgid "Version: "
+msgstr "Version : "
+
+#: menu:68
+#, sh-format
+msgid "Author: Colin GILLE / Congelli501"
+msgstr "Auteur : Colin GILLE / Congelli501"
+
+#: menu:70
+#: menu:153
+#: menu:249
+#, sh-format
+msgid "Press Next to continue."
+msgstr "Appuyez sur \"Suivant\" pour continuer."
+
+#: menu:88
+#, sh-format
+msgid "What do you want to do ?"
+msgstr "Que voulez vous faire ?"
+
+#: menu:88
+#, sh-format
+msgid "Restore an applications..."
+msgstr "Restaurer une application..."
+
+#: menu:88
+#, sh-format
+msgid "Save an applications..."
+msgstr "Sauvegarder une application..."
+
+#: menu:95
+#, sh-format
+msgid "Please choose the application you want to restore..."
+msgstr "Veuillez sélectionner l'application que vous voulez restaurer..."
+
+#: menu:100
+#: menu:231
+#: menu:285
+#, sh-format
+msgid "Please wait..."
+msgstr "Veuillez patienter..."
+
+#: menu:105
+#, sh-format
+msgid "Error: this file is not a valid polApp !"
+msgstr "Erreur : ce fichier n'est pas un fichier polApp valide !"
+
+#: menu:117
+#, sh-format
+msgid "Error: bad file version !"
+msgstr "Erreur : Mauvaise version du fichier !"
+
+#: menu:148
+#, sh-format
+msgid "Application:"
+msgstr "Application :"
+
+#: menu:149
+#: menu:245
+#, sh-format
+msgid "Shortcut number:"
+msgstr "Nombre de raccourcis :"
+
+#: menu:150
+#, sh-format
+msgid "Compression method:"
+msgstr "Méthode de compression :"
+
+#: menu:151
+#: menu:247
+#, sh-format
+msgid "Size:"
+msgstr "Taille :"
+
+#: menu:160
+#: menu:179
+#: menu:211
+#, sh-format
+msgid "Restoring your application..."
+msgstr "Restauration de votre application..."
+
+#: menu:175
+#: menu:331
+#, sh-format
+msgid "$progress% - Remaining: $timeLeft"
+msgstr "$progress% - Temps restant: $timeLeft"
+
+#: menu:227
+#, sh-format
+msgid "Please choose the application you want to save..."
+msgstr "Veuillez choisir l'application que vous voulez sauvegarder..."
+
+#: menu:244
+#, sh-format
+msgid "Selected Application:"
+msgstr "Application sélectionnée :"
+
+#: menu:246
+#, sh-format
+msgid "Wine prefix:"
+msgstr "Préfixe Wine :"
+
+#: menu:254
+#, sh-format
+msgid "Please select the compression method..."
+msgstr "Veuillez sélectionner une méthode de compression..."
+
+#: menu:254
+#, sh-format
+msgid "bz2 compression (good compression but slow)"
+msgstr "Compression bz2 (bonne compression mais lente)"
+
+#: menu:254
+#, sh-format
+msgid "lzop compression (medium compression but fast)"
+msgstr "Compression lzop (compression moyenne mais rapide)"
+
+#: menu:254
+#, sh-format
+msgid "None (no compression but very fast)"
+msgstr "Aucune (pas de compression mais très rapide)"
+
+#: menu:288
+#, sh-format
+msgid "Error: can't create backup file !"
+msgstr "Erreur : Impossible de créer le fichier de sauvegarde !"
+
+#: menu:324
+#, sh-format
+msgid "Saving your application..."
+msgstr "Sauvegarde de votre application..."
+
+#: menu:338
+#, sh-format
+msgid "Everything is ok !"
+msgstr "Tout est Ok !"
+
+#: menu:339
+#, sh-format
+msgid "Time needed: $totalTime"
+msgstr "Temps requis : $totalTime"
+
+#~ msgid "bz2 compression"
+#~ msgstr "Compression Bz2"
+
+#~ msgid "None"
+#~ msgstr "Aucune"

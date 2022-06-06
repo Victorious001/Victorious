@@ -1,0 +1,35 @@
+[06/06/22 12:51:36] - Running wine- --version (Working directory : /usr/share/playonlinux/python)
+wine-5.0 (Ubuntu 5.0-3ubuntu1)
+
+PlayOnLinux logfile
+-------------------
+Date: 06/06/22 12:51:36
+
+> PlayOnLinux Version
+  4.3.4
+> uname -a
+  Linux victorious-HP-EliteBook-Revolve-810-G3 5.13.0-44-generic #49~20.04.1-Ubuntu SMP Wed May 18 18:44:28 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+> lsb_release -a
+  
+> wine --version
+  wine-5.0 (Ubuntu 5.0-3ubuntu1)
+> POL_WINEVERSION
+  
+> WINEPREFIX
+  /home/victorious/.PlayOnLinux//wineprefix/microsoftoffice2016
+> Distribution
+  Ubuntu 20.04.4 LTS
+> glxinfo \| grep rendering
+  direct rendering: Yes
+> glxinfo \| grep renderer
+      GLX_MESA_query_renderer, GLX_MESA_swap_control, GLX_NV_float_buffer, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_query_renderer, GLX_MESA_swap_control, 
+Extended renderer info (GLX_MESA_query_renderer):
+OpenGL renderer string: Mesa Intel(R) HD Graphics 5500 (BDW GT2)
+> OpenGL libs (Direct rendering testing)
+  check_dd_x86 missing, test skipped
+  check_dd_amd64 missing, test skipped
+
+[06/06/22 12:51:36] - This is a 32bits prefix!
+[06/06/22 12:51:36] - Running wine- cmd /c echo %ProgramFiles% (Working directory : /usr/share/playonlinux/python)
+wine: WINEARCH set to win64 but '/home/victorious/.PlayOnLinux//wineprefix/microsoftoffice2016' is a 32-bit installation.

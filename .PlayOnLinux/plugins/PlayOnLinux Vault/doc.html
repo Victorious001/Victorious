@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+	<head>
+		<title>Documentation</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			table
+			{
+				border-collapse:collapse;
+			}
+			td, th
+			{
+				border:1px solid black;
+			}		
+		</style>
+	</head>
+	<body>
+		<h1>Documentation</h1>
+		<h2>polApp Files, v0.0.1</h2>
+		<h3>Overview</h3>
+		<p>
+			A single ".polApp" file contains the whole program. You can only have one prefix per polApp file.<br />
+			It contains :
+		</p>
+		<ul>
+			<li>A version file</li>
+			<li>A configuration file</li>
+			<li>The wine prefix (which contains "drive_c", "dosdevices" and "*.reg")</li>
+			<li>The lunch scripts (usually located in "configurations/installed"). They also contains the wine version to use.</li>
+			<li>The 32x32 icons if needed (usually located in  "icones/32"), one per lunch script</li>
+		</ul>
+		<p>
+			A polApp file is a c501tar archive, please read c501tar section.<br />
+			Example tar ball content:
+			<blockquote>
+				version<br />
+				config<br />
+				prefix.tar.bz2<br />
+				installed<br />
+				&nbsp;&nbsp;|==> Notepad++<br />
+				&nbsp;&nbsp;|==> Notepad++ update<br />
+				&nbsp;&nbsp;\==> Notepad++ another exe<br />
+				icons_32x32<br />
+				&nbsp;&nbsp;|==> Notepad++<br />
+				&nbsp;&nbsp;\==> Notepad++ update<br />
+			</blockquote>
+		</p>
+		
+		<h3>c501tar</h3>
+		<p>
+			A c501tar file is a container for files.<br />
+			I created it because I was unable to send pipe results directly to tar.<br />
+			The first 4k of this file contains the archive header. The permissions are not managed by this format.<br />
+			<br />
+			Header example:
+			<blockquote>
+				#C501tar_HEADER_v1.0.0#<br />
+				filename_1|position (in 512 bytes blocs)|file size (bytes)<br />
+				file2.tar.bz2|position (in 512 bytes blocs)|file size (bytes)<br />
+				filename_3|position (in 512 bytes blocs)|file size (bytes)<br />
+				#END_OF_HEADER#
+			</blockquote>
+			The rest of the c501tar file contains the files content.
+		</p>
+		
+		<h3>The version file</h3>
+		<p>
+			Charset: <strong>utf-8</strong><br />
+			Name: "version"<br />
+			<br />
+			It only contains "0.0.1", the current version.
+		</p>
+		
+		<h3>The configuration file</h3>
+		<p>
+			Charset: <strong>utf-8</strong><br />
+			Name: "config"<br />
+			<br />
+			Structure: <em>field</em>=<em>value</em><br />
+			<!--Translated value: <em>field[language]</em>=<em>value</em><br />-->			
+		</p>
+		<p>
+			Example:
+			<blockquote>
+				name=Notepad++<br />
+				comment=A good text editor.<br />
+				prefixSize=5.6G<br />
+				prefixCompressionMethod=bz2<br />
+			</blockquote>
+		</p>
+		<table>
+			<tr>
+				<th>Field</th>
+				<th>Value</th>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td>The application's name.</td>
+			</tr>
+			<tr>
+				<td>comment</td>
+				<td>A small description.</td>
+			</tr>
+			<tr>
+				<td>prefixSize</td>
+				<td>The humain readable prefix size (uncompressed).</td>
+			</tr>
+			<tr>
+				<td>prefixCompressionMethod</td>
+				<td>The prefix compression method. Only bz2 is avaible.</td>
+			</tr>
+		</table>
+		
+		<h3>The wine prefix</h3>
+		<p>
+			Name: prefix.tar.bz2<br />
+			<br />
+			The wine prefix.
+		</p>
+		
+		<h3>Directory "installed"</h3>
+		<p>
+			It contains the PlayOnLinux lunch scripts. <strong>/home/$USER/.PlayOnLinux should be replaced with %PLAYONLINUX_HOME%</strong>.
+			<br />
+			Example:
+			<blockquote>
+				#!/bin/bash<br />
+				export WINEPREFIX="<strong>%PLAYONLINUX_HOME%</strong>/wineprefix/NotepadPlusPlus"<br />
+				export WINEDEBUG="-all"<br />
+				cd "<strong>%PLAYONLINUX_HOME%</strong>/wineprefix/NotepadPlusPlus/drive_c/Program Files/Notepad++"<br />
+				wine "notepad++.exe"  $@
+			</blockquote>
+		</p>
+		
+		<h3>Directory "icons_32x32" and "icons_full_size"</h3>
+		<p>
+			It contains the 32x32 icons and the full sized icons. They are named before the script name. If no icon exists for a script, the default icon will be used.<br />
+			<br />
+			Format: png, jpg, xpm...
+		</p>
+	</body>
+</html>
+

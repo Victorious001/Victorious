@@ -1,0 +1,15 @@
+[2022-06-06T11:16:34.824Z] Validating found git in: git
+[2022-06-06T11:16:34.904Z] Using git 2.36.1 from git
+[2022-06-06T11:16:34.927Z] > git rev-parse --show-toplevel [8ms]
+[2022-06-06T11:16:34.939Z] > git rev-parse --git-dir --git-common-dir [2ms]
+[2022-06-06T11:16:34.948Z] Open repository: /home/victorious/Development/code/prework/phase-0-completing-assignments
+[2022-06-06T11:16:34.971Z] > git status -z -uall [11ms]
+[2022-06-06T11:16:34.981Z] > git symbolic-ref --short HEAD [2ms]
+[2022-06-06T11:16:34.990Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/master refs/remotes/master [2ms]
+[2022-06-06T11:16:35.007Z] > git remote --verbose [3ms]
+[2022-06-06T11:16:35.007Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [10ms]
+[2022-06-06T11:16:35.021Z] > git config --get commit.template [3ms]
+[2022-06-06T11:16:35.852Z] > git show --textconv :README.md [73ms]
+[2022-06-06T11:16:35.852Z] > git check-ignore -v -z --stdin [8ms]
+[2022-06-06T11:16:35.855Z] > git ls-files --stage -- /home/victorious/Development/code/prework/phase-0-completing-assignments/README.md [64ms]
+[2022-06-06T11:16:35.876Z] > git cat-file -s 198ab640663c17fbfe82229a1ddcf031813c5089 [14ms]

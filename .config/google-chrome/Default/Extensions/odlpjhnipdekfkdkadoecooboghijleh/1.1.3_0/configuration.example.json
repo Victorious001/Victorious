@@ -1,0 +1,26 @@
+{
+  "US": {
+    "expiration": "2022-04-13T07:56:30.522Z",
+    "banner": {
+      "img_src": "http://localhost:5000/assets/amazon_us_banner.jpg",
+      "target": "https://example.com#us",
+      "text": "Add the Chrome extension to start earning!"
+    }
+  },
+  "UK": {
+    "expiration": "2022-04-13T07:56:30.522Z",
+    "banner": {
+      "img_src": "http://localhost:5000/assets/amazon_uk_banner.jpg",
+      "target": "https://example.com#uk",
+      "text": "Add the Chrome extension to start earning!"
+    }
+  },
+  "IL": {
+    "expiration": "2022-04-13T07:56:30.522Z",
+    "banner": {
+      "img_src": "http://localhost:5000/assets/amazon_us_banner.jpg",
+      "target": "https://example.com#il",
+      "text": "Add the Chrome extension to start earning!"
+    }
+  }
+}

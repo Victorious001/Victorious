@@ -1,0 +1,572 @@
+/* STATUS BUBBLE */
+
+#netflex_bubble_container {
+    position: fixed !important;
+    z-index: 100;
+    padding: 0.8em;
+    width: 500px;
+    border-radius: 0.5em;
+    font-size: 16px;
+    right: var(--netflex_bubble_off_right, auto) !important;
+    top: var(--netflex_bubble_off_top, auto) !important;
+    bottom: var(--netflex_bubble_off_bottom, auto) !important;
+}
+
+#netflex_bubble_container .unread {
+    color: #e70000 !important;
+}
+
+#netflex_bubble_container[controls="watch"] #extension_logo {
+    cursor: pointer;
+}
+
+#netflex_bubble_container[profile="general"] {
+    color: #FFFFFF;
+    background-color: rgba(38,38,38,0.85);
+}
+
+#netflex_bubble_container[profile="kids"] {
+    color: #000000;
+    background-color: rgba(255,255,255,0.85);
+}
+
+#netflex_bubble_container a.highlight {
+    color: #00b642 !important;
+    text-decoration: underline;
+}
+
+#netflex_bubble_container[profile="general"] a.highlight:hover {
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+#netflex_bubble_container[profile="kids"] a.highlight:hover {
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+#netflex_icon_status {
+    stroke: var(--netflex_icon_bord_color, #FFFFFF) !important;
+    stroke-width: 80px;
+    color: var(--netflex_icon_stat_color, transparent) !important;
+    transform-origin: center center !important;
+}
+
+#netflex_icon_status:hover {
+    cursor: pointer;
+    transition: transform .25s cubic-bezier(.5,0,.1,1);
+    transform: scale(1.2);
+}
+
+#extension_news_integrated .news_content {
+    position: relative;
+    background-color: rgba(38, 38, 38, 0.90);
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.50);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#extension_news_integrated .new_message {
+    background-color: rgba(255, 255, 255, 0.90);
+    color: #000000;
+}
+
+#extension_news_integrated .news_content a {
+    color: #FFFFFF !important;
+    text-decoration: underline;
+}
+
+#extension_news_integrated .news_content a:hover {
+    color: #00b642 !important;
+    text-decoration: underline;
+}
+
+#extension_news_integrated .new_message a {
+    color: #000000 !important;
+    text-decoration: underline;
+}
+
+#extension_news_integrated .new_message a:hover {
+    color: #00b642 !important;
+    text-decoration: underline;
+}
+
+/* OPTIONS */
+
+#extension_options_scrollable {
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	font-size: 12px;
+	background-color: transparent;
+}
+
+#netflex_bubble_container[profile="general"] #extension_options_scrollable {
+	color: #ffffff;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable {
+	color: #000000;
+}
+
+#extension_options_scrollable .sidebar {
+	width: 120px;
+	height: 400px;
+	position: fixed !important;
+	z-index: 2;
+	overflow: auto;
+	padding-top: 13px !important;
+	padding-bottom: 15px !important;
+}
+
+#extension_options_scrollable .content {
+	height: 400px;
+	width: 377px;
+	position: absolute !important;
+	z-index: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	word-wrap: break-word;
+	padding-right: 3px;
+}
+
+#extension_options_scrollable .status {
+	width: 367px;
+	height: 12px;
+	display: block;
+	line-height: 12px;
+	position: fixed !important;
+	overflow: hidden;
+	z-index: 3;
+	background-color: #ffffff;
+}
+
+#extension_options_scrollable .controls {
+	width: 360px;
+	position: fixed !important;
+	overflow: hidden;
+	z-index: 1;
+	display: block;
+	background-color: #ffffff;
+	padding-bottom: 3px;
+}
+
+#extension_options_scrollable .marginLeftContent {
+	background-color: transparent;
+	margin-left: 120px;
+}
+
+#extension_options_scrollable .marginTopContent {
+	background-color: transparent;
+	margin-top: 35px;
+}
+
+#extension_options_scrollable .marginTopControls {
+	background-color: transparent;
+	margin-top: 13px;
+}
+
+#extension_options_scrollable .option {
+	width: 95%;
+}
+
+
+#extension_options_scrollable .marginTop5px {
+	margin-top: 5px;
+}
+
+#extension_options_scrollable .block,
+#extension_options_scrollable .item {
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 1px;
+	text-align: left;
+	border: none;
+	white-space: normal;
+	float: none;
+	outline: 0;
+}
+
+#extension_options_scrollable .item {
+	color: #ffffff;
+	background-color: #000000;
+}
+
+#extension_options_scrollable .control {
+	border: none;
+	white-space: normal;
+	float: none;
+	outline: 0;
+	position: relative;
+	color: #ffffff;
+	background-color: #000000;
+}
+
+#extension_options_scrollable .item:hover:not(.active),
+#extension_options_scrollable .control:hover:enabled {
+	color: #ffffff !important;
+	background-color: #00b642 !important;
+}
+
+#extension_options_scrollable .active:hover {
+	color: #000000 !important;
+	background-color: #00b642 !important;
+}
+
+#extension_options_scrollable .active {
+	color: #ffffff !important;
+	background-color: #00b642 !important;
+}
+
+#extension_options_scrollable .hidden {
+	display: none;
+}
+
+#extension_options_scrollable .description {
+	font-style: italic;
+}
+
+#netflex_bubble_container[profile="general"] .description {
+	color: #CCCCCC;
+}
+
+#netflex_bubble_container[profile="kids"] .description {
+	color: #676767;
+}
+
+#extension_options_scrollable .cfg_content {
+	font-size: 14px;
+}
+
+#extension_options_scrollable .cfg_default_mark {
+    display: inline-block;
+	background-color: #000000;
+}
+
+#extension_options_scrollable .cfg_default_mark.cfg_is_default {
+	background-color: #00b642 !important;
+}
+
+#extension_options_scrollable .cfg_option {
+	cursor: pointer;
+}
+
+#extension_options_scrollable .stats_name {
+	font-size: 15px;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+#extension_options_scrollable .cfg_name {
+	font-size: 15px;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+#extension_options_scrollable .cfg_name[data-type="bool"] {
+	cursor: pointer;
+}
+
+#extension_options_scrollable .cfg_form:not([data-type="bool"]) {
+	margin-bottom: 5px;
+	display: inline-block;
+	width: 100%;
+}
+
+#extension_options_scrollable .button_default {
+	margin-bottom: 5px;
+}
+
+#extension_options_scrollable .cfg_range_tab {
+	width: 100%;
+	margin: 0px;
+	border: 0px;
+	display: inline-table;
+}
+
+#extension_options_scrollable .cfg_range_tab td {
+	vertical-align: middle;
+}
+
+#extension_options_scrollable .cfg_current_value {
+	font-size: 15px;
+}
+
+@keyframes fadingShade {
+    0%   { background-color: transparent; }
+    49%  { background-color: #e70000; }
+    60%  { background-color: #e70000; }
+    99%  { background-color: #e70000; }
+    100% { background-color: transparent; }
+}
+#extension_options_scrollable .highlight_dependency {
+    animation-name: fadingShade;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+#extension_options_scrollable .cfg_notice {
+	font-size: 13px;
+}
+
+#extension_options_scrollable .green {
+	color: #00b642;
+	font-style: italic;
+}
+
+#extension_options_scrollable .orange {
+	color: #e77400;
+	font-style: italic;
+}
+
+#extension_options_scrollable .red {
+	color: #e70000;
+	font-style: italic;
+}
+
+#extension_options_scrollable .right {
+	float: right;
+}
+
+#extension_options_scrollable .left {
+	float: left;
+}
+
+#extension_options_scrollable .about_extension_name {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#extension_options_scrollable .about_changelog {
+	width: 100%;
+	height: 200px;
+	overflow-y: scroll;
+	white-space: pre-wrap;
+	font-family: Lucida Console;
+}
+
+#extension_options_scrollable .about_changelog_text {
+	font-weight: bold;
+	font-size: 14px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+#extension_options_scrollable .about_cfg_string {
+	width: 300px;
+	height: 100px;
+}
+
+#extension_options_scrollable .about_cfg_string_text {
+	font-weight: bold;
+}
+
+#extension_options_scrollable textarea {
+	cursor: text !important;
+}
+
+#extension_features_scrollable a,
+#extension_options_scrollable a {
+	color: #00b642;
+}
+
+#netflex_bubble_container[profile="general"] #extension_features_scrollable a:hover,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable a:hover {
+	color: #ffffff;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable a:hover,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable a:hover {
+	color: #000000;
+}
+
+#netflex_bubble_container[profile="general"] #extension_features_scrollable input,
+#netflex_bubble_container[profile="general"] #extension_features_scrollable textarea,
+#netflex_bubble_container[profile="general"] #extension_features_scrollable select,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable input,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable textarea,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable select {
+	background-color: transparent;
+	color: #ffffff;
+    cursor: pointer;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable input,
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable textarea,
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable select,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable input,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable textarea,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable select {
+	background-color: transparent;
+	color: #000000;
+    cursor: pointer;
+}
+
+#netflex_bubble_container[profile="general"] #extension_features_scrollable input[type="text"],
+#netflex_bubble_container[profile="general"] #extension_features_scrollable textarea,
+#netflex_bubble_container[profile="general"] #extension_features_scrollable select,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable input[type="text"],
+#netflex_bubble_container[profile="general"] #extension_options_scrollable textarea,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable select {
+	border: 1px solid #ffffff;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable input[type="text"],
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable textarea,
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable select,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable input[type="text"],
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable textarea,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable select {
+	border: 1px solid #000000;
+}
+
+#extension_options_scrollable select option {
+	background-color: transparent;
+}
+
+#extension_features_scrollable input[type="checkbox"],
+#extension_options_scrollable input[type="checkbox"],
+#extension_features_scrollable input[type="radio"],
+#extension_options_scrollable input[type="radio"] {
+    display: none;
+}
+
+#extension_features_scrollable .checked,
+#extension_options_scrollable .checked {
+    color: #00b642;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#extension_features_scrollable .unchecked,
+#extension_options_scrollable .unchecked {
+    color: #00b642;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#extension_features_scrollable input[type="checkbox"]:checked ~ .checked,
+#extension_options_scrollable input[type="checkbox"]:checked ~ .checked {
+    display: inline-block;
+}
+
+#extension_features_scrollable input[type="checkbox"]:checked ~ .unchecked,
+#extension_options_scrollable input[type="checkbox"]:checked ~ .unchecked {
+    display: none;
+}
+
+#extension_features_scrollable input[type="checkbox"]:not(:checked) ~ .checked,
+#extension_options_scrollable input[type="checkbox"]:not(:checked) ~ .checked {
+    display: none;
+}
+
+#extension_features_scrollable input[type="checkbox"]:not(:checked) ~ .unchecked,
+#extension_options_scrollable input[type="checkbox"]:not(:checked) ~ .unchecked {
+    display: inline-block;
+}
+
+#extension_features_scrollable input[type="radio"]:checked ~ .checked,
+#extension_options_scrollable input[type="radio"]:checked ~ .checked {
+    display: inline-block;
+}
+
+#extension_features_scrollable input[type="radio"]:checked ~ .unchecked,
+#extension_options_scrollable input[type="radio"]:checked ~ .unchecked {
+    display: none;
+}
+
+#extension_features_scrollable input[type="radio"]:not(:checked) ~ .checked,
+#extension_options_scrollable input[type="radio"]:not(:checked) ~ .checked {
+    display: none;
+}
+
+#extension_features_scrollable input[type="radio"]:not(:checked) ~ .unchecked,
+#extension_options_scrollable input[type="radio"]:not(:checked) ~ .unchecked {
+    display: inline-block;
+}
+
+#extension_features_scrollable input[type="range"],
+#extension_options_scrollable input[type="range"] {
+    -webkit-appearance: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#extension_features_scrollable input[type="range"]:focus,
+#extension_options_scrollable input[type="range"]:focus {
+    outline: none;
+    border: none;
+}
+
+#extension_features_scrollable input[type="range"]::-webkit-slider-runnable-track,
+#extension_options_scrollable input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+#netflex_bubble_container[profile="general"] #extension_features_scrollable input[type="range"]::-webkit-slider-runnable-track,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #ffffff;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable input[type="range"]::-webkit-slider-runnable-track,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #000000;
+}
+
+#extension_features_scrollable input[type="range"]::-webkit-slider-thumb,
+#extension_options_scrollable input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #00b642;
+    margin-top: -5px;
+}
+
+#extension_features_scrollable input[type="range"]::-moz-range-track,
+#extension_options_scrollable input[type="range"]::-moz-range-track {
+    height: 5px;
+    border: none;
+    border-radius: 3px;
+    /**/
+}
+
+#netflex_bubble_container[profile="general"] #extension_features_scrollable input[type="range"]::-moz-range-track,
+#netflex_bubble_container[profile="general"] #extension_options_scrollable input[type="range"]::-moz-range-track {
+    background-color: #ffffff;
+}
+
+#netflex_bubble_container[profile="kids"] #extension_features_scrollable input[type="range"]::-moz-range-track,
+#netflex_bubble_container[profile="kids"] #extension_options_scrollable input[type="range"]::-moz-range-track {
+    background-color: #000000;
+}
+
+#extension_features_scrollable input[type="range"]::-moz-range-thumb,
+#extension_options_scrollable input[type="range"]::-moz-range-thumb {
+    border: none;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: #00b642;
+    /*margin-top: -5px;*/
+}
+
+/* // No solution like this for Chrome
+
+#extension_features_scrollable input[type="range"]::-moz-range-progress,
+#extension_options_scrollable input[type="range"]::-moz-range-progress {
+    background-color: #00b642;
+}*/

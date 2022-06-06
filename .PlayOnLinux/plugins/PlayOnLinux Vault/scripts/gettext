@@ -1,0 +1,13 @@
+#!/bin/bash
+# Script by Congelli501
+# Version : 0.0.1
+
+# Config
+if [ "$scriptPathDir" = "" ]; then
+	scriptPathDir=$(dirname $(readlink -f $0)) # readlink -f $0 ne marche pas en cas de "source"
+fi
+
+# Gettext
+export TEXTDOMAINDIR="$scriptPathDir/../locale/"
+export TEXTDOMAIN="polVault"
+. gettext.sh

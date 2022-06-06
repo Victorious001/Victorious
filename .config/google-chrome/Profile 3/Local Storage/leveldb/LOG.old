@@ -1,0 +1,42 @@
+2022/06/06-10:32:39.603 5 Reusing MANIFEST /home/victorious/.config/google-chrome/Profile 3/Local Storage/leveldb/MANIFEST-000001
+2022/06/06-10:32:39.610 5 Recovering log #62
+2022/06/06-10:32:39.613 5 Reusing old log /home/victorious/.config/google-chrome/Profile 3/Local Storage/leveldb/000062.log 
+2022/06/06-10:36:42.276 5 Level-0 table #66: started
+2022/06/06-10:36:42.286 5 Level-0 table #66: 11527 bytes OK
+2022/06/06-10:36:42.290 5 Delete type=0 #62
+2022/06/06-10:36:42.291 5 Compacting 4@0 + 1@1 files
+2022/06/06-10:36:42.297 5 Generated table #67@0: 708 keys, 38956 bytes
+2022/06/06-10:36:42.298 5 Compacted 4@0 + 1@1 files => 38956 bytes
+2022/06/06-10:36:42.301 5 compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/06/06-10:36:42.303 5 Delete type=2 #61
+2022/06/06-10:36:42.303 5 Delete type=2 #59
+2022/06/06-10:36:42.303 5 Delete type=2 #63
+2022/06/06-10:36:42.303 5 Delete type=2 #66
+2022/06/06-10:36:42.304 5 Delete type=2 #57
+2022/06/06-10:42:38.010 5 Level-0 table #69: started
+2022/06/06-10:42:38.023 5 Level-0 table #69: 15842 bytes OK
+2022/06/06-10:42:38.027 5 Delete type=0 #65
+2022/06/06-10:54:11.822 5 Level-0 table #71: started
+2022/06/06-10:54:11.833 5 Level-0 table #71: 16647 bytes OK
+2022/06/06-10:54:11.837 5 Delete type=0 #68
+2022/06/06-11:10:40.774 5 Level-0 table #73: started
+2022/06/06-11:10:40.778 5 Level-0 table #73: 19386 bytes OK
+2022/06/06-11:10:40.783 5 Delete type=0 #70
+2022/06/06-11:22:15.877 5 Level-0 table #75: started
+2022/06/06-11:22:15.887 5 Level-0 table #75: 21476 bytes OK
+2022/06/06-11:22:15.891 5 Delete type=0 #72
+2022/06/06-11:22:15.891 5 Compacting 4@0 + 1@1 files
+2022/06/06-11:22:15.898 5 Generated table #76@0: 1004 keys, 52533 bytes
+2022/06/06-11:22:15.898 5 Compacted 4@0 + 1@1 files => 52533 bytes
+2022/06/06-11:22:15.900 5 compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/06/06-11:22:15.902 5 Delete type=2 #75
+2022/06/06-11:22:15.902 5 Delete type=2 #73
+2022/06/06-11:22:15.902 5 Delete type=2 #69
+2022/06/06-11:22:15.902 5 Delete type=2 #67
+2022/06/06-11:22:15.902 5 Delete type=2 #71
+2022/06/06-11:27:21.499 5 Level-0 table #78: started
+2022/06/06-11:27:21.512 5 Level-0 table #78: 106270 bytes OK
+2022/06/06-11:27:21.516 5 Delete type=0 #74
+2022/06/06-12:12:40.780 25 Level-0 table #80: started
+2022/06/06-12:12:40.785 25 Level-0 table #80: 17522 bytes OK
+2022/06/06-12:12:40.790 25 Delete type=0 #77

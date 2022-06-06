@@ -1,0 +1,24 @@
+2022/06/06-10:32:39.614 1064 Reusing MANIFEST /home/victorious/.config/google-chrome/Profile 3/Sync Data/LevelDB/MANIFEST-000001
+2022/06/06-10:32:39.617 1064 Recovering log #49
+2022/06/06-10:32:39.621 1064 Reusing old log /home/victorious/.config/google-chrome/Profile 3/Sync Data/LevelDB/000049.log 
+2022/06/06-10:36:26.370 1063 Level-0 table #53: started
+2022/06/06-10:36:26.378 1063 Level-0 table #53: 102457 bytes OK
+2022/06/06-10:36:26.382 1063 Delete type=0 #49
+2022/06/06-10:52:47.340 179e Level-0 table #55: started
+2022/06/06-10:52:47.345 179e Level-0 table #55: 105379 bytes OK
+2022/06/06-10:52:47.349 179e Delete type=0 #52
+2022/06/06-11:30:04.543 337f Level-0 table #57: started
+2022/06/06-11:30:04.551 337f Level-0 table #57: 115572 bytes OK
+2022/06/06-11:30:04.556 337f Delete type=0 #54
+2022/06/06-11:30:04.556 337f Compacting 4@0 + 1@1 files
+2022/06/06-11:30:04.569 337f Generated table #58@0: 120 keys, 37396 bytes
+2022/06/06-11:30:04.569 337f Compacted 4@0 + 1@1 files => 37396 bytes
+2022/06/06-11:30:04.571 337f compacted to: files[ 0 1 1 0 0 0 0 ]
+2022/06/06-11:30:04.572 337f Delete type=2 #55
+2022/06/06-11:30:04.572 337f Delete type=2 #53
+2022/06/06-11:30:04.572 337f Delete type=2 #48
+2022/06/06-11:30:04.572 337f Delete type=2 #50
+2022/06/06-11:30:04.572 337f Delete type=2 #57
+2022/06/06-12:35:36.012 37a8 Level-0 table #60: started
+2022/06/06-12:35:36.019 37a8 Level-0 table #60: 104059 bytes OK
+2022/06/06-12:35:36.027 37a8 Delete type=0 #56

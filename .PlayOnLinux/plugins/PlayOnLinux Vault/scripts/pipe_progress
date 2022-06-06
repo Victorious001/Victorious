@@ -1,0 +1,45 @@
+#!/bin/bash
+# Script by Congelli501
+# Version : 0.0.1
+# Args:
+#  - $1 : Total size (bytes)
+
+function getProgress()
+{
+	TOTAL_SIZE="$1"
+	CURENT_SIZE=1
+	SIZE=0
+	PERCENT=0
+	
+	echo "$PERCENT" >&2
+	
+	LAST_UPDATE_TIME=$(date +%s)
+	BEGIN_TIME=$(date +%s)
+	
+	while [ "$CURENT_SIZE" -ne 0 ] ; do
+		# Envoi de la porgression toutes les 1s
+		while [ "$CURENT_SIZE" -ne 0 ] && [ "$LAST_UPDATE_TIME" -eq "$(date +%s)" ] ; do
+			CURENT_SIZE=$(( env LANGUAGE=en dd bs=1M count=1 > /dev/null  ) 2>&1 | tail -n 1 | cut -d ' ' -f 1)
+			(( SIZE += CURENT_SIZE ))
+			(( PERCENT = (SIZE * 100) / TOTAL_SIZE ))
+		done
+		
+		LAST_UPDATE_TIME=$(date +%s)
+		
+		# Calcul du temps restant
+		if [ "$SIZE" -ne 0 ]; then
+			(( elapsedTime = LAST_UPDATE_TIME - BEGIN_TIME ))
+			(( leftTime = ( elapsedTime * TOTAL_SIZE ) / SIZE - elapsedTime ))
+			if [ "$leftTime" -le 0 ]; then
+				leftTime=0
+			fi
+		else
+			leftTime="?"
+		fi
+		
+		# Envoi
+		echo "$PERCENT|$leftTime" >&2
+	done
+}
+
+tee >( getProgress "$1" )

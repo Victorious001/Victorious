@@ -1,0 +1,39 @@
+
+{
+  "buildVars": {
+        "extensionId": "_j5Membersttab03_@ext.ask.com",
+    "configDefId": "232530392",
+    "toolbarDisplayName": "Search Extension by Ask (BETA)",
+    "internalProductName": "searchextensionbyask",
+    "filenamePrefix": "j5",
+    "version": "50.199.19.63413",
+    "buildDate": "2021-04-13T14:34:17.275Z",
+    "localStorageUrl": "https://ext.dl.tb.ask.com/blank.jhtml",
+    "localStorageKeys": [],
+    "downloadDomain": ".ask.com",
+    "livePing": {
+      "url": "https://live.tb.ask.com/tr.gif",
+      "interval": 21600000
+    },
+    "toolbarDataTimeout": 3000,
+    "pixelUrl": "https://ext.dl.tb.ask.com/install_pixels.jhtml?partner=${partnerID}",
+    "unifiedLoggingUrl": "https://anx.tb.ask.com/anx.gif",
+    "homepageURLForBabClick": "https://hp.tb.ask.com/tbask/index.html?st=lc&tpr=omni&p2=<!--partnerID-->&ptb=<!--toolbarID-->&n=<!--installDateHex-->&si=<!--partnerSubID-->&enableSearch=true&rdrct=no",
+    "track": "BETA02",
+    "coId": "CPC",
+    "uninstallSurveyUrl": "http://ext.dl.myway.com/uninstall.jhtml?c=<!--toolbarID-->&ptb=<!--partnerID-->",
+    "defaultPartnerId": "^CPC^chr999^BETA02^",
+    "settingsOverrides": {
+      "searchUrl": "https:\/\/search.tb.ask.com\/search\/GGmain.jhtml?searchfor={searchTerms}&enableSearch=true&rdrct=no",
+      "searchUrlWithParamsToReplace": "https:\/\/search.tb.ask.com\/search\/GGmain.jhtml?st=sb&tpr=omni&p2=<!--partnerID-->&ptb=<!--toolbarID-->&n=<!--installDateHex-->&si=<!--partnerSubID-->&enableSearch=true&rdrct=no&trs=mv3ds&o=1470190",
+      "faviconUrl": "http:\/\/ak.imgfarm.com\/images\/vicinio\/232530392\/16x16_1471446408681.ico",
+      "searchSuggestUrl": "https:\/\/ss.search.ask.com\/ss?li=ff&sstype=prefix&limit=10&hl=en&q={searchTerms}&enableSearch=true&rdrct=no"
+    },
+    "internationalSearchDefaultDomain": "https://int.search.tb.ask.com/search&enableSearch=true&rdrct=no",
+    "internationalSearchSpecifiedDomain": "https://search.tb.ask.com/search&enableSearch=true&rdrct=no",
+    "internationalSearchCountryCodes": ["99","US"],
+    "searchDomain": "search.tb.ask.com/search",
+    "pTagServiceUrl": "https://params.tb.ask.com/ptag",
+    "surveyURL": "https://www.research.net/r/J3BQJ7F?ptb=${toolbarID}"
+  }
+}

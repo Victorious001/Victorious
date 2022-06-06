@@ -1,0 +1,61 @@
+#!/bin/bash
+
+[ "$PLAYONLINUX" = "" ] && exit 0
+source "$PLAYONLINUX/lib/sources"
+
+TITLE="ScreenCap"
+
+if [ "$POL_LANG" == "fr" ]; then
+	L_NOT_FOUND="introuvable, installez-le"
+	L_DISCLAIMER="va uploader une copie de votre ou vos écran(s) sur\nhttp://www.imageshack.us\n\nAnnulez maintenant si vous considérez que votre vie privée est en jeu."
+	L_UPLOADING="Upload de la copie d'écran en cours"
+	L_OPCOMPLETE="La copie d'écran a été uploadée\nMerci de votre contribution"
+	L_UPFAILED="L'upload a échoué"
+	L_OPFAILED="La copie d'écran a échoué"
+else
+	L_NOT_FOUND="not found, please install it"
+	L_DISCLAIMER="is going to upload a shot of your screen(s) to\nhttp://www.imageshack.us\n\nHit cancel now if you think your privacy is compromised."
+	L_UPLOADING="Uploading screenshot, please wait"
+	L_OPCOMPLETE="The screenshot has been uploaded\nThanks for your contribution"
+	L_UPFAILED="Upload failed"
+	L_OPFAILED="Screenshot operation failed"
+fi
+
+if [ $POL_OS = "Linux" ]; then
+	capturetool="scrot"
+else
+	capturetool="screencapture"
+fi
+
+POL_SetupWindow_Init
+
+if [ -z $(which curl) ]; then
+	POL_SetupWindow_message "curl $L_NOT_FOUND" "$TITLE" 
+else
+	if [ -z $(which $capturetool) ]; then
+		POL_SetupWindow_message "$capturetool $L_NOT_FOUND" "$TITLE" 
+	else
+		outfile="$POL_USER_ROOT/tmp/$(uuidgen).jpg"
+		echo "Taking screenshot $POL_USER_ROOT/tmp/$(uuidgen).jpg"
+		$capturetool $outfile
+		if [ -f $outfile ]; then
+			POL_SetupWindow_message "$TITLE $L_DISCLAIMER" "$TITLE"
+			POL_SetupWindow_wait_next_signal "$L_UPLOADING" "$TITLE"
+			returnurl=$(
+				curl -s -H Expect: -F fileupload="@$outfile" -F xml=yes "http://www.imageshack.us/index.php" \
+				| tr -d "[:space:]" | sed -e 's/.*<image_link>\(.*\)<\/image_link>.*/\1/'
+			)
+			if [ -z $returnurl ]; then
+				POL_SetupWindow_message "$L_UPFAILED" "$TITLE"
+			else
+				echo "Let's browse there : $returnurl"
+				rm -f $outfile
+				POL_SetupWindow_message "$L_OPCOMPLETE" "$TITLE"
+				POL_Browser "$returnurl"
+			fi
+		else
+			POL_SetupWindow_message "$L_OPFAILED" "$TITLE"
+		fi
+	fi
+fi
+POL_SetupWindow_Close

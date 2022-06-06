@@ -1,0 +1,211 @@
+#!/bin/bash
+# Script by Congelli501
+# Version : 0.0.1
+
+# Config
+if [ "$scriptPathDir" = "" ]; then
+	scriptPathDir=$(dirname $(readlink -f $0)) # readlink -f $0 ne marche pas en cas de "source"
+fi
+
+BLOC_SIZE=512 # 0.5k
+HEADER_MAX_SIZE_BLOC=8 # 4k
+HEADER=""
+START_OF_HEADER_STRING="#C501tar_HEADER_v1.0.0#"
+END_OF_HEADER_STRING="#END_OF_HEADER#"
+HEADER_SEPARATOR="|"
+CURRENT_ARCHIVE_SIZE_BLOC=0
+
+# c501tarInit() # _private_
+# Args:
+#  - $1 : c501tar filename
+
+function c501tarInit() # _private_
+{
+	FILENAME="$1"
+
+	if [ ! -f "$FILENAME" ]; then
+		echo "Error, c501tarInit() : \"$1\" does not exist !" >&2
+		return 1
+	fi
+
+	CURRENT_ARCHIVE_SIZE_BLOC=$(du -sb "$FILENAME" | cut -d$'\t' -f1)
+	(( CURRENT_ARCHIVE_SIZE_BLOC /= BLOC_SIZE ))
+	
+	# Verif
+	firstBytes=$(dd if="$FILENAME" bs="$(echo "$START_OF_HEADER_STRING" | wc --bytes)" count=1 2> /dev/null)
+	if [ "$firstBytes" != "$START_OF_HEADER_STRING" ]; then
+		echo "Error, c501tarInit() : \"$1\" is not a valid c501tar file !" >&2
+		return 1
+	fi
+	
+	HEADER=""
+	# Lecture de l'header
+	while read LINE && [ "$LINE" != "$END_OF_HEADER_STRING" ] ; do
+		if [ "$LINE" != "$START_OF_HEADER_STRING" ]; then
+			HEADER="$HEADER""$LINE"$'\n'
+		fi
+	done < "$FILENAME"
+	
+	return 0
+}
+
+# c501tarCreate()
+# Args:s
+#  - $1 : c501tar filename
+
+function c501tarCreate()
+{
+	FILENAME="$1"
+
+	if touch "$FILENAME"; then
+		dd if=/dev/zero of="$FILENAME" bs="$BLOC_SIZE" count=$HEADER_MAX_SIZE_BLOC 2> /dev/null
+		echo -e "${START_OF_HEADER_STRING}\n${END_OF_HEADER_STRING}" | dd conv=notrunc of="$FILENAME" 2> /dev/null
+	else
+		echo "Error, c501tarCreate() : Can't create file \"$1\" !" >&2
+		return 1
+	fi
+}
+
+# Ajout de fichiers...
+# c501tarAddFile()
+# Args:
+#  - stdin: the file to add.
+#  - $1 : c501tar filename
+#  - $2 : filename to add in the c501tar, must no contain '$HEADER_SEPARATOR'
+
+function c501tarAddFile()
+{
+	FILENAME="$1"
+
+	if ! c501tarInit "$FILENAME"; then
+		echo "Error, c501tarAddFile() : c501tarInit() failed !" >&2
+		return 1
+	fi
+
+	filenameToAdd="$2"
+	
+	fileToAddSize=$(( env LANGUAGE=en dd of="$FILENAME" conv=notrunc bs=$BLOC_SIZE seek="$CURRENT_ARCHIVE_SIZE_BLOC" ) 2>&1 | tail -n 1 | cut -d ' ' -f 1)
+	# On conpléte l'archive jusqu'à atteinde $BLOC_SIZE...
+	(( bytesToAdd = BLOC_SIZE - (fileToAddSize % BLOC_SIZE) ))
+	dd if=/dev/zero bs=1 count="$bytesToAdd" >> "$FILENAME" 2> /dev/null
+	
+	HEADER="$HEADER""${filenameToAdd}${HEADER_SEPARATOR}${CURRENT_ARCHIVE_SIZE_BLOC}${HEADER_SEPARATOR}${fileToAddSize}"$'\n'
+	
+	# Ecriture du header
+	newHeaderSizeBytes=$(echo "$HEADER" | wc --bytes)
+	(( maxHeaderSizeBytes = HEADER_MAX_SIZE_BLOC * BLOC_SIZE ))
+	
+	if [ "$newHeaderSizeBytes" -le "$maxHeaderSizeBytes" ]; then # =<
+		dd conv=notrunc if=/dev/zero of="$FILENAME" bs=$BLOC_SIZE count=$HEADER_MAX_SIZE_BLOC 2> /dev/null
+		echo -e "${START_OF_HEADER_STRING}\n${HEADER}${END_OF_HEADER_STRING}" | dd conv=notrunc of="$FILENAME" 2> /dev/null
+	else
+		echo "Error, c501tarAddFile() : Header too big !" >&2
+		return 1
+	fi
+}
+
+# c501tarListFiles()
+# Args:
+#  - $1 : c501tar filename
+#  - stdout: the file list.
+
+function c501tarListFiles()
+{
+	FILENAME="$1"
+	
+	if ! c501tarInit "$FILENAME"; then
+		echo "Error, c501tarListFiles() : c501tarInit() failed !" >&2
+		return 1
+	fi
+	
+	while read LINE; do
+		if [ -n "$(echo "$LINE" | grep "$HEADER_SEPARATOR")" ]; then	
+			echo "$LINE" | cut -d"$HEADER_SEPARATOR" -f1
+		fi
+	done < <( echo "$HEADER" )
+}
+
+# getFileSize()
+# Args:
+#  - $1 : c501tar filename
+#  - $2 : file to search
+#  - stdout: the file size.
+
+function c501tarGetFileSize()
+{
+	FILENAME="$1"
+	
+	if ! c501tarInit "$FILENAME"; then
+		echo "Error, getFileSize() : c501tarInit() failed !" >&2
+		return 1
+	fi
+	
+	tarFileName="$2"
+	
+	while read LINE; do
+		if [ -n "$(echo "$LINE" | grep "${tarFileName}${HEADER_SEPARATOR}")" ]; then	
+			echo "$LINE" | cut -d"$HEADER_SEPARATOR" -f3
+			return 0
+		fi
+	done < <( echo "$HEADER" )
+}
+
+# getHumanSize()
+# Args:
+#  - $1 : file size (bytes)
+#  - stdout: the human-readable file size
+
+function getHumanSize()
+{
+	unitTbl=('B' 'Kio' 'Mio' 'Gio' 'Tio' 'Pio' 'Eio' 'Zio' 'Yio')
+
+	size="$1"
+	nbDiv=0
+	
+	while [ "$size" -gt "1000" ]; do
+		(( nbDiv++ ))
+		(( size /= 1024 ))
+	done
+	
+	echo "$size ${unitTbl[$nbDiv]}"
+}
+
+# getFile()
+# Args:
+#  - $1 : c501tar filename
+#  - $2 : filename in c501tar
+#  - stdout: the file
+
+function c501tarGetFile()
+{
+	FILENAME="$1"
+	
+	if ! c501tarInit "$FILENAME"; then
+		echo "Error, getFile() : c501tarInit() failed !" >&2
+		return 1
+	fi
+	
+	tarFileName="$2"
+	tarFilePosBloc=0
+	tarFileSize=0
+	
+	while read LINE; do
+		if [ -n "$(echo "$LINE" | grep "${tarFileName}${HEADER_SEPARATOR}")" ]; then
+			tarFilePosBloc=$(echo "$LINE" | cut -d"$HEADER_SEPARATOR" -f2)
+			tarFileSize=$(echo "$LINE" | cut -d"$HEADER_SEPARATOR" -f3)
+		fi
+	done < <( echo "$HEADER" )
+	
+	if [ "$tarFilePosBloc" -ne 0 ]; then	
+		# On prend les blocs
+		(( blocCount = tarFileSize / BLOC_SIZE ))
+		dd if="$FILENAME" bs="$BLOC_SIZE" count="$blocCount" skip="$tarFilePosBloc" 2> /dev/null
+	
+		(( leftBytesCount = tarFileSize - blocCount * BLOC_SIZE ))
+		(( leftBytesPos = (tarFilePosBloc + blocCount) * BLOC_SIZE ))
+		dd if="$FILENAME" bs=1 count="$leftBytesCount" skip="$leftBytesPos" 2> /dev/null
+	else
+		echo "Error, getFile() : file not found !" >&2
+		return 1
+	fi
+}

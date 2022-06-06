@@ -1,0 +1,1934 @@
+{
+   "about_cfg_string_text": {
+      "description": "",
+      "message": "Configuration export"
+   },
+   "adjusting_stored_data": {
+      "description": "",
+      "message": "Adjusting stored data."
+   },
+   "applied_version": {
+      "description": "",
+      "message": "Applied version: {0}"
+   },
+   "assistant_disabled": {
+      "description": "",
+      "message": "All extension assistant features were disabled."
+   },
+   "assistant_enabled": {
+      "description": "",
+      "message": "All extension assistant features were enabled."
+   },
+   "button_debug": {
+      "description": "",
+      "message": "Show debug options"
+   },
+   "button_default": {
+      "description": "",
+      "message": "Reset to default"
+   },
+   "button_reload": {
+      "description": "",
+      "message": "Reload extension"
+   },
+   "button_reset": {
+      "description": "",
+      "message": "Reset all to default"
+   },
+   "button_reset_bindings": {
+      "description": "",
+      "message": "Reset all key binding options to default"
+   },
+   "button_reset_debug": {
+      "description": "",
+      "message": "Reset all debug options to default"
+   },
+   "button_reset_subtitles": {
+      "description": "",
+      "message": "Reset all subtitles options to default"
+   },
+   "button_reset_video": {
+      "description": "",
+      "message": "Reset all video options to default"
+   },
+   "cfg_allowKidsConfig_description": {
+      "description": "",
+      "message": "Turns on/off configuration menu on Kids profile."
+   },
+   "cfg_allowKidsConfig_name": {
+      "description": "",
+      "message": "Allow Kids configuration"
+   },
+   "cfg_autoDisableKids_description": {
+      "description": "",
+      "message": "Turns on/off automatic disabling of extension features when on Kids profile. It is possible to manually override this by clicking on extension status icon until next page reload or profile change."
+   },
+   "cfg_autoDisableKids_name": {
+      "description": "",
+      "message": "Disable extension on Kids profile"
+   },
+   "cfg_bubbleHideDelay_description": {
+      "description": "",
+      "message": "How long should status bubble stay open after mouse leaves DOM object area. Changing this value may require extension reload."
+   },
+   "cfg_bubbleHideDelay_name": {
+      "description": "",
+      "message": "Status bubble hide delay"
+   },
+   "cfg_changed": {
+      "description": "",
+      "message": "Configuration has changed. (Affected variables: {0})"
+   },
+   "cfg_controlsSwitchTimer_description": {
+      "description": "",
+      "message": "How often should mouse move events be switched on video player controls to keep it open while working with extension icon or bubble and options. Changing this value may require extension reload."
+   },
+   "cfg_controlsSwitchTimer_name": {
+      "description": "",
+      "message": "Controls switch timer"
+   },
+   "cfg_debugControlsSwitchTimer_description": {
+      "description": "",
+      "message": "How often should DOM elements be removed when debugging simulation of mouse movement events is turned on. Changing this value may require extension reload."
+   },
+   "cfg_debugControlsSwitchTimer_name": {
+      "description": "",
+      "message": "Debug controls switch timer"
+   },
+   "cfg_debug_description": {
+      "description": "",
+      "message": "Turns on/off debug output for various categories."
+   },
+   "cfg_debug_name": {
+      "description": "",
+      "message": "Debug options"
+   },
+   "cfg_default_off": {
+      "description": "",
+      "message": "Off"
+   },
+   "cfg_default_on": {
+      "description": "",
+      "message": "On"
+   },
+   "cfg_dependencyHighlightDelay_description": {
+      "description": "",
+      "message": "How long should we wait before highlight on dependency is removed."
+   },
+   "cfg_dependencyHighlightDelay_name": {
+      "description": "",
+      "message": "Dependency highlight remove delay"
+   },
+   "cfg_devToolsConfigLoadTimer_description": {
+      "description": "",
+      "message": "How often should configuration in DevTools be refreshed. Changing this value may require extension reload."
+   },
+   "cfg_devToolsConfigLoadTimer_name": {
+      "description": "",
+      "message": "DevTools configuration load timer"
+   },
+   "cfg_devToolsRefreshTimer_description": {
+      "description": "",
+      "message": "How often should data in DevTools be refreshed. Changing this value may require extension reload."
+   },
+   "cfg_devToolsRefreshTimer_name": {
+      "description": "",
+      "message": "DevTools data refresh timer"
+   },
+   "cfg_elementHandlerTimer_description": {
+      "description": "",
+      "message": "How often should extension icon be updated. Changing this value may require extension reload."
+   },
+   "cfg_elementHandlerTimer_name": {
+      "description": "",
+      "message": "Element handler timer"
+   },
+   "cfg_enableVideoFeatures_description": {
+      "description": "",
+      "message": "Turns on/off all video features. Netflix™ playback speed will be ignored while this option is enabled. Other extensions with similar video functions might stop working as expected."
+   },
+   "cfg_enableVideoFeatures_name": {
+      "description": "",
+      "message": "Enable video features"
+   },
+   "cfg_enableVideoFeatures_notice": {
+      "description": "",
+      "message": "Disabling this feature might require a page refresh to reset video values to default."
+   },
+   "cfg_environmentUpdateTimer_description": {
+      "description": "",
+      "message": "How often should environment variables and events be updated. Changing this value may require extension reload."
+   },
+   "cfg_environmentUpdateTimer_name": {
+      "description": "",
+      "message": "Environment update timer"
+   },
+   "cfg_errorExtensionReloadDelay_description": {
+      "description": "",
+      "message": "How long should extension reload be delayed after too many core errors have occurred. Changing this value may require extension reload."
+   },
+   "cfg_errorExtensionReloadDelay_name": {
+      "description": "",
+      "message": "Error extension reload delay"
+   },
+   "cfg_exitPlayerKey_description": {
+      "description": "",
+      "message": "Define key, that will exit Netflix™ video player back to video selection."
+   },
+   "cfg_exitPlayerKey_name": {
+      "description": "",
+      "message": "Exit player"
+   },
+   "cfg_forceReloadDelay_description": {
+      "description": "",
+      "message": "How many seconds should extension wait before repeated page reloads when extension detects something is wrong. This delay should prevent accidental account locking for 24 hours for too many requests to Netflix™ servers."
+   },
+   "cfg_forceReloadDelay_name": {
+      "description": "",
+      "message": "Repeated reload delay"
+   },
+   "cfg_hideDisliked_description": {
+      "description": "",
+      "message": "Turns on/off hiding of disliked titles."
+   },
+   "cfg_hideDisliked_name": {
+      "description": "",
+      "message": "Hide disliked titles"
+   },
+   "cfg_hideSpoilersObjects_description": {
+      "description": "",
+      "message": "Turns on/off blurring of spoilers of specific type."
+   },
+   "cfg_hideSpoilersObjects_name": {
+      "description": "",
+      "message": "Blur spoilers objects"
+   },
+   "cfg_hideSpoilers_description": {
+      "description": "",
+      "message": "Turns on/off blurring of spoilers."
+   },
+   "cfg_hideSpoilers_name": {
+      "description": "",
+      "message": "Blur spoilers"
+   },
+   "cfg_hideStatusIcon_description": {
+      "description": "",
+      "message": "Turns on/off hiding of status icon while playing title. If enabled, this would hide extension status icon and pop-up bubble from video player, but will remain available on browse pages to have an ability to disable this setting."
+   },
+   "cfg_hideStatusIcon_name": {
+      "description": "",
+      "message": "Hide status icon in video player"
+   },
+   "cfg_hideSubtitlesKey_description": {
+      "description": "",
+      "message": "Define key, that will temporarily hide subtitles. Effect lasts until next episode or title."
+   },
+   "cfg_hideSubtitlesKey_name": {
+      "description": "",
+      "message": "Temporary hide subtitles"
+   },
+   "cfg_highlightSubtitles_description": {
+      "description": "",
+      "message": "Sets subtitles highlight style.\u003Cbr>\u003Cbr>~ Hide subtitles - All subtitles will be hidden.\u003Cbr>~ Original - Subtitles will not be highlighted by extension, but might be highlighted by Netflix™.\u003Cbr>~ Shadow - Subtitles shadow will be darker and more visible around them, if Netflix™ provides subtitles with black background this will have no effect.\u003Cbr>~ Background - Subtitles will receive background that will be 50% transparent, if Netflix™ provides subtitles with black background this will have no effect."
+   },
+   "cfg_highlightSubtitles_name": {
+      "description": "",
+      "message": "Highlight subtitles"
+   },
+   "cfg_injectorTimer_description": {
+      "description": "",
+      "message": "How often should event injection occur. Changing this value may require extension reload."
+   },
+   "cfg_injectorTimer_name": {
+      "description": "",
+      "message": "Injector timer"
+   },
+   "cfg_keepHistory_description": {
+      "description": "",
+      "message": "How many movies/episodes should extension keep history of. Off value disables history of previous videos and also 'Play previous' feature."
+   },
+   "cfg_keepHistory_name": {
+      "description": "",
+      "message": "Played history"
+   },
+   "cfg_keyEventProcessingDelay_description": {
+      "description": "",
+      "message": "How often should extension check for pressed key binds. Changing this value may require extension reload."
+   },
+   "cfg_keyEventProcessingDelay_name": {
+      "description": "",
+      "message": "Key event processing timer"
+   },
+   "cfg_load_timedout": {
+      "description": "",
+      "message": "Loading configuration failed."
+   },
+   "cfg_loaded": {
+      "description": "",
+      "message": "Configuration loaded."
+   },
+   "cfg_loading": {
+      "description": "",
+      "message": "Loading configuration..."
+   },
+   "cfg_loadingTimeLimit_description": {
+      "description": "",
+      "message": "How many seconds should extension wait, while video is loaded, before considering something might be wrong. For people with slower connections, this might need to be adjusted."
+   },
+   "cfg_loadingTimeLimit_name": {
+      "description": "",
+      "message": "Data load time wait"
+   },
+   "cfg_logLevel_description": {
+      "description": "",
+      "message": "Turns on/off output for specific message types. Option that is chosen will mark output messages of that type that will be shown together with messages of types below, messages of type above will not be shown."
+   },
+   "cfg_logLevel_name": {
+      "description": "",
+      "message": "Log level"
+   },
+   "cfg_moviesRecommendations_description": {
+      "description": "",
+      "message": ""
+   },
+   "cfg_moviesRecommendations_name": {
+      "description": "",
+      "message": "Movies Recommendations"
+   },
+   "cfg_netflixAssistantTimer_description": {
+      "description": "",
+      "message": "How often should Netflix™ assistant actions to be performed. Changing this value may require extension reload."
+   },
+   "cfg_netflixAssistantTimer_name": {
+      "description": "",
+      "message": "Netflix™ assistant timer"
+   },
+   "cfg_netflixRatingsTimer_description": {
+      "description": "",
+      "message": "How often should Netflix™ ratings to be checked and inserted. Changing this value may require extension reload."
+   },
+   "cfg_netflixRatingsTimer_name": {
+      "description": "",
+      "message": "Netflix™ ratings timer"
+   },
+   "cfg_nextEpisodeKey_description": {
+      "description": "",
+      "message": "Define key, that will skip to next episode, if there is some available."
+   },
+   "cfg_nextEpisodeKey_name": {
+      "description": "",
+      "message": "Next episode"
+   },
+   "cfg_nextEpisodeStopMovies_description": {
+      "description": "",
+      "message": "Turns on/off automated stopping of next movie, if it is from different title."
+   },
+   "cfg_nextEpisodeStopMovies_name": {
+      "description": "",
+      "message": "Stop movies on different title"
+   },
+   "cfg_nextEpisodeStopSeries_description": {
+      "description": "",
+      "message": "Turns on/off automated stopping of next episode, if it is from different title."
+   },
+   "cfg_nextEpisodeStopSeries_name": {
+      "description": "",
+      "message": "Stop series on different title"
+   },
+   "cfg_nextTitleDelayLimit_description": {
+      "description": "",
+      "message": "How many seconds should extension wait, before starting next different title. Off value disables automated start for next videos in case titles are different, default Netflix™ behavior should apply."
+   },
+   "cfg_nextTitleDelayLimit_name": {
+      "description": "",
+      "message": "Next title delay"
+   },
+   "cfg_omdbApi_description": {
+      "description": "",
+      "message": "API key for OMDB API (Free API keys can be generated here: \u003Ca href='https://omdbapi.com/apikey.aspx' style='display: unset;' target='_blank'>https://omdbapi.com/apikey.aspx\u003C/a>)."
+   },
+   "cfg_omdbApi_name": {
+      "description": "",
+      "message": "OMDB API key"
+   },
+   "cfg_pageReloadTimer_description": {
+      "description": "",
+      "message": "How often should timer check if page reload is requested. Changing this value may require extension reload."
+   },
+   "cfg_pageReloadTimer_name": {
+      "description": "",
+      "message": "Page reload timer"
+   },
+   "cfg_pauseOnBlur_description": {
+      "description": "",
+      "message": "Sets sensitivity of automated pausing of the video, in case window or tab is not active.\u003Cbr>\u003Cbr>~ Disabled - Video will not be paused. This also disables 'Play video if focused' feature.\u003Cbr>~ Low - Video will be paused if tab is switched or browser is minimized.\u003Cbr>~ High - Video will be paused if video player is not in focus (behavior should include actions from Low setting)."
+   },
+   "cfg_pauseOnBlur_name": {
+      "description": "",
+      "message": "Pause video if not focused"
+   },
+   "cfg_playOnFocus_description": {
+      "description": "",
+      "message": "Turns on/off automated start of video, if it was paused by 'Pause video if not focused' when video windows is in focus again."
+   },
+   "cfg_playOnFocus_name": {
+      "description": "",
+      "message": "Play video if focused"
+   },
+   "cfg_playPauseButtonDelay_description": {
+      "description": "",
+      "message": "How long should play/pause button click be delayed after intro or recap was skipped to prevent video from staying playing/paused after the activity. Changing this value may require extension reload."
+   },
+   "cfg_playPauseButtonDelay_name": {
+      "description": "",
+      "message": "Play/Pause button delay"
+   },
+   "cfg_prevEpisodeKey_description": {
+      "description": "",
+      "message": "Define key, that will return to previous played video, if there is some stored via 'Played history' feature."
+   },
+   "cfg_prevEpisodeKey_name": {
+      "description": "",
+      "message": "Previous episode"
+   },
+   "cfg_randomMovieKey_description": {
+      "description": "",
+      "message": "Define key, that will start a random movie while on video selection screen."
+   },
+   "cfg_randomMovieKey_name": {
+      "description": "",
+      "message": "Play random video"
+   },
+   "cfg_ratingsAnchors_description": {
+      "description": "",
+      "message": "Turns on/off feature to redirect to web of rating source when clicked on ratings."
+   },
+   "cfg_ratingsAnchors_name": {
+      "description": "",
+      "message": "Links to rating sites"
+   },
+   "cfg_ratingsSources_description": {
+      "description": "",
+      "message": "Decide which rating sources should be displayed. Some sources have lower availability then others.\u003Cbr>~ IMDb - mostly available\u003Cbr>~ Rotten Tomatoes - sometimes available\u003Cbr>~ Metacritic - mostly unavailable"
+   },
+   "cfg_ratingsSources_name": {
+      "description": "",
+      "message": "Ratings source"
+   },
+   "cfg_ratingsTilePosition_description": {
+      "description": "",
+      "message": "Sets position where should ratings data be shown on browse tiles."
+   },
+   "cfg_ratingsTilePosition_name": {
+      "description": "",
+      "message": "Ratings position on tiles"
+   },
+   "cfg_ratingsTileSize_description": {
+      "description": "",
+      "message": "Sets text size of ratings data shown on browse tiles."
+   },
+   "cfg_ratingsTileSize_name": {
+      "description": "",
+      "message": "Ratings text size on tiles"
+   },
+   "cfg_ratingsTileTextAlign_description": {
+      "description": "",
+      "message": "Sets align of ratings text on browse tiles."
+   },
+   "cfg_ratingsTileTextAlign_name": {
+      "description": "",
+      "message": "Ratings text align on tiles"
+   },
+   "cfg_ratingsWikidataAnchors_description": {
+      "description": "",
+      "message": "Turns on/off feature to show links to Wikidata for adding identifications for movies to improve ratings. This will also show Netflix™ title ID in link and in UI to provide relevant data. Some titles will need to be searched manually, in case title name is in language that is not available by Wikidata. If title is completely missing from Wikidata, new title page will have to be created and both IMDb and Netflix™ IDs have to be added. If IMDb ID is missing it has to be searched and added to Wikidata. Data should automatically refresh within one hour."
+   },
+   "cfg_ratingsWikidataAnchors_name": {
+      "description": "",
+      "message": "Show data for Wikidata editing"
+   },
+   "cfg_ratingsWikidataAnchors_notice": {
+      "description": "",
+      "message": "This is advised only for advanced users or regular Wikidata contributors."
+   },
+   "cfg_revealSpoilers_description": {
+      "description": "",
+      "message": "Turns on/off and sets delay for revealing spoilers when mouse hovering over blurred object."
+   },
+   "cfg_revealSpoilers_name": {
+      "description": "",
+      "message": "Reveal spoilers"
+   },
+   "cfg_revealSpoilers_notice": {
+      "description": "",
+      "message": "Reveal might not work when blurred object is covered by other object (ex. Play button)."
+   },
+   "cfg_saved": {
+      "description": "",
+      "message": "Configuration saved."
+   },
+   "cfg_saving": {
+      "description": "",
+      "message": "Saving configuration..."
+   },
+   "cfg_showElapsedTime_description": {
+      "description": "",
+      "message": "Turns on/off display of elapsed video time."
+   },
+   "cfg_showElapsedTime_name": {
+      "description": "",
+      "message": "Show elapsed video time"
+   },
+   "cfg_showRatings_description": {
+      "description": "",
+      "message": "Turns on/off ratings display and collection. When turned off, already collected ratings will stay in local storage but will not be used."
+   },
+   "cfg_showRatings_name": {
+      "description": "",
+      "message": "Show ratings"
+   },
+   "cfg_showRatings_notice": {
+      "description": "",
+      "message": "Ratings might not work on Development or Test environments."
+   },
+   "cfg_showRecommendations_description": {
+      "description": "",
+      "message": "Shows video recommendations. Requires reloading the extension."
+   },
+   "cfg_showRecommendations_name": {
+      "description": "",
+      "message": "Show recommendations"
+   },
+   "cfg_simulateProduction_description": {
+      "description": "",
+      "message": "Turns on/off debug simulation of production environment."
+   },
+   "cfg_simulateProduction_name": {
+      "description": "",
+      "message": "Simulate production environment"
+   },
+   "cfg_simulateProduction_notice": {
+      "description": "",
+      "message": "This option will force page reload to properly initialise extension. Such reload has a timeout configured in 'Repeated reload delay' debug option to prevent Netflix™ from blocking you for too many queries to their servers."
+   },
+   "cfg_skipInterrupter_description": {
+      "description": "",
+      "message": "Turns on/off skipping interruption feature. Interruption happens when other features are disabled and every few episodes Netflix™ will ask you, if you are still watching."
+   },
+   "cfg_skipInterrupter_name": {
+      "description": "",
+      "message": "Skip interruption"
+   },
+   "cfg_skipIntros_description": {
+      "description": "",
+      "message": "Turns on/off intro skipping feature."
+   },
+   "cfg_skipIntros_name": {
+      "description": "",
+      "message": "Skip intros"
+   },
+   "cfg_skipRecaps_description": {
+      "description": "",
+      "message": "Turns on/off recap skipping feature."
+   },
+   "cfg_skipRecaps_name": {
+      "description": "",
+      "message": "Skip recaps"
+   },
+   "cfg_skippingPreventionTimer_description": {
+      "description": "",
+      "message": "How long should be the delay before extension starts to skip intros/recaps after skipping intro/recap before. Changing this value may require extension reload."
+   },
+   "cfg_skippingPreventionTimer_name": {
+      "description": "",
+      "message": "Skipping prevention timer"
+   },
+   "cfg_spoilersBlurAmount_description": {
+      "description": "",
+      "message": "Sets how much should spoiler texts be blurred. The more the texts are blurred the more invisible they seem."
+   },
+   "cfg_spoilersBlurAmount_name": {
+      "description": "",
+      "message": "Spoilers blur amount"
+   },
+   "cfg_startupTimer_description": {
+      "description": "",
+      "message": "How often should check for possible startup occur. Changing this value may require extension reload."
+   },
+   "cfg_startupTimer_name": {
+      "description": "",
+      "message": "Startup timer"
+   },
+   "cfg_stuckTimeLimit_description": {
+      "description": "",
+      "message": "How many seconds should extension wait, before reloading web page, after browser and data load time wait timers ran out. This gives some space, in case nothing is wrong, only loading times were longer. Off value disables automated page reload if video does not start playing as expected, default Netflix™ behavior should apply."
+   },
+   "cfg_stuckTimeLimit_name": {
+      "description": "",
+      "message": "Video stuck timeout"
+   },
+   "cfg_subtitlesColor_description": {
+      "description": "",
+      "message": "Sets subtitles color. You can use common english color names (red, white, blue, yellow, etc...) or you can use Hex color codes starting with #. Hex color codes can be looked up here: \u003Ca href='https://www.color-hex.com/' target='_blank'>https://www.color-hex.com/\u003C/a>. Any invalid value will result in white color."
+   },
+   "cfg_subtitlesColor_name": {
+      "description": "",
+      "message": "Subtitles color"
+   },
+   "cfg_subtitlesFont_description": {
+      "description": "",
+      "message": "Sets subtitles font."
+   },
+   "cfg_subtitlesFont_name": {
+      "description": "",
+      "message": "Subtitles font"
+   },
+   "cfg_subtitlesSize_description": {
+      "description": "",
+      "message": "Sets subtitles size."
+   },
+   "cfg_subtitlesSize_name": {
+      "description": "",
+      "message": "Subtitles size"
+   },
+   "cfg_timeFromLoadLimit_description": {
+      "description": "",
+      "message": "How many seconds should extension wait, after page is loaded, before considering something might be wrong. For people with slower computers, this might need to be adjusted."
+   },
+   "cfg_timeFromLoadLimit_name": {
+      "description": "",
+      "message": "Browser load time wait"
+   },
+   "cfg_titleEndAction_description": {
+      "description": "",
+      "message": "Sets what action should be done when title ends."
+   },
+   "cfg_titleEndAction_name": {
+      "description": "",
+      "message": "Title end action"
+   },
+   "cfg_titleEndAction_notice": {
+      "description": "",
+      "message": "There is one situation when credits will start and Netflix™ will not provide clickable object to roll credits, in this situation extension will start next episode the moment when Netflix™ will try to run trailer video for next title."
+   },
+   "cfg_titleEndActionsDelay_description": {
+      "description": "",
+      "message": "How long should extension wait before it starts checking for next title buttons after it started next title."
+   },
+   "cfg_titleEndActionsDelay_name": {
+      "description": "",
+      "message": "Loading next episode delay"
+   },
+   "cfg_toggleAssistantKey_description": {
+      "description": "",
+      "message": "Define key, that will enable/disable extension assistant features."
+   },
+   "cfg_toggleAssistantKey_name": {
+      "description": "",
+      "message": "Toggle extension assistant"
+   },
+   "cfg_trailerVideoStop_description": {
+      "description": "",
+      "message": "Turns on/off stopping of all trailer video previews."
+   },
+   "cfg_trailerVideoStop_name": {
+      "description": "",
+      "message": "Stop trailers"
+   },
+   "cfg_tvSeriesRecommendations_description": {
+      "description": "",
+      "message": ""
+   },
+   "cfg_tvSeriesRecommendations_name": {
+      "description": "",
+      "message": "Tv Series Recommendations"
+   },
+   "cfg_value_changed": {
+      "description": "",
+      "message": "Value is different from default"
+   },
+   "cfg_value_not_changed": {
+      "description": "",
+      "message": "Value is the same as default"
+   },
+   "cfg_videoAspectRatio_description": {
+      "description": "",
+      "message": "Sets video aspect ratio at which will every title play."
+   },
+   "cfg_videoAspectRatio_name": {
+      "description": "",
+      "message": "Video aspect ratio"
+   },
+   "cfg_videoBrightness_description": {
+      "description": "",
+      "message": "Sets video brightness at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoBrightness_name": {
+      "description": "",
+      "message": "Video brightness"
+   },
+   "cfg_videoContrast_description": {
+      "description": "",
+      "message": "Sets video contrast at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoContrast_name": {
+      "description": "",
+      "message": "Video contrast"
+   },
+   "cfg_videoGrayscale_description": {
+      "description": "",
+      "message": "Sets video grayscale effect at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoGrayscale_name": {
+      "description": "",
+      "message": "Video grayscale effect"
+   },
+   "cfg_videoHue_description": {
+      "description": "",
+      "message": "Sets video hue at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoHue_name": {
+      "description": "",
+      "message": "Video hue"
+   },
+   "cfg_videoInvert_description": {
+      "description": "",
+      "message": "Sets video color invert at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoInvert_name": {
+      "description": "",
+      "message": "Video color invert"
+   },
+   "cfg_videoSaturation_description": {
+      "description": "",
+      "message": "Sets video saturation at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoSaturation_name": {
+      "description": "",
+      "message": "Video saturation"
+   },
+   "cfg_videoSepia_description": {
+      "description": "",
+      "message": "Sets video sepia effect at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoSepia_name": {
+      "description": "",
+      "message": "Video sepia effect"
+   },
+   "cfg_videoSpeedRate_description": {
+      "description": "",
+      "message": "Sets video speed rate at which will every title play. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoSpeedRate_name": {
+      "description": "",
+      "message": "Video speed rate"
+   },
+   "cfg_videoSpeedRate_notice": {
+      "description": "",
+      "message": "Too sudden changes can de-synchronize audio and video. Page refresh can fix that."
+   },
+   "cfg_videoZoom_description": {
+      "description": "",
+      "message": "Sets video zoom at which will every title play. Video aspect ratio must be set to manual for this option to take effect. This can be temporarily overwritten by status bubble controls."
+   },
+   "cfg_videoZoom_name": {
+      "description": "",
+      "message": "Video zoom"
+   },
+   "cfg_wheelVolume_description": {
+      "description": "",
+      "message": "Turns on/off and sets how much a mouse wheel scroll changes playback volume."
+   },
+   "cfg_wheelVolume_name": {
+      "description": "",
+      "message": "Adjust volume by mouse wheel"
+   },
+   "changelog": {
+      "description": "",
+      "message": "Changelog"
+   },
+   "changelog_fetch_failed": {
+      "description": "",
+      "message": "Obtaining changelog failed. Try reloading extension."
+   },
+   "checking_news": {
+      "description": "",
+      "message": "Checking for news..."
+   },
+   "confirm_reset": {
+      "description": "",
+      "message": "Are you sure you want to reset all values to default?"
+   },
+   "data_loading": {
+      "description": "",
+      "message": "Loading..."
+   },
+   "debug_message": {
+      "description": "",
+      "message": "NETFLEX DEBUG: "
+   },
+   "debug_message_without_access": {
+      "description": "",
+      "message": "Debug message did not provide any access information. Original message was '{0}'."
+   },
+   "debug_type_assistant_loop": {
+      "description": "",
+      "message": "Assistant loop"
+   },
+   "debug_type_background": {
+      "description": "",
+      "message": "Background communication"
+   },
+   "debug_type_configuration": {
+      "description": "",
+      "message": "Configuration"
+   },
+   "debug_type_core_errors": {
+      "description": "",
+      "message": "Core errors"
+   },
+   "debug_type_dom_activities": {
+      "description": "",
+      "message": "DOM activities"
+   },
+   "debug_type_dom_events": {
+      "description": "",
+      "message": "DOM events"
+   },
+   "debug_type_environment": {
+      "description": "",
+      "message": "Environment refresh"
+   },
+   "debug_type_fractions_counter": {
+      "description": "",
+      "message": "Time fractions counter"
+   },
+   "debug_type_init": {
+      "description": "",
+      "message": "Initialisation"
+   },
+   "debug_type_keypress": {
+      "description": "",
+      "message": "Key press"
+   },
+   "debug_type_main_loop": {
+      "description": "",
+      "message": "Main loop"
+   },
+   "debug_type_mouse_simulation": {
+      "description": "",
+      "message": "Mouse movement simulation"
+   },
+   "debug_type_news": {
+      "description": "",
+      "message": "News"
+   },
+   "debug_type_options_generation": {
+      "description": "",
+      "message": "Options generation"
+   },
+   "debug_type_overflow": {
+      "description": "",
+      "message": "Overflow"
+   },
+   "debug_type_ratings": {
+      "description": "",
+      "message": "Ratings"
+   },
+   "debug_type_skip_button_text": {
+      "description": "",
+      "message": "Skip button text"
+   },
+   "debug_type_startup": {
+      "description": "",
+      "message": "Startup"
+   },
+   "debug_type_visibility_status": {
+      "description": "",
+      "message": "Visibility status"
+   },
+   "debug_type_wheelturn": {
+      "description": "",
+      "message": "Mouse wheel turn"
+   },
+   "debug_variables_nodata": {
+      "description": "",
+      "message": "No data available."
+   },
+   "debug_variables_noloop": {
+      "description": "",
+      "message": "Unable to loop trough object (last known key: '{0}')."
+   },
+   "debug_warning_notice": {
+      "description": "",
+      "message": "Changing any of following values may lead to poor performance or unexpected behavior and ultimately may break extension."
+   },
+   "dependency_and": {
+      "description": "",
+      "message": "and"
+   },
+   "dependency_any_of": {
+      "description": "",
+      "message": "any of"
+   },
+   "dependency_or": {
+      "description": "",
+      "message": "or"
+   },
+   "dependency_set": {
+      "description": "",
+      "message": "Set"
+   },
+   "dependency_with_value": {
+      "description": "",
+      "message": "with value"
+   },
+   "description": {
+      "description": "",
+      "message": "Extension for Netflix™ to skip intros, recaps, start next movie/episode in faster pace and many more."
+   },
+   "description_hidden": {
+      "description": "",
+      "message": "Description was hidden."
+   },
+   "developed_by": {
+      "description": "",
+      "message": "Developed by"
+   },
+   "developer": {
+      "description": "",
+      "message": "Vidoc.tv"
+   },
+   "devtools_loading_error": {
+      "description": "",
+      "message": "Problem with loading DevTools: {0}."
+   },
+   "devtools_page_loading": {
+      "description": "",
+      "message": "DevTools page loading..."
+   },
+   "devtools_pause": {
+      "description": "",
+      "message": "Pause"
+   },
+   "devtools_resume": {
+      "description": "",
+      "message": "Resume"
+   },
+   "devtools_show_content": {
+      "description": "",
+      "message": "Show content"
+   },
+   "devtools_tabs_error": {
+      "description": "",
+      "message": "Netflix™ Extended DevTools work only with Netflix™ tab."
+   },
+   "disclaimer": {
+      "description": "",
+      "message": "NETFLIX is a trademark of Netflix, Inc.. This application and its developer are in no way affiliated with Netflix, Inc..\u003Cbr>\u003Cbr>The software is provided \"as is\", without a warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software."
+   },
+   "disliked_hidden": {
+      "description": "",
+      "message": "Disliked title was hidden."
+   },
+   "dnf_error": {
+      "description": "",
+      "message": "Translation error"
+   },
+   "donate": {
+      "description": "",
+      "message": "Support developer:"
+   },
+   "dummy": {
+      "description": "",
+      "message": "Template"
+   },
+   "error_core": {
+      "description": "",
+      "message": "CORE ERROR DETECTED: {0}."
+   },
+   "error_core_assistant_delay": {
+      "description": "",
+      "message": "CORE ERROR DETECTED: Assistant call is too old, restarting assistant loop ({0} - {1} = {2} > {3})."
+   },
+   "error_gen_tab_content": {
+      "description": "",
+      "message": "Error generating options tab contents. Error: {0}"
+   },
+   "error_invalid_value": {
+      "description": "",
+      "message": "Stored configuration value for variable {0} is not valid, default value was used instead."
+   },
+   "error_loading_value": {
+      "description": "",
+      "message": "Error loading stored configuration value for variable {0}, default value was used instead. Error: {1}"
+   },
+   "error_message": {
+      "description": "",
+      "message": "NETFLEX ERROR: "
+   },
+   "error_obtaining_ratings": {
+      "description": "",
+      "message": "Error obtaining ratings. Error: {0}"
+   },
+   "error_obtaining_ratings_error": {
+      "description": "",
+      "message": "Error showing ratings error: {0}"
+   },
+   "error_range_config": {
+      "description": "",
+      "message": "Range configuration of variable '{0}' is missing some of the following values: min, max, step."
+   },
+   "error_reload": {
+      "description": "",
+      "message": "Extension detected too many critical errors. It will self reload within few seconds."
+   },
+   "error_showing_ratings": {
+      "description": "",
+      "message": "Error showing ratings: {0}"
+   },
+   "extension_autoinject_failed": {
+      "description": "",
+      "message": "Failed to auto-inject tabs."
+   },
+   "extension_disable": {
+      "description": "",
+      "message": "Extension disabled."
+   },
+   "extension_enable": {
+      "description": "",
+      "message": "Extension enabled."
+   },
+   "extension_feature_reset_cfg": {
+      "description": "",
+      "message": "Reset to configured value"
+   },
+   "extension_feature_reset_default": {
+      "description": "",
+      "message": "Reset to default value"
+   },
+   "extension_install": {
+      "description": "",
+      "message": "Installing extension."
+   },
+   "extension_update": {
+      "description": "",
+      "message": "Updating extension."
+   },
+   "extension_version": {
+      "description": "",
+      "message": "Current version: {0}"
+   },
+   "extension_webstore": {
+      "description": "",
+      "message": "Extension Webstore"
+   },
+   "failed": {
+      "description": "",
+      "message": "Failed."
+   },
+   "feature_tempHideSubtitles": {
+      "description": "",
+      "message": "Temporary hide subtitles (lasts until next video):"
+   },
+   "feature_videoBrightness": {
+      "description": "",
+      "message": "Temporary video brightness (lasts until next video):"
+   },
+   "feature_videoContrast": {
+      "description": "",
+      "message": "Temporary video contrast (lasts until next video):"
+   },
+   "feature_videoGrayscale": {
+      "description": "",
+      "message": "Temporary video grayscale effect (lasts until next video):"
+   },
+   "feature_videoHue": {
+      "description": "",
+      "message": "Temporary video hue (lasts until next video):"
+   },
+   "feature_videoInvert": {
+      "description": "",
+      "message": "Temporary video color invert (lasts until next video):"
+   },
+   "feature_videoSaturation": {
+      "description": "",
+      "message": "Temporary video saturation (lasts until next video):"
+   },
+   "feature_videoSepia": {
+      "description": "",
+      "message": "Temporary video sepia effect (lasts until next video):"
+   },
+   "feature_videoSpeedRate": {
+      "description": "",
+      "message": "Temporary video speed rate (lasts until next video):"
+   },
+   "feature_videoZoom": {
+      "description": "",
+      "message": "Temporary video zoom (lasts until next video, manual aspect radio option required):"
+   },
+   "features": {
+      "description": "",
+      "message": "More features"
+   },
+   "fireworks_start": {
+      "description": "",
+      "message": "Yay! Fireworks!"
+   },
+   "founded_by": {
+      "description": "",
+      "message": "Founded by"
+   },
+   "founder": {
+      "description": "",
+      "message": "Martin Suchy"
+   },
+   "gained_focus_play": {
+      "description": "",
+      "message": "Video was started as video player gained focus and video was previously paused by extension."
+   },
+   "github": {
+      "description": "",
+      "message": "GitHub"
+   },
+   "help_wikidata": {
+      "description": "",
+      "message": "Help make WikiData better for everyone. Visit https://www.wikidata.org/w/index.php?search={0}, find correct title in results and add Netflix™ ID: {1}."
+   },
+   "hideSpoilersObjects_type_description": {
+      "description": "",
+      "message": "Descriptions"
+   },
+   "hideSpoilersObjects_type_episode_name": {
+      "description": "",
+      "message": "Episode names"
+   },
+   "hideSpoilersObjects_type_episode_picture": {
+      "description": "",
+      "message": "Episode pictures"
+   },
+   "hideSpoilersObjects_type_runner_thumbnail": {
+      "description": "",
+      "message": "Runner thumbnails"
+   },
+   "highlightSubtitles_type_background": {
+      "description": "",
+      "message": "Background"
+   },
+   "highlightSubtitles_type_hidden": {
+      "description": "",
+      "message": "Hide subtitles"
+   },
+   "highlightSubtitles_type_original": {
+      "description": "",
+      "message": "Original"
+   },
+   "highlightSubtitles_type_shadow": {
+      "description": "",
+      "message": "Shadow"
+   },
+   "info_message": {
+      "description": "",
+      "message": "NETFLEX INFO: "
+   },
+   "lang_key_missing": {
+      "description": "",
+      "message": "Unable to locate lang key '{0}'."
+   },
+   "last_version": {
+      "description": "",
+      "message": "Last version: {0}"
+   },
+   "logLevel_type_debug": {
+      "description": "",
+      "message": "Debug"
+   },
+   "logLevel_type_error": {
+      "description": "",
+      "message": "Error"
+   },
+   "logLevel_type_info": {
+      "description": "",
+      "message": "Info"
+   },
+   "logLevel_type_none": {
+      "description": "",
+      "message": "None"
+   },
+   "logLevel_type_output": {
+      "description": "",
+      "message": "Output"
+   },
+   "logLevel_type_unknown": {
+      "description": "",
+      "message": "Unknown"
+   },
+   "logLevel_type_warn": {
+      "description": "",
+      "message": "Warn"
+   },
+   "log_type_unknown": {
+      "description": "",
+      "message": "Log type '{0}' is unknown."
+   },
+   "loop_overflow": {
+      "description": "",
+      "message": "Loop '{0}' had {1} loop(s) from last check, normal count is equal or lower than {2} loop(s)."
+   },
+   "lost_focus_pause": {
+      "description": "",
+      "message": "Video was paused as video player lost focus."
+   },
+   "menu_about": {
+      "description": "",
+      "message": "About"
+   },
+   "menu_api": {
+      "description": "",
+      "message": "API keys"
+   },
+   "menu_assistant": {
+      "description": "",
+      "message": "Assistant"
+   },
+   "menu_bindings": {
+      "description": "",
+      "message": "Key bindings"
+   },
+   "menu_debug": {
+      "description": "",
+      "message": "Debug"
+   },
+   "menu_kids": {
+      "description": "",
+      "message": "Kids"
+   },
+   "menu_ratings": {
+      "description": "",
+      "message": "Ratings"
+   },
+   "menu_recommendations": {
+      "description": "",
+      "message": "Recommendations"
+   },
+   "menu_settings": {
+      "description": "",
+      "message": "Settings"
+   },
+   "menu_statistics": {
+      "description": "",
+      "message": "Statistics"
+   },
+   "menu_storage": {
+      "description": "",
+      "message": "Storage"
+   },
+   "menu_subtitles": {
+      "description": "",
+      "message": "Subtitles"
+   },
+   "menu_timers": {
+      "description": "",
+      "message": "Timers"
+   },
+   "menu_video": {
+      "description": "",
+      "message": "Video"
+   },
+   "name": {
+      "description": "",
+      "message": "Netflix™ Extended"
+   },
+   "netflix_changes": {
+      "description": "",
+      "message": "This feature is disabled due to changes on Netflix™ side that cause problems while using this extension. This may be temporary until workaround is found or permanent when there is no fix found in reasonable time. If there is no fix, this feature might get removed."
+   },
+   "news": {
+      "description": "",
+      "message": "News"
+   },
+   "news_missing_data": {
+      "description": "",
+      "message": "Missing data in news dynamic value '{0}'."
+   },
+   "news_received_at": {
+      "description": "",
+      "message": "Received at: "
+   },
+   "news_updated_at": {
+      "description": "",
+      "message": "Updated at: "
+   },
+   "next_episode": {
+      "description": "",
+      "message": "Playing next episode..."
+   },
+   "next_video_delay": {
+      "description": "",
+      "message": "Next video is not from same series, delaying next episode for {0} {1} out of {2}..."
+   },
+   "next_video_stop": {
+      "description": "",
+      "message": "Next video is not from same title and extension is configured to stop playing."
+   },
+   "no_features_available": {
+      "description": "",
+      "message": "There are no features available on this page, or there are no valid features enabled."
+   },
+   "no_news": {
+      "description": "",
+      "message": "No news at this moment."
+   },
+   "object_category_unknown": {
+      "description": "",
+      "message": "Unknown object category '{0}'."
+   },
+   "option_unit_deg": {
+      "description": "",
+      "message": "°"
+   },
+   "option_unit_ms": {
+      "description": "",
+      "message": "ms"
+   },
+   "option_unit_pct": {
+      "description": "",
+      "message": "%"
+   },
+   "option_unit_px": {
+      "description": "",
+      "message": "px"
+   },
+   "option_unit_sec": {
+      "description": "",
+      "message": "sec"
+   },
+   "option_unknown": {
+      "description": "",
+      "message": "Unknown"
+   },
+   "options": {
+      "description": "",
+      "message": "Options"
+   },
+   "options_default": {
+      "description": "",
+      "message": "Default"
+   },
+   "options_dependency": {
+      "description": "",
+      "message": "Dependency"
+   },
+   "options_max": {
+      "description": "",
+      "message": "Max"
+   },
+   "options_min": {
+      "description": "",
+      "message": "Min"
+   },
+   "options_off": {
+      "description": "",
+      "message": "Off"
+   },
+   "options_open": {
+      "description": "",
+      "message": "Opening options page..."
+   },
+   "options_title": {
+      "description": "",
+      "message": "Netflix™ Extended Options"
+   },
+   "output_message": {
+      "description": "",
+      "message": "NETFLEX OUTPUT: "
+   },
+   "page_reload": {
+      "description": "",
+      "message": "Page reload request was detected within all limits, reloading..."
+   },
+   "page_reload_cancelled": {
+      "description": "",
+      "message": "Page reload was cancelled."
+   },
+   "page_reload_delay": {
+      "description": "",
+      "message": "Reload is being delayed. To prevent account from being blocked, reload will be performed once there is difference at least {0} {1}..."
+   },
+   "page_reload_delay_info": {
+      "description": "",
+      "message": "Reload delayed for another {0} {1}."
+   },
+   "patreon": {
+      "description": "",
+      "message": "Patreon"
+   },
+   "pauseOnBlur_type_disabled": {
+      "description": "",
+      "message": "Disabled"
+   },
+   "pauseOnBlur_type_high": {
+      "description": "",
+      "message": "High"
+   },
+   "pauseOnBlur_type_low": {
+      "description": "",
+      "message": "Low"
+   },
+   "paypal": {
+      "description": "",
+      "message": "PayPal"
+   },
+   "prev_episode_manual": {
+      "description": "",
+      "message": "Starting previous episode..."
+   },
+   "prev_episode_manual_no_history": {
+      "description": "",
+      "message": "No more episodes in history."
+   },
+   "previous_version": {
+      "description": "",
+      "message": "Previous version: {0}"
+   },
+   "provided_by": {
+      "description": "",
+      "message": "Provided by"
+   },
+   "provider": {
+      "description": "",
+      "message": "Vidoc.tv"
+   },
+   "rand_video_failed_play": {
+      "description": "",
+      "message": "Starting of random title failed."
+   },
+   "rand_video_failed_select": {
+      "description": "",
+      "message": "Selection of random title failed."
+   },
+   "rand_video_success": {
+      "description": "",
+      "message": "Random title was selected: {0}."
+   },
+   "rate_extension": {
+      "description": "",
+      "message": "Click here to rate extension"
+   },
+   "rating_daily_limit": {
+      "description": "",
+      "message": "Ratings daily limit reached, retry in 24 hours."
+   },
+   "rating_display_error": {
+      "description": "",
+      "message": "Unable to display ratings."
+   },
+   "rating_id_not_found": {
+      "description": "",
+      "message": "Unable to obtain title ID."
+   },
+   "rating_imdb": {
+      "description": "",
+      "message": "IMDb"
+   },
+   "rating_invalid_key": {
+      "description": "",
+      "message": "Provided API key is invalid."
+   },
+   "rating_meta": {
+      "description": "",
+      "message": "Meta"
+   },
+   "rating_next_refresh": {
+      "description": "",
+      "message": "Next refresh at {0}."
+   },
+   "rating_no_rating": {
+      "description": "",
+      "message": "No ratings found."
+   },
+   "rating_rt": {
+      "description": "",
+      "message": "RT"
+   },
+   "ratingsSources_type_imdb": {
+      "description": "",
+      "message": "IMDb"
+   },
+   "ratingsSources_type_meta": {
+      "description": "",
+      "message": "Metacritic"
+   },
+   "ratingsSources_type_rt": {
+      "description": "",
+      "message": "Rotten Tomatoes"
+   },
+   "ratingsTilePosition_type_bottom_center": {
+      "description": "",
+      "message": "Bottom center"
+   },
+   "ratingsTilePosition_type_bottom_left": {
+      "description": "",
+      "message": "Bottom left"
+   },
+   "ratingsTilePosition_type_bottom_right": {
+      "description": "",
+      "message": "Bottom right"
+   },
+   "ratingsTilePosition_type_middle_center": {
+      "description": "",
+      "message": "Middle center"
+   },
+   "ratingsTilePosition_type_middle_left": {
+      "description": "",
+      "message": "Middle left"
+   },
+   "ratingsTilePosition_type_middle_right": {
+      "description": "",
+      "message": "Middle right"
+   },
+   "ratingsTilePosition_type_top_center": {
+      "description": "",
+      "message": "Top center"
+   },
+   "ratingsTilePosition_type_top_left": {
+      "description": "",
+      "message": "Top left"
+   },
+   "ratingsTilePosition_type_top_right": {
+      "description": "",
+      "message": "Top right"
+   },
+   "ratingsTileTextAlign_type_center": {
+      "description": "",
+      "message": "Center"
+   },
+   "ratingsTileTextAlign_type_left": {
+      "description": "",
+      "message": "Left"
+   },
+   "ratingsTileTextAlign_type_right": {
+      "description": "",
+      "message": "Right"
+   },
+   "ratingsTileTextAlign_type_same_as_position": {
+      "description": "",
+      "message": "Same as horizontal position of tile ratings"
+   },
+   "ratings_error_message": {
+      "description": "",
+      "message": "ERROR: {0} (response status: {1})."
+   },
+   "ratings_imdb_id_not_found": {
+      "description": "",
+      "message": "Wikidata did not provide IMDb identification."
+   },
+   "ratings_no_data_omdb_api": {
+      "description": "",
+      "message": "No data were provided from OMDB API."
+   },
+   "ratings_no_data_wikidata": {
+      "description": "",
+      "message": "No data were provided from Wikidata."
+   },
+   "ratings_reason": {
+      "description": "",
+      "message": "Reason: {0}."
+   },
+   "ratings_unknown_error": {
+      "description": "",
+      "message": "Unknown."
+   },
+   "ratings_wiki_missing_imdb_id": {
+      "description": "",
+      "message": "Missing IMDb ID (\u003Ca href='{0}' style='text-decoration: underline;' target='_blank'>search\u003C/a>) at \u003Ca href='{1}' style='text-decoration: underline;' target='_blank'>Wikidata\u003C/a>.\u003Cbr>{2}"
+   },
+   "ratings_wiki_missing_netflix_id": {
+      "description": "",
+      "message": "Missing Netflix ID (\u003Cspan style='user-select: all;'>{0}\u003C/span>) at \u003Ca href='{1}' style='text-decoration: underline;' target='_blank'>Wikidata\u003C/a>.\u003Cbr>{2}"
+   },
+   "repeat_title": {
+      "description": "",
+      "message": "Attempting title repeat..."
+   },
+   "roll_credits": {
+      "description": "",
+      "message": "Rolling credits..."
+   },
+   "second": {
+      "description": "",
+      "message": "second"
+   },
+   "second_less5": {
+      "description": "",
+      "message": "seconds"
+   },
+   "seconds": {
+      "description": "",
+      "message": "seconds"
+   },
+   "short_name": {
+      "description": "",
+      "message": "Netflex"
+   },
+   "show_debug_variables_hint_html": {
+      "description": "",
+      "message": "Generating debug variables as HTML."
+   },
+   "show_debug_variables_hint_json": {
+      "description": "",
+      "message": "Generating debug variables as JSON (default)."
+   },
+   "skipping_interrupter": {
+      "description": "",
+      "message": "Skipping interruption..."
+   },
+   "skipping_intro": {
+      "description": "",
+      "message": "Skipping intro..."
+   },
+   "skipping_recap": {
+      "description": "",
+      "message": "Skipping recap..."
+   },
+   "source": {
+      "description": "",
+      "message": "Source:"
+   },
+   "stat_actions": {
+      "description": "",
+      "message": "Action"
+   },
+   "stat_actions_count": {
+      "description": "",
+      "message": "Count"
+   },
+   "stat_actions_none": {
+      "description": "",
+      "message": "No actions statistics available yet."
+   },
+   "stat_api_call": {
+      "description": "",
+      "message": "OMDB API attempted calls"
+   },
+   "stat_api_error": {
+      "description": "",
+      "message": "OMDB API calls with error"
+   },
+   "stat_api_finished": {
+      "description": "",
+      "message": "OMDB API successful calls"
+   },
+   "stat_api_invalid": {
+      "description": "",
+      "message": "OMDB API calls with invalid key"
+   },
+   "stat_api_limit": {
+      "description": "",
+      "message": "OMDB API calls with API limit reached"
+   },
+   "stat_api_not_available": {
+      "description": "",
+      "message": "OMDB API calls without ratings"
+   },
+   "stat_api_timeout": {
+      "description": "",
+      "message": "OMDB API calls with timeout"
+   },
+   "stat_cfg_changed": {
+      "description": "",
+      "message": "Configuration changed"
+   },
+   "stat_extension_actions": {
+      "description": "",
+      "message": "Extension actions"
+   },
+   "stat_hideDisliked": {
+      "description": "",
+      "message": "Disliked titles hidden"
+   },
+   "stat_hideSpoilers": {
+      "description": "",
+      "message": "Spoilers hidden"
+   },
+   "stat_highlightSubtitles": {
+      "description": "",
+      "message": "Subtitles highlighted"
+   },
+   "stat_keyBinding": {
+      "description": "",
+      "message": "Key bindings used"
+   },
+   "stat_loaded_api": {
+      "description": "",
+      "message": "Ratings loaded from API"
+   },
+   "stat_loaded_storage": {
+      "description": "",
+      "message": "Ratings loaded from storage"
+   },
+   "stat_nextEpisodeStopMovies": {
+      "description": "",
+      "message": "Stopped on different title (movies)"
+   },
+   "stat_nextEpisodeStopSeries": {
+      "description": "",
+      "message": "Stopped on different title (series)"
+   },
+   "stat_pauseOnBlur": {
+      "description": "",
+      "message": "Paused on blur"
+   },
+   "stat_playOnFocus": {
+      "description": "",
+      "message": "Played on focus after pause on blur"
+   },
+   "stat_randomTitle": {
+      "description": "",
+      "message": "Random titles started"
+   },
+   "stat_ratings": {
+      "description": "",
+      "message": "Ratings"
+   },
+   "stat_ratings_api_limit": {
+      "description": "",
+      "message": "API key limit reached for today"
+   },
+   "stat_ratings_expire_1w": {
+      "description": "",
+      "message": "Ratings expiring within 1 week"
+   },
+   "stat_ratings_expire_24h": {
+      "description": "",
+      "message": "Ratings expiring within 24 hours"
+   },
+   "stat_ratings_general": {
+      "description": "",
+      "message": "General"
+   },
+   "stat_ratings_states": {
+      "description": "",
+      "message": "Stored ratings states"
+   },
+   "stat_ratings_total_size": {
+      "description": "",
+      "message": "Total ratings size"
+   },
+   "stat_ratings_total_stored": {
+      "description": "",
+      "message": "Total stored ratings"
+   },
+   "stat_revealSpoilers": {
+      "description": "",
+      "message": "Spoilers revealed"
+   },
+   "stat_showElapsedTime": {
+      "description": "",
+      "message": "Elapsed time shown"
+   },
+   "stat_skipInterrupter": {
+      "description": "",
+      "message": "Interrupters skipped"
+   },
+   "stat_skipIntros": {
+      "description": "",
+      "message": "Intros skipped"
+   },
+   "stat_skipRecaps": {
+      "description": "",
+      "message": "Recaps skipped"
+   },
+   "stat_storage": {
+      "description": "",
+      "message": "Storage"
+   },
+   "stat_storage_extension": {
+      "description": "",
+      "message": "Extension"
+   },
+   "stat_storage_local": {
+      "description": "",
+      "message": "Local"
+   },
+   "stat_storage_percentage": {
+      "description": "",
+      "message": "Percentage"
+   },
+   "stat_storage_size": {
+      "description": "",
+      "message": "Used size/Total size"
+   },
+   "stat_storage_size_unknown": {
+      "description": "",
+      "message": "Unable to determine size at this moment."
+   },
+   "stat_storage_type": {
+      "description": "",
+      "message": "Storage type"
+   },
+   "stat_titleEndActionRepeat": {
+      "description": "",
+      "message": "Title repeated"
+   },
+   "stat_titleEndActionRoll": {
+      "description": "",
+      "message": "Title end credits rolled"
+   },
+   "stat_titleEndActionSkip": {
+      "description": "",
+      "message": "Title end skipped"
+   },
+   "stat_trailerVideoStop": {
+      "description": "",
+      "message": "Trailers stopped"
+   },
+   "stat_wheelTurn": {
+      "description": "",
+      "message": "Wheel features used"
+   },
+   "stat_wiki_call": {
+      "description": "",
+      "message": "Wikidata attempted calls"
+   },
+   "stat_wikidata_error": {
+      "description": "",
+      "message": "Wikidata calls with error"
+   },
+   "stat_wikidata_finished": {
+      "description": "",
+      "message": "Wikidata successful calls"
+   },
+   "stat_wikidata_imdb_not_available": {
+      "description": "",
+      "message": "Wikidata calls with no IMDb ID"
+   },
+   "stat_wikidata_not_available": {
+      "description": "",
+      "message": "Wikidata calls with no Netflix™ ID"
+   },
+   "stat_wikidata_timeout": {
+      "description": "",
+      "message": "Wikidata calls with timeout"
+   },
+   "status_text_broken": {
+      "description": "",
+      "message": "Consider reloading Netflix™, extension is not working."
+   },
+   "status_text_disabled": {
+      "description": "",
+      "message": "Extension assistant features are currently disabled.\u003Cbr>Click on status icon to enable all assistant features."
+   },
+   "status_text_discontinued": {
+      "description": "",
+      "message": "This extension has been discontinued."
+   },
+   "status_text_discontinued_redirect": {
+      "description": "",
+      "message": "This extension has been discontinued, replacement extension can be found \u003Ca href='{0}' class='highlight' target='_blank'>here\u003C/a>."
+   },
+   "status_text_errors": {
+      "description": "",
+      "message": "Consider reloading Netflix™, errors were detected."
+   },
+   "status_text_ok": {
+      "description": "",
+      "message": "Everything seems OK.\u003Cbr>Click on status icon to disable all assistant features."
+   },
+   "status_text_update": {
+      "description": "",
+      "message": "Extension state changed. Either it was updated, reloaded, disabled or uninstalled. Extension should handle this situation on its own, but it is recommended to reload Netflix™ for changes to correctly apply."
+   },
+   "success": {
+      "description": "",
+      "message": "Success."
+   },
+   "titleEndAction_type_none": {
+      "description": "",
+      "message": "None"
+   },
+   "titleEndAction_type_repeat": {
+      "description": "",
+      "message": "Repeat episode"
+   },
+   "titleEndAction_type_roll": {
+      "description": "",
+      "message": "Roll credits and skip after"
+   },
+   "titleEndAction_type_skip": {
+      "description": "",
+      "message": "Skip to next episode"
+   },
+   "trailer_stopped": {
+      "description": "",
+      "message": "Trailer was stopped."
+   },
+   "unsupported_browser": {
+      "description": "",
+      "message": "Unsupported browser running extension."
+   },
+   "unsupported_cfg_type": {
+      "description": "",
+      "message": "Configuration type '{0}' is not supported."
+   },
+   "version": {
+      "description": "",
+      "message": "Version"
+   },
+   "version_changed": {
+      "description": "",
+      "message": "Playing next episode..."
+   },
+   "version_changes": {
+      "description": "",
+      "message": "Applying changes for version before {0}."
+   },
+   "versions_remove_stats": {
+      "description": "",
+      "message": "Removing statistic variable '{0}'."
+   },
+   "versions_remove_variable": {
+      "description": "",
+      "message": "Removing configuration variable '{0}'."
+   },
+   "versions_rename_localStorage": {
+      "description": "",
+      "message": "Renaming local storage variable from '{0}' to '{1}'."
+   },
+   "versions_rename_stats": {
+      "description": "",
+      "message": "Renaming statistic variable from '{0}' to '{1}'."
+   },
+   "versions_rename_variable": {
+      "description": "",
+      "message": "Renaming configuration variable from '{0}' to '{1}'."
+   },
+   "versions_reset_data": {
+      "description": "",
+      "message": "Resetting configuration data of variable '{0}'."
+   },
+   "videoAspectRatio_type_21_9": {
+      "description": "",
+      "message": "21:9"
+   },
+   "videoAspectRatio_type_manual": {
+      "description": "",
+      "message": "Manual (see Video zoom settings)"
+   },
+   "videoAspectRatio_type_original": {
+      "description": "",
+      "message": "Original"
+   },
+   "video_stuck": {
+      "description": "",
+      "message": "Video seems to be stuck for {0} {1} out of {2}..."
+   },
+   "warn_message": {
+      "description": "",
+      "message": "NETFLEX WARNING: "
+   },
+   "wrong_configuration_type": {
+      "description": "",
+      "message": "Provided configuration item '{0}' is of wrong type '{1}', expected type is '{2}'."
+   }
+}

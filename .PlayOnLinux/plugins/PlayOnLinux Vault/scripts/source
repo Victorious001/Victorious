@@ -1,0 +1,207 @@
+#!/bin/bash
+# Script by Congelli501
+# Version : 0.0.1
+
+# Config
+if [ "$scriptPathDir" = "" ]; then
+	scriptPathDir=$(dirname $(readlink -f $0)) # readlink -f $0 ne marche pas en cas de "source"
+fi
+
+# polFatalError()
+# Args:
+#  - $1 : Error description
+
+function polFatalError()
+{
+	echo "$1" >&2
+	POL_SetupWindow_message "$1" "$PLUGIN_NAME"
+	POL_SetupWindow_Close
+	exit 1
+}
+
+# checkProg()
+# Args:
+#  - $1 : command
+
+function checkProg()
+{
+	if ! which "$1" > /dev/null; then
+		polFatalError "$1 not found !"
+	fi
+}
+
+# getTimeLeft()
+# Args:
+#  - $1 : elapsedTime
+#  - $2 : percentDone
+#  - stdout: left time (s)
+
+#function getTimeLeft()
+#{
+#	elapsedTime="$1"
+#	percentDone="$2"
+#	
+#	if [ "$percentDone" -ne 0 ]; then
+#		(( leftTime = ( elapsedTime * 100 ) / percentDone - elapsedTime ))
+#		if [ "$leftTime" -le 0 ]; then
+#			leftTime=0
+#		fi
+#		
+#		leftTime=$(transformTime "$leftTime")	
+#		echo "${leftTime}"
+#	else
+#		echo '?'
+#	fi
+#}
+
+# getConfigValue()
+# Args:
+#  - stdin: the file to scan.
+#  - $1 : the field you want.
+
+function getConfigValue
+{
+	grep "$1=" | cut -f2 -d'='
+}
+
+# scanLunchScript()
+# Args:
+#  - stdin: the file to scan.
+#  - $1 : the information to return
+#    => Possible values: prefix ; wineVersion ; prefixName
+
+function scanLunchScript()
+{
+	case "$1" in
+		'prefix' | 'prefixName')
+			PREFIX=$(cat | grep 'export WINEPREFIX' | cut -d'"' -f2)
+			
+			if [ "$1" = 'prefix' ]; then
+				echo "$PREFIX"
+				return 0
+			else
+				basename "$PREFIX"
+				return 0
+			fi
+			;;
+		'wineVersion')
+			LINE=$(cat | grep 'PATH=')
+			
+			if [ -n "$LINE" ]; then
+				echo "$LINE" | cut -d'/' -f6
+			else # System version
+				echo 'System'
+			fi
+			;;
+		*)
+			echo "Error, scanLunchScript() : \"$$1\" unknown !" >&2
+			;;
+	esac
+}
+
+# getWineprefixApps() => Get lunch scripts which use the given prefix
+# Args:
+#  - $1 : wineprefix
+
+function getWineprefixApps()
+{
+	prefix="$1"
+
+	if [ -n "$REPERTOIRE" ]; then
+		scriptsPath="$REPERTOIRE/shortcuts"
+	else
+		echo 'getWineprefixApps() ==> $REPERTOIRE not set !' >&2
+		scriptsPath="$HOME/.PlayOnLinux/shortcuts"
+	fi
+	
+	for file in "$scriptsPath/"*; do
+		currentPrefix=$(cat "$file" | scanLunchScript 'prefix')
+		if [ "$currentPrefix" = "$prefix" ]; then
+			echo "$file"
+		fi
+	done
+}
+
+# addPolHomeVar()
+# Args:
+#  - stdin: the file to modify.
+#  - stdout: the file, modified.
+
+function addPolHomeVar()
+{
+	if [ -n "$REPERTOIRE" ]; then
+		OLD_VAR="$REPERTOIRE"
+	else
+		echo 'addPolHomeVar() ==> $REPERTOIRE not set !' >&2
+		OLD_VAR="$HOME/.PlayOnLinux"
+	fi
+	
+	NEW_VAR='%PLAYONLINUX_HOME%'
+	
+	# Replace "/" with "\/"
+	OLD_VAR=$(echo "$OLD_VAR" | sed "s/\//\\\\\//g")
+
+	cat | sed "s/$OLD_VAR/$NEW_VAR/"
+}
+
+# removePolHomeVar()
+# Args:
+#  - stdin: the file to modify.
+#  - stdout: the file, modified.
+
+function removePolHomeVar()
+{
+	if [ -n "$REPERTOIRE" ]; then
+		NEW_VAR="$REPERTOIRE"
+	else
+		echo 'removePolHomeVar() ==> $REPERTOIRE not set !' >&2
+		NEW_VAR="$HOME/.PlayOnLinux"
+	fi
+	
+	OLD_VAR='%PLAYONLINUX_HOME%'
+	
+	# Replace "/" with "\/"
+	NEW_VAR=$(echo "$NEW_VAR" | sed "s/\//\\\\\//g")
+
+	cat | sed "s/$OLD_VAR/$NEW_VAR/"
+}
+
+# timeSave()
+function timeSave()
+{
+	LAST_TIME=$(date +%s)
+}
+
+# getTimeSpan()
+function getTimeSpan()
+{
+	if [ -n "$LAST_TIME" ]; then
+		expr $(date +%s) - "$LAST_TIME"
+	else
+		echo 0
+		echo 'Error, getTimeSpan() : $TIME not set !' >&2
+	fi
+}
+
+# transformTime()
+# Args:
+#  - $1 : time (s).
+#  - stdout: time (modified).
+
+function transformTime()
+{
+	seconds="$1"
+	
+	if [ "$seconds" = '?' ]; then
+		echo "?s"
+	else
+		(( min = seconds / 60 ))
+		(( seconds -= min * 60 ))
+
+		if [ "$min" -ne 0 ]; then
+			echo -n "${min}min "
+		fi
+
+		echo -n "${seconds}s"
+	fi
+}
